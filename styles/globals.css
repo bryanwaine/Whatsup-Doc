@@ -41,19 +41,19 @@ a {
 }
 
 .mobileMenu {
-  -moz-backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
+  -moz-backdrop-filter: blur(17px);
+  -webkit-backdrop-filter: blur(17px);
+  backdrop-filter: blur(17px);
   left: -40rem;
   z-index: -1;
-  opacity: 0;
-  transition: left 0.5s, opacity 1s;
+  opacity: .9;
+  transition: left 0.5s;
 }
 
 .mobileMenu.true {
   /* display: initial; */
   left: 0;
-  opacity: 0.95;
+  opacity: .9;
   -moz-backdrop-filter: blur(17px);
   -webkit-backdrop-filter: blur(17px);
   backdrop-filter: blur(17px);
