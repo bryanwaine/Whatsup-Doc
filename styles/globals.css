@@ -46,8 +46,8 @@ a {
   backdrop-filter: none;
   left: -20rem;
   z-index: -1;
-  opacity: 0;
-  transition: all 0.5s ease-out;
+  opacity: 0.9;
+  transition: all 0.5s ease-in-out;
 }
 
 .mobileMenu.true {
