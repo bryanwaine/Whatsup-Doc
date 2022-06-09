@@ -21,6 +21,9 @@ import MedicationIcon from '@mui/icons-material/Medication';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import CorporateFareIcon from '@mui/icons-material/CorporateFare';
 import PersonIcon from '@mui/icons-material/Person';
+import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
+import MailRoundedIcon from '@mui/icons-material/MailRounded';
+import PhoneIphoneRoundedIcon from '@mui/icons-material/PhoneIphoneRounded';
 
 import cs from '../public/chat-screen.png';
 import vc from '../public/video-call.png';
@@ -54,25 +57,24 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    reveal_first_section()
-    reveal_first_section_image()
-    reveal_first_section_text()
-    
-    
+    reveal_first_section();
+    reveal_first_section_image();
+    reveal_first_section_text();
+
     window.addEventListener('scroll', () => {
-      reveal_second_section()
-      reveal_second_section_text()
-      reveal_second_section_card_1()
-      reveal_second_section_card_2()
-      reveal_third_section()
-      reveal_third_section_text()
-      reveal_third_section_card_1()
-      reveal_third_section_card_2()
-      reveal_third_section_card_3()
-      reveal_third_section_card_4()
-  reveal_third_section_image()
-  reveal_fourth_section_text()
-  reveal_fourth_section_image()
+      reveal_second_section();
+      reveal_second_section_text();
+      reveal_second_section_card_1();
+      reveal_second_section_card_2();
+      reveal_third_section();
+      reveal_third_section_text();
+      reveal_third_section_card_1();
+      reveal_third_section_card_2();
+      reveal_third_section_card_3();
+      reveal_third_section_card_4();
+      reveal_third_section_image();
+      reveal_fourth_section_text();
+      reveal_fourth_section_image();
     });
   }, []);
 
@@ -1214,7 +1216,7 @@ export default function Home() {
                   justifyContent: 'space-between',
                   alignItems: 'center',
                   height: '100%',
-                  padding: '20px',
+                  padding: '20px 0',
                   width: '100%',
                 }}
               >
@@ -1222,7 +1224,7 @@ export default function Home() {
                   sx={{ flex: 1, margin: '0 0 2rem 0', cursor: 'pointer' }}
                   onClick={() => router.push('/')}
                 >
-                  <Image src={wd} width={300} height={55} alt='Whatsup Doc!' />
+                  <Image src={wd} width={240} height={44} alt='Whatsup Doc!' />
                 </Box>
                 <Box
                   sx={{
@@ -1292,38 +1294,512 @@ export default function Home() {
                     />
                   </Box>
                 </Box>
+
+                {/* Footer links */}
                 <Box
                   sx={{
                     display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    width: '100%',
-                    cursor: 'pointer',
+                    flexDirection: { xs: 'column', md: 'row' },
+                    ustifyContent: 'space-between',
                   }}
                 >
-                  <Typography
-                    variant='medium'
+                  {/* Footer Links Section 1 */}
+                  <Box
                     sx={{
-                      color: '#000000',
-                      padding: '.5rem',
-                      borderRadius: '.5rem',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      width: '100%',
+                      alignItems: 'start',
+                      margin: '1rem 0',
                     }}
-                    className='footer'
                   >
-                    Terms of services
-                  </Typography>
-                  <Typography
-                    variant='medium'
+                    {/* For Patients */}
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'start',
+                        width: '100%',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      <Box sx={{ width: '100%' }}>
+                        <Typography
+                          variant='bold'
+                          sx={{
+                            color: '#aaaaaa ',
+                            padding: '.5rem',
+                            borderRadius: '.5rem',
+                            margin: '0',
+                            fontSize: '.8rem',
+                          }}
+                        >
+                          FOR PATIENTS
+                        </Typography>
+                        <div
+                          style={{
+                            height: '.1rem',
+                            width: '3rem',
+                            background: '#aaaaaa',
+                          }}
+                        />
+                      </Box>
+
+                      <Typography
+                        variant='medium'
+                        sx={{
+                          color: '#000000',
+                          padding: '.5rem',
+                          borderRadius: '.5rem',
+                          margin: '0',
+                          fontSize: '.8rem',
+                        }}
+                        className='footer'
+                      >
+                        Search&nbsp;for&nbsp;doctors
+                      </Typography>
+                      <Typography
+                        variant='medium'
+                        sx={{
+                          color: '#000000',
+                          padding: '.5rem',
+                          borderRadius: '.5rem',
+                          margin: '0',
+                          fontSize: '.8rem',
+                        }}
+                        className='footer'
+                      >
+                        Log&nbsp;in
+                      </Typography>
+                      <Typography
+                        variant='medium'
+                        sx={{
+                          color: '#000000',
+                          padding: '.5rem',
+                          borderRadius: '.5rem',
+                          margin: '0',
+                          fontSize: '.8rem',
+                        }}
+                        className='footer'
+                      >
+                        Sign&nbsp;up
+                      </Typography>
+                      <Typography
+                        variant='medium'
+                        sx={{
+                          color: '#000000',
+                          padding: '.5rem',
+                          borderRadius: '.5rem',
+                          margin: '0',
+                          fontSize: '.8rem',
+                        }}
+                        className='footer'
+                      >
+                        Booking
+                      </Typography>
+                    </Box>
+
+                    <div style={{ width: '3rem' }} />
+                    {/* For Doctors */}
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'start',
+                        width: '100%',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      <Box sx={{ width: '100%' }}>
+                        <Typography
+                          variant='bold'
+                          sx={{
+                            color: '#aaaaaa ',
+                            padding: '.5rem',
+                            borderRadius: '.5rem',
+                            margin: '0',
+                            fontSize: '.8rem',
+                          }}
+                        >
+                          FOR DOCTORS
+                        </Typography>
+                        <div
+                          style={{
+                            height: '.1rem',
+                            width: '3rem',
+                            background: '#aaaaaa',
+                          }}
+                        />
+                      </Box>
+
+                      <Typography
+                        variant='medium'
+                        sx={{
+                          color: '#000000',
+                          padding: '.5rem',
+                          borderRadius: '.5rem',
+                          margin: '0',
+                          fontSize: '.8rem',
+                        }}
+                        className='footer'
+                      >
+                        Appointments
+                      </Typography>
+                      <Typography
+                        variant='medium'
+                        sx={{
+                          color: '#000000',
+                          padding: '.5rem',
+                          borderRadius: '.5rem',
+                          margin: '0',
+                          fontSize: '.8rem',
+                        }}
+                        className='footer'
+                      >
+                        Log&nbsp;in
+                      </Typography>
+                      <Typography
+                        variant='medium'
+                        sx={{
+                          color: '#000000',
+                          padding: '.5rem',
+                          borderRadius: '.5rem',
+                          margin: '0',
+                          fontSize: '.8rem',
+                        }}
+                        className='footer'
+                      >
+                        Sign&nbsp;up
+                      </Typography>
+                    </Box>
+                  </Box>
+
+                  <div style={{ width: '3rem' }} />
+                  {/* Footer Links Section 2 */}
+                  <Box
                     sx={{
-                      color: '#000000',
-                      padding: '.5rem',
-                      borderRadius: '.5rem',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      width: '100%',
+                      alignItems: 'start',
+                      margin: '1rem 0',
                     }}
-                    className='footer'
                   >
-                    Privacy policy
-                  </Typography>
+                    {/* Company */}
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'start',
+                        width: '100%',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      <Box sx={{ width: '100%' }}>
+                        <Typography
+                          variant='bold'
+                          sx={{
+                            color: '#aaaaaa ',
+                            padding: '.5rem',
+                            borderRadius: '.5rem',
+                            margin: '0',
+                            fontSize: '.8rem',
+                          }}
+                        >
+                          COMPANY
+                        </Typography>
+                        <div
+                          style={{
+                            height: '.1rem',
+                            width: '3rem',
+                            background: '#aaaaaa',
+                          }}
+                        />
+                      </Box>
+
+                      <Typography
+                        variant='medium'
+                        sx={{
+                          color: '#000000',
+                          padding: '.5rem',
+                          borderRadius: '.5rem',
+                          margin: '0',
+                          fontSize: '.8rem',
+                        }}
+                        className='footer'
+                      >
+                        Our&nbsp;company
+                      </Typography>
+                      <Typography
+                        variant='medium'
+                        sx={{
+                          color: '#000000',
+                          padding: '.5rem',
+                          borderRadius: '.5rem',
+                          margin: '0',
+                          fontSize: '.8rem',
+                        }}
+                        className='footer'
+                      >
+                        News
+                      </Typography>
+                      <Typography
+                        variant='medium'
+                        sx={{
+                          color: '#000000',
+                          padding: '.5rem',
+                          borderRadius: '.5rem',
+                          margin: '0',
+                          fontSize: '.8rem',
+                        }}
+                        className='footer'
+                      >
+                        Gallery
+                      </Typography>
+                      <Typography
+                        variant='medium'
+                        sx={{
+                          color: '#000000',
+                          padding: '.5rem',
+                          borderRadius: '.5rem',
+                          margin: '0',
+                          fontSize: '.8rem',
+                        }}
+                        className='footer'
+                      >
+                        Individual&nbsp;Plan
+                      </Typography>
+                      <Typography
+                        variant='medium'
+                        sx={{
+                          color: '#000000',
+                          padding: '.5rem',
+                          borderRadius: '.5rem',
+                          margin: '0',
+                          fontSize: '.8rem',
+                        }}
+                        className='footer'
+                      >
+                        Family&nbsp;Plan
+                      </Typography>
+                      <Typography
+                        variant='medium'
+                        sx={{
+                          color: '#000000',
+                          padding: '.5rem',
+                          borderRadius: '.5rem',
+                          margin: '0',
+                          fontSize: '.8rem',
+                        }}
+                        className='footer'
+                      >
+                        Corporate&nbsp;Plan
+                      </Typography>
+                      <Typography
+                        variant='medium'
+                        sx={{
+                          color: '#000000',
+                          padding: '.5rem',
+                          borderRadius: '.5rem',
+                          margin: '0',
+                          fontSize: '.8rem',
+                        }}
+                        className='footer'
+                      >
+                        FAQ
+                      </Typography>
+                      <Typography
+                        variant='medium'
+                        sx={{
+                          color: '#000000',
+                          padding: '.5rem',
+                          borderRadius: '.5rem',
+                          margin: '0',
+                          fontSize: '.8rem',
+                        }}
+                        className='footer'
+                      >
+                        Ask
+                      </Typography>
+                    </Box>
+
+                    <div style={{ width: '3rem' }} />
+                    {/* LEGAL */}
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'start',
+                        width: '100%',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      <Box sx={{ width: '100%' }}>
+                        <Typography
+                          variant='bold'
+                          sx={{
+                            color: '#aaaaaa ',
+                            padding: '.5rem',
+                            borderRadius: '.5rem',
+                            margin: '0',
+                            fontSize: '.8rem',
+                          }}
+                        >
+                          LEGAL
+                        </Typography>
+                        <div
+                          style={{
+                            height: '.1rem',
+                            width: '3rem',
+                            background: '#aaaaaa',
+                          }}
+                        />
+                      </Box>
+                      <Typography
+                        variant='medium'
+                        sx={{
+                          color: '#000000',
+                          padding: '.5rem',
+                          borderRadius: '.5rem',
+                          margin: '0',
+                          fontSize: '.8rem',
+                        }}
+                        className='footer'
+                      >
+                        Terms&nbsp;of&nbsp;services
+                      </Typography>
+                      <Typography
+                        variant='medium'
+                        sx={{
+                          color: '#000000',
+                          padding: '.5rem',
+                          borderRadius: '.5rem',
+                          margin: '0',
+                          fontSize: '.8rem',
+                        }}
+                        className='footer'
+                      >
+                        Privacy policy
+                      </Typography>
+                    </Box>
+                  </Box>
+
+                  <div style={{ width: '3rem' }} />
+                  {/* Footer Links Section 3 */}
+                  <Box
+                    sx={{
+                      flex: 2,
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      width: '100%',
+                      alignItems: 'start',
+                      margin: '1rem 0',
+                    }}
+                  >
+                    {/* Contact */}
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'start',
+                        width: '100%',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      <Box sx={{ width: '100%' }}>
+                        <Typography
+                          variant='bold'
+                          sx={{
+                            color: '#aaaaaa ',
+                            padding: '.5rem',
+                            borderRadius: '.5rem',
+                            margin: '0',
+                            fontSize: '.8rem',
+                          }}
+                        >
+                          CONTACT
+                        </Typography>
+                        <div
+                          style={{
+                            height: '.1rem',
+                            width: '3rem',
+                            background: '#aaaaaa',
+                          }}
+                        />
+                      </Box>
+
+                      <Typography
+                        variant='medium'
+                        sx={{
+                          color: '#000000',
+                          padding: '.5rem',
+                          borderRadius: '.5rem',
+                          margin: '0',
+                          fontStyle: 'italic',
+                          display: 'flex',
+                          alignItems: 'center',
+                          fontSize: '.8rem',
+                          width: '100%',
+                        }}
+                        className='footer'
+                      >
+                        <BusinessRoundedIcon
+                          sx={{ margin: '0 1rem 0 0', color: '#ffa500' }}
+                        />
+                        Abuja, Nigeria.
+                      </Typography>
+                      <Typography
+                        variant='medium'
+                        sx={{
+                          color: '#000000',
+                          padding: '.5rem',
+                          borderRadius: '.5rem',
+                          margin: '0',
+                          fontStyle: 'italic',
+                          display: 'flex',
+                          alignItems: 'center',
+                          fontSize: '.8rem',
+                          width: '100%',
+                        }}
+                        className='footer'
+                      >
+                        <MailRoundedIcon
+                          sx={{ margin: '0 1rem 0 0', color: '#ffa500' }}
+                        />
+                        <a href='mailto:info@whats-updoc.vercel.app'>
+                          info@whatsup-doc.vercel.app
+                        </a>
+                      </Typography>
+                      <Typography
+                        variant='medium'
+                        sx={{
+                          color: '#000000',
+                          padding: '.5rem',
+                          borderRadius: '.5rem',
+                          margin: '0',
+                          fontStyle: 'italic',
+                          display: 'flex',
+                          alignItems: 'center',
+                          fontSize: '.8rem',
+                        }}
+                        className='footer'
+                      >
+                        <PhoneIphoneRoundedIcon
+                          sx={{ margin: '0 1rem 0 0', color: '#ffa500' }}
+                        />
+                        <a href='tel:+2349052367228'>
+                          +234&nbsp;WHATSUP&nbsp;DOC
+                        </a>
+                      </Typography>
+                    </Box>
+                  </Box>
                 </Box>
+
                 <Box
                   sx={{
                     display: 'flex',
@@ -1336,6 +1812,7 @@ export default function Home() {
                     variant='medium'
                     sx={{
                       color: '#000000',
+                      fontSize: '.8rem',
                     }}
                   >
                     &copy; 2022&nbsp;&nbsp;
