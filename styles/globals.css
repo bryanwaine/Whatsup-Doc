@@ -57,7 +57,7 @@ a {
   -moz-backdrop-filter: blur(17px);
   -webkit-backdrop-filter: blur(17px);
   backdrop-filter: blur(17px);
-  left: -40rem;
+  left: -100rem;
   z-index: -1;
   opacity: 0.95;
   transition: left 0.5s;
