@@ -69,7 +69,7 @@ const Layout = ({
             {/* Desktop Toolbar */}
             <Toolbar
               sx={{
-                display: { xs: 'none', md: 'flex' },
+                display: { xs: 'none', lg: 'flex' },
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 height: '100%',
