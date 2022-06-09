@@ -1,0 +1,58 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Poppins;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+
+.nav {
+  background-color: transparent;
+  transition: background-color 0.9s ease-out;
+}
+
+.nav:hover {
+  background-color: rgba(255, 166, 0, 0.2);
+  backdrop-filter: 'blur(6px)';
+  color: #ffa500;
+}
+
+.nav-action {
+  background-color: transparent;
+  transition: background-color 0.9s ease-out;
+}
+
+.nav-action:hover {
+  background-color: rgba(14, 83, 148, 1);
+  color: #fff;
+}
+
+.social:hover {
+  color: #111111;
+}
+
+.mobileMenu {
+  -moz-backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}
+
+.mobileMenu.true {
+  opacity: 0.95;
+  -moz-backdrop-filter: blur(17px);
+  -webkit-backdrop-filter: blur(17px);
+  backdrop-filter: blur(17px);
+  z-index: 10000;
+}
