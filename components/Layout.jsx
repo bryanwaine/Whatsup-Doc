@@ -147,7 +147,7 @@ const Layout = ({
               {/* Login/Sign Up */}
               <Box
                 sx={{
-                  flex: {md: 1.5, lg: 1},
+                  flex: { md: 1.5, lg: 1 },
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
@@ -252,14 +252,20 @@ const Layout = ({
               }}
               className={`mobileMenu ${menuOpen}`}
             >
-              <ListItem sx={{ display: 'flex', justifyContent: 'start' }}>
+              <ListItem
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'start',
+                  margin: '0 0 0 5rem',
+                }}
+              >
                 <NextLink href='#' passHref>
                   <Typography
-                    variant='bold'
+                    variant='medium'
                     sx={{
                       fontSize: '1.5rem',
                       cursor: 'pointer',
-                      color: selectedAbout ? '#ffffff' : '#666666',
+                      color: selectedAbout ? '#ffffff' : '#000000',
                       ':hover': {
                         color: '#ffffff',
                       },
@@ -275,17 +281,17 @@ const Layout = ({
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
+                  margin: '0 0 0 5rem',
                 }}
                 onClick={() => menuOpenHandler()}
               >
                 <NextLink href='#' passHref>
                   <Typography
-                    variant='bold'
+                    variant='medium'
                     sx={{
-                      // margin: 0,
                       fontSize: '1.5rem',
                       cursor: 'pointer',
-                      color: selectedPortfolio ? '#ffffff' : '#666666',
+                      color: selectedPortfolio ? '#ffffff' : '#000000',
                       ':hover': {
                         color: '#ffffff',
                       },
@@ -297,23 +303,27 @@ const Layout = ({
                 </NextLink>
                 <KeyboardArrowDownRoundedIcon
                   sx={{
-                    color: '#666666',
+                    color: '#000000',
                     fontSize: '2rem',
-                    margin: '0 5rem 0 0',
+                    margin: '0 12rem 0 0',
                   }}
                 />
               </ListItem>
               <ListItem
-                sx={{ display: 'flex', justifyContent: 'space-between' }}
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  margin: '0 0 0 5rem',
+                }}
                 onClick={() => menuOpenHandler()}
               >
                 <NextLink href='#' passHref>
                   <Typography
-                    variant='bold'
+                    variant='medium'
                     sx={{
                       fontSize: '1.5rem',
                       cursor: 'pointer',
-                      color: selectedContact ? '#ffffff' : '#666666',
+                      color: selectedContact ? '#ffffff' : '#000000',
                       ':hover': {
                         color: '#ffffff',
                       },
@@ -324,23 +334,27 @@ const Layout = ({
                 </NextLink>
                 <KeyboardArrowDownRoundedIcon
                   sx={{
-                    color: '#666666',
+                    color: '#000000',
                     fontSize: '2rem',
-                    margin: '0 5rem 0 0',
+                    margin: '0 12rem 0 0',
                   }}
                 />
               </ListItem>
               <ListItem
-                sx={{ display: 'flex', justifyContent: 'start' }}
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'start',
+                  margin: '0 0 0 5rem',
+                }}
                 onClick={() => menuOpenHandler()}
               >
                 <NextLink href='#' passHref>
                   <Typography
-                    variant='bold'
+                    variant='medium'
                     sx={{
                       fontSize: '1.5rem',
                       cursor: 'pointer',
-                      color: selectedContact ? '#ffffff' : '#666666',
+                      color: selectedContact ? '#ffffff' : '#000000',
                       ':hover': {
                         color: '#ffffff',
                       },
@@ -351,16 +365,20 @@ const Layout = ({
                 </NextLink>
               </ListItem>
               <ListItem
-                sx={{ display: 'flex', justifyContent: 'start' }}
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'start',
+                  margin: '0 0 0 5rem',
+                }}
                 onClick={() => menuOpenHandler()}
               >
                 <NextLink href='#' passHref>
                   <Typography
-                    variant='bold'
+                    variant='medium'
                     sx={{
                       fontSize: '1.5rem',
                       cursor: 'pointer',
-                      color: selectedContact ? '#ffffff' : '#666666',
+                      color: selectedContact ? '#ffffff' : '#000000',
                       ':hover': {
                         color: '#ffffff',
                       },
@@ -411,7 +429,6 @@ const Layout = ({
             }}
           >
             {children}
-
           </Box>
         </ThemeProvider>
       </CssBaseline>
