@@ -1793,7 +1793,7 @@ export default function Home() {
                           sx={{ margin: '0 1rem 0 0', color: '#ffa500' }}
                         />
                         <a href='tel:+2349052367228'>
-                          +234&nbsp;WHATSUP&nbsp;DOC
+                          +234&nbsp;WHATSUP&nbsp;DOC!
                         </a>
                       </Typography>
                     </Box>
