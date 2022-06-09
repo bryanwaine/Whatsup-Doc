@@ -1308,7 +1308,7 @@ export default function Home() {
                       padding: '.5rem',
                       borderRadius: '.5rem',
                     }}
-                    className='nav'
+                    className='footer'
                   >
                     Terms of services
                   </Typography>
@@ -1319,7 +1319,7 @@ export default function Home() {
                       padding: '.5rem',
                       borderRadius: '.5rem',
                     }}
-                    className='nav'
+                    className='footer'
                   >
                     Privacy policy
                   </Typography>

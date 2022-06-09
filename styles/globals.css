@@ -17,23 +17,36 @@ a {
 
 .nav {
   background-color: transparent;
-  transition: background-color 0.9s ease-out;
+  box-shadow:none;
+  transition: 0.9s all ease-out;
 }
 
 .nav:hover {
   background-color: rgba(255, 166, 0, 0.2);
   backdrop-filter: 'blur(6px)';
   color: #ffa500;
+    box-shadow: -2px 2px 5px 2px rgba(0,0,0,0.1);
 }
 
 .nav-action {
   background-color: transparent;
-  transition: background-color 0.9s ease-out;
+  box-shadow:none;
+  transition: 0.9s all ease-out;
 }
 
 .nav-action:hover {
-  background-color: rgba(14, 83, 148, 1);
+  background-color: rgba(14, 83, 148, 1);  
+    box-shadow: -2px 2px 5px 2px rgba(0,0,0,0.3);
   color: #fff;
+}
+
+.footer {
+ color: #000000;
+  transition: color 0.9s ease-out;
+}
+
+.footer:hover {
+  color: #ffa500;
 }
 
 .social:hover {
@@ -46,14 +59,14 @@ a {
   backdrop-filter: blur(17px);
   left: -40rem;
   z-index: -1;
-  opacity: 0.9;
+  opacity: 0.95;
   transition: left 0.5s;
 }
 
 .mobileMenu.true {
   /* display: initial; */
   left: 0;
-  opacity: 0.9;
+  opacity: 0.95;
   -moz-backdrop-filter: blur(17px);
   -webkit-backdrop-filter: blur(17px);
   backdrop-filter: blur(17px);

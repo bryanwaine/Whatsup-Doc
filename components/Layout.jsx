@@ -6,6 +6,8 @@ import NextLink from 'next/link';
 
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
+import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRounded';
 import {
   AppBar,
   Box,
@@ -87,7 +89,7 @@ const Layout = ({
                   flex: 3,
                   display: 'flex',
                   justifyContent: 'end',
-                  padding: '0 50px 0 0',
+                  padding: '0 1rem 0 0',
                   cursor: 'pointer',
                   borderRight: '1px solid #000000',
                 }}
@@ -100,20 +102,30 @@ const Layout = ({
                 >
                   Home
                 </Typography>
-                <Typography
-                  className='nav'
-                  variant='medium'
-                  sx={styles.navButton}
-                >
-                  About us
-                </Typography>
-                <Typography
-                  className='nav'
-                  variant='medium'
-                  sx={styles.navButton}
-                >
-                  Plans
-                </Typography>
+                  <Typography
+                    className='nav'
+                    variant='medium'
+                    sx={styles.navButton}
+                  >
+                    About us
+                  <KeyboardArrowDownRoundedIcon
+                    sx={{
+                      color: '#666666',
+                    }}
+                  />
+                  </Typography>
+                  <Typography
+                    className='nav'
+                    variant='medium'
+                    sx={styles.navButton}
+                  >
+                    Plans
+                  <KeyboardArrowDownRoundedIcon
+                    sx={{
+                      color: '#666666',
+                    }}
+                  />
+                  </Typography>
                 <Typography
                   className='nav'
                   variant='medium'
@@ -231,116 +243,164 @@ const Layout = ({
             {/* Mobile Menu */}
             <Box
               sx={{
-                display: {lg: 'none'},
+                display: { lg: 'none' },
                 position: 'absolute',
                 top: '5rem',
                 width: '100%',
                 height: '150vh',
-               background:
-                  '#ffffff',
+                background: '#ffffff',
               }}
               className={`mobileMenu ${menuOpen}`}
             >
-         
-                <ListItem sx={{ display: 'flex', justifyContent: 'center' }}>
-                  <NextLink href='#' passHref>
-                    <Typography
-                      variant='bold'
-                      sx={{
-                        fontSize: '2rem',
-                        cursor: 'pointer',
-                        color: selectedAbout ? '#ffffff' : '#666666',
-                        ':hover': {
-                          color: '#ffffff',
-                        },
-                      }}
-                      onClick={() => menuOpenHandler()}
-                    >
-                      Home
-                    </Typography>
-                  </NextLink>
-                </ListItem>
-                <ListItem
-                  sx={{ display: 'flex', justifyContent: 'center' }}
-                  onClick={() => menuOpenHandler()}
+              <ListItem sx={{ display: 'flex', justifyContent: 'start' }}>
+                <NextLink href='#' passHref>
+                  <Typography
+                    variant='bold'
+                    sx={{
+                      fontSize: '1.5rem',
+                      cursor: 'pointer',
+                      color: selectedAbout ? '#ffffff' : '#666666',
+                      ':hover': {
+                        color: '#ffffff',
+                      },
+                    }}
+                    onClick={() => menuOpenHandler()}
+                  >
+                    Home
+                  </Typography>
+                </NextLink>
+              </ListItem>
+              <ListItem
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                }}
+                onClick={() => menuOpenHandler()}
+              >
+                <NextLink href='#' passHref>
+                  <Typography
+                    variant='bold'
+                    sx={{
+                      // margin: 0,
+                      fontSize: '1.5rem',
+                      cursor: 'pointer',
+                      color: selectedPortfolio ? '#ffffff' : '#666666',
+                      ':hover': {
+                        color: '#ffffff',
+                      },
+                    }}
+                    onClick={() => menuOpenHandler()}
+                  >
+                    About Us
+                  </Typography>
+                </NextLink>
+                <KeyboardArrowDownRoundedIcon
+                  sx={{
+                    color: '#666666',
+                    fontSize: '2rem',
+                    margin: '0 5rem 0 0',
+                  }}
+                />
+              </ListItem>
+              <ListItem
+                sx={{ display: 'flex', justifyContent: 'space-between' }}
+                onClick={() => menuOpenHandler()}
+              >
+                <NextLink href='#' passHref>
+                  <Typography
+                    variant='bold'
+                    sx={{
+                      fontSize: '1.5rem',
+                      cursor: 'pointer',
+                      color: selectedContact ? '#ffffff' : '#666666',
+                      ':hover': {
+                        color: '#ffffff',
+                      },
+                    }}
+                  >
+                    Plans
+                  </Typography>
+                </NextLink>
+                <KeyboardArrowDownRoundedIcon
+                  sx={{
+                    color: '#666666',
+                    fontSize: '2rem',
+                    margin: '0 5rem 0 0',
+                  }}
+                />
+              </ListItem>
+              <ListItem
+                sx={{ display: 'flex', justifyContent: 'start' }}
+                onClick={() => menuOpenHandler()}
+              >
+                <NextLink href='#' passHref>
+                  <Typography
+                    variant='bold'
+                    sx={{
+                      fontSize: '1.5rem',
+                      cursor: 'pointer',
+                      color: selectedContact ? '#ffffff' : '#666666',
+                      ':hover': {
+                        color: '#ffffff',
+                      },
+                    }}
+                  >
+                    FAQ
+                  </Typography>
+                </NextLink>
+              </ListItem>
+              <ListItem
+                sx={{ display: 'flex', justifyContent: 'start' }}
+                onClick={() => menuOpenHandler()}
+              >
+                <NextLink href='#' passHref>
+                  <Typography
+                    variant='bold'
+                    sx={{
+                      fontSize: '1.5rem',
+                      cursor: 'pointer',
+                      color: selectedContact ? '#ffffff' : '#666666',
+                      ':hover': {
+                        color: '#ffffff',
+                      },
+                    }}
+                  >
+                    Blog
+                  </Typography>
+                </NextLink>
+              </ListItem>
+              <ListItem>
+                <div style={{ height: '5rem' }} />
+              </ListItem>
+              <ListItem
+                sx={{ display: 'flex', justifyContent: 'center' }}
+                onClick={() => menuOpenHandler()}
+              >
+                <Typography
+                  variant='medium'
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    width: '8rem',
+                    height: '3rem',
+                    margin: '0 1rem 0 0',
+                    padding: '.5rem',
+                    borderRadius: '.5rem',
+                    color: '#000000',
+                    background: 'transparent',
+                    border: '1px solid rgba(14, 83, 148, 1)',
+                    cursor: 'pointer',
+                    '&:hover': {
+                      background: 'rgba(14, 83, 148, 1)',
+                      color: 'rgba(255, 255, 255, 1)',
+                    },
+                  }}
                 >
-                  <NextLink href='#' passHref>
-                    <Typography
-                      variant='bold'
-                      sx={{
-                        fontSize: '2rem',
-                        cursor: 'pointer',
-                        color: selectedPortfolio ? '#ffffff' : '#666666',
-                        ':hover': {
-                          color: '#ffffff',
-                        },
-                      }}
-                      onClick={() => menuOpenHandler()}
-                    >
-                      About Us
-                    </Typography>
-                  </NextLink>
-                </ListItem>
-                <ListItem
-                  sx={{ display: 'flex', justifyContent: 'center' }}
-                  onClick={() => menuOpenHandler()}
-                >
-                  <NextLink href='#' passHref>
-                    <Typography
-                      variant='bold'
-                      sx={{
-                        fontSize: '2rem',
-                        cursor: 'pointer',
-                        color: selectedContact ? '#ffffff' : '#666666',
-                        ':hover': {
-                          color: '#ffffff',
-                        },
-                      }}
-                    >
-                      Plans
-                    </Typography>
-                  </NextLink>
-                </ListItem>
-                <ListItem
-                  sx={{ display: 'flex', justifyContent: 'center' }}
-                  onClick={() => menuOpenHandler()}
-                >
-                  <NextLink href='#' passHref>
-                    <Typography
-                      variant='bold'
-                      sx={{
-                        fontSize: '2rem',
-                        cursor: 'pointer',
-                        color: selectedContact ? '#ffffff' : '#666666',
-                        ':hover': {
-                          color: '#ffffff',
-                        },
-                      }}
-                    >
-                      FAQ
-                    </Typography>
-                  </NextLink>
-                </ListItem>
-                <ListItem
-                  sx={{ display: 'flex', justifyContent: 'center' }}
-                  onClick={() => menuOpenHandler()}
-                >
-                  <NextLink href='#' passHref>
-                    <Typography
-                      variant='bold'
-                      sx={{
-                        fontSize: '2rem',
-                        cursor: 'pointer',
-                        color: selectedContact ? '#ffffff' : '#666666',
-                        ':hover': {
-                          color: '#ffffff',
-                        },
-                      }}
-                    >
-                      Blog
-                    </Typography>
-                  </NextLink>
-                </ListItem>
+                  Log in
+                </Typography>
+              </ListItem>
             </Box>
           </AppBar>
 

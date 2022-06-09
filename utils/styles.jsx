@@ -5,9 +5,8 @@ const styles = {
     alignItems: 'center',
     color: '#000000',
     height: '3rem',
-    width: '6rem',
+    width: '7rem',
     borderRadius: '.5rem',
-
     margin: '0 1rem',
   },
   navActionButton: {
@@ -68,8 +67,8 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '3.5rem',
-    height: '3.5rem',
+    width: '3rem',
+    height: '3rem',
     borderRadius: '50%',
     background: '#FEF9F1',
   },
