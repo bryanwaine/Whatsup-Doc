@@ -44,10 +44,10 @@ a {
   -moz-backdrop-filter: none;
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
-  left: -20rem;
+  left: -40rem;
   z-index: -1;
-  opacity: 0.9;
-  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  transition: left 0.5s, opacity 1s,  ease-in-out;
 }
 
 .mobileMenu.true {
