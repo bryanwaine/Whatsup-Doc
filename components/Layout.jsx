@@ -69,7 +69,7 @@ const Layout = ({
             {/* Desktop Toolbar */}
             <Toolbar
               sx={{
-                display: { xs: 'none', lg: 'flex' },
+                display: { xs: 'none', md: 'flex' },
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 height: '100%',
@@ -89,7 +89,7 @@ const Layout = ({
                   flex: 3,
                   display: 'flex',
                   justifyContent: 'end',
-                  padding: '0 1rem 0 0',
+                  padding: '0',
                   cursor: 'pointer',
                   borderRight: '1px solid #000000',
                 }}
@@ -147,7 +147,7 @@ const Layout = ({
               {/* Login/Sign Up */}
               <Box
                 sx={{
-                  flex: 1,
+                  flex: {md: 1.5, lg: 1},
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
@@ -180,7 +180,7 @@ const Layout = ({
             {/* Mobile Toolbar */}
             <Toolbar
               sx={{
-                display: { xs: 'flex', lg: 'none' },
+                display: { xs: 'flex', md: 'none' },
                 justifyContent: 'center',
                 alignItems: 'center',
                 height: '100%',
