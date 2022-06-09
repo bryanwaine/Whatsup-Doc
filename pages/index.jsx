@@ -688,6 +688,7 @@ export default function Home() {
                 alignItems: 'left',
                 margin: '2rem 0',
               }}
+              className={`reveal_fourth_section_text`}
             >
               <Typography
                 variant='bold'
@@ -802,7 +803,10 @@ export default function Home() {
               </Typography>
             </Box>
             <Box sx={{ flex: 1, margin: '1rem 0' }}>
-              <Box sx={{ padding: '1rem', alignItems: 'center' }}>
+              <Box
+                sx={{ padding: '1rem', alignItems: 'center' }}
+                className={`reveal_fourth_section_image`}
+              >
                 <Image
                   src={hv}
                   width={400}
@@ -833,6 +837,7 @@ export default function Home() {
                 alignItems: 'left',
                 margin: '2rem 0',
               }}
+              className={`reveal_fourth_section_text`}
             >
               <Typography
                 variant='bold'
@@ -912,7 +917,10 @@ export default function Home() {
               </Typography>
             </Box>
             <Box sx={{ flex: 1, margin: '1rem 0' }}>
-              <Box sx={{ padding: '1rem', alignItems: 'center' }}>
+              <Box
+                sx={{ padding: '1rem', alignItems: 'center' }}
+                className={`reveal_fourth_section_image`}
+              >
                 <Image
                   src={vc2}
                   width={400}
@@ -943,6 +951,7 @@ export default function Home() {
                 alignItems: 'left',
                 margin: '2rem 0',
               }}
+              className={`reveal_fourth_section_text`}
             >
               <Typography
                 variant='bold'
@@ -1022,7 +1031,10 @@ export default function Home() {
               </Typography>
             </Box>
             <Box sx={{ flex: 1, margin: '1rem 0' }}>
-              <Box sx={{ padding: '1rem', alignItems: 'center' }}>
+              <Box
+                sx={{ padding: '1rem', alignItems: 'center' }}
+                className={`reveal_fourth_section_image`}
+              >
                 <Image
                   src={cs}
                   width={400}
@@ -1052,6 +1064,7 @@ export default function Home() {
                 alignItems: 'left',
                 margin: '2rem 0',
               }}
+              className={`reveal_fourth_section_text`}
             >
               <Typography
                 variant='bold'
@@ -1135,6 +1148,7 @@ export default function Home() {
                 display: 'flex',
                 flexDirection: { xs: 'column', md: 'column' },
               }}
+              className={`reveal_fourth_section_image`}
             >
               <Card raised sx={styles.plans} style={{ marginLeft: '0' }}>
                 <Box
