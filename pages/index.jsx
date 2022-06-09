@@ -1338,10 +1338,9 @@ export default function Home() {
                       color: '#000000',
                     }}
                   >
-                    Copyright 2022{' '}
-                    <strong style={{ color: '#ffa500' }}>|</strong> Whatsup
-                    Doc!&#8482; <strong style={{ color: '#ffa500' }}>|</strong>{' '}
-                    All Rights Reserved.
+                    &copy; 2022&nbsp;&nbsp;
+                    <strong style={{ color: '#ffa500' }}>|</strong>&nbsp; All
+                    Rights Reserved.
                   </Typography>
                 </Box>
               </Box>

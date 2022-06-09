@@ -371,7 +371,7 @@ const Layout = ({
                 </NextLink>
               </ListItem>
               <ListItem>
-                <div style={{ height: '5rem' }} />
+                <div style={{ height: '3rem' }} />
               </ListItem>
               <ListItem
                 sx={{ display: 'flex', justifyContent: 'center' }}
