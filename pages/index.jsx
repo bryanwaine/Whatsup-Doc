@@ -46,6 +46,8 @@ import {
   reveal_third_section_card_3,
   reveal_third_section_card_4,
   reveal_third_section_image,
+  reveal_fourth_section_text,
+  reveal_fourth_section_image,
 } from '../components/Animations';
 
 export default function Home() {
@@ -69,6 +71,8 @@ export default function Home() {
       reveal_third_section_card_3()
       reveal_third_section_card_4()
   reveal_third_section_image()
+  reveal_fourth_section_text()
+  reveal_fourth_section_image()
     });
   }, []);
 
@@ -913,7 +917,7 @@ export default function Home() {
                   src={vc2}
                   width={400}
                   height={520}
-                  alt='Image of doctor on home visit!'
+                  alt='Image of doctor on video call!'
                 />
               </Box>
             </Box>
@@ -1023,7 +1027,7 @@ export default function Home() {
                   src={cs}
                   width={400}
                   height={600}
-                  alt='Image of chat screen on Whatsup Doc!'
+                  alt='Image of prescription chat screen'
                 />
               </Box>
             </Box>

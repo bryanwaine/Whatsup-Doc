@@ -6,9 +6,7 @@ const reveal_first_section = () => {
     var elementVisible = -250;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
-    } else {
-      reveals[i].classList.remove('active');
-    }
+    } 
   }
 };
 
@@ -20,9 +18,7 @@ const reveal_first_section_image = () => {
     var elementVisible = -250;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
-    } else {
-      reveals[i].classList.remove('active');
-    }
+    } 
   }
 };
 
@@ -34,9 +30,7 @@ const reveal_first_section_text = () => {
     var elementVisible = -250;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
-    } else {
-      reveals[i].classList.remove('active');
-    }
+    } 
   }
 };
 
@@ -48,9 +42,7 @@ const reveal_second_section = () => {
     var elementVisible = 200;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
-    } else {
-      reveals[i].classList.remove('active');
-    }
+    } 
   }
 };
 
@@ -62,9 +54,7 @@ const reveal_second_section_text = () => {
     var elementVisible = 200;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
-    } else {
-      reveals[i].classList.remove('active');
-    }
+    } 
   }
 };
 
@@ -76,9 +66,7 @@ const reveal_second_section_card_1 = () => {
     var elementVisible = 200;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
-    } else {
-      reveals[i].classList.remove('active');
-    }
+    } 
   }
 };
 
@@ -90,9 +78,7 @@ const reveal_second_section_card_2 = () => {
     var elementVisible = 200;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
-    } else {
-      reveals[i].classList.remove('active');
-    }
+    } 
   }
 };
 
@@ -104,9 +90,7 @@ const reveal_third_section = () => {
     var elementVisible = 200;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
-    } else {
-      reveals[i].classList.remove('active');
-    }
+    } 
   }
 };
 
@@ -118,9 +102,7 @@ const reveal_third_section_text = () => {
     var elementVisible = 200;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
-    } else {
-      reveals[i].classList.remove('active');
-    }
+    } 
   }
 };
 
@@ -132,9 +114,7 @@ const reveal_third_section_card_1 = () => {
     var elementVisible = 200;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
-    } else {
-      reveals[i].classList.remove('active');
-    }
+    } 
   }
 };
 
@@ -146,9 +126,7 @@ const reveal_third_section_card_2 = () => {
     var elementVisible = 200;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
-    } else {
-      reveals[i].classList.remove('active');
-    }
+    } 
   }
 };
 
@@ -160,9 +138,7 @@ const reveal_third_section_card_3 = () => {
     var elementVisible = 200;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
-    } else {
-      reveals[i].classList.remove('active');
-    }
+    } 
   }
 };
 
@@ -174,12 +150,9 @@ const reveal_third_section_card_4 = () => {
     var elementVisible = 200;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
-    } else {
-      reveals[i].classList.remove('active');
-    }
+    } 
   }
 };
-
 
 const reveal_third_section_image = () => {
   var reveals = document.querySelectorAll('.reveal_third_section_image');
@@ -189,9 +162,31 @@ const reveal_third_section_image = () => {
     var elementVisible = 200;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
-    } else {
-      reveals[i].classList.remove('active');
-    }
+    } 
+  }
+};
+
+const reveal_fourth_section_text = () => {
+  var reveals = document.querySelectorAll('.reveal_fourth_section_text');
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 200;
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add('active');
+    } 
+  }
+};
+
+const reveal_fourth_section_image = () => {
+  var reveals = document.querySelectorAll('.reveal_fourth_section_image');
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 200;
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add('active');
+    } 
   }
 };
 
@@ -208,6 +203,8 @@ export {
   reveal_third_section_card_1,
   reveal_third_section_card_2,
   reveal_third_section_card_3,
-    reveal_third_section_card_4,
-  reveal_third_section_image
+  reveal_third_section_card_4,
+  reveal_third_section_image,
+  reveal_fourth_section_text,
+  reveal_fourth_section_image,
 };
