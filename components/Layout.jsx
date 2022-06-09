@@ -180,7 +180,7 @@ const Layout = ({
             {/* Mobile Toolbar */}
             <Toolbar
               sx={{
-                display: { xs: 'flex', md: 'none' },
+                display: { xs: 'flex', lg: 'none' },
                 justifyContent: 'center',
                 alignItems: 'center',
                 height: '100%',
