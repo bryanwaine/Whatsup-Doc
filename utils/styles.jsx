@@ -79,6 +79,20 @@ const styles = {
     background: '#ffa500',
     borderRadius: '50%',
   },
+  whatsappWidget: {
+    '& .whatsapp_widget_wrapper': {
+    
+        bottom: {sm: '80px !important'},
+        right:{sm:  '20px !important'},
+        width: {sm:50},
+    },
+    '& .whatsapp_widget_icon': {
+      webkitBoxShadow: '3px 3px 5px 1px rgba(0,0,0,0.50)  !important',
+      mozBoxShadow: '3px 3px 5px 1px rgba(0,0,0,0.50)  !important',
+      boxShadow: '3px 3px 5px 1px rgba(0,0,0,0.50)  !important',
+      border: 'none',
+    },
+  },
 };
 
 export { styles };

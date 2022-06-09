@@ -102,30 +102,30 @@ const Layout = ({
                 >
                   Home
                 </Typography>
-                  <Typography
-                    className='nav'
-                    variant='medium'
-                    sx={styles.navButton}
-                  >
-                    About us
+                <Typography
+                  className='nav'
+                  variant='medium'
+                  sx={styles.navButton}
+                >
+                  About us
                   <KeyboardArrowDownRoundedIcon
                     sx={{
                       color: '#666666',
                     }}
                   />
-                  </Typography>
-                  <Typography
-                    className='nav'
-                    variant='medium'
-                    sx={styles.navButton}
-                  >
-                    Plans
+                </Typography>
+                <Typography
+                  className='nav'
+                  variant='medium'
+                  sx={styles.navButton}
+                >
+                  Plans
                   <KeyboardArrowDownRoundedIcon
                     sx={{
                       color: '#666666',
                     }}
                   />
-                  </Typography>
+                </Typography>
                 <Typography
                   className='nav'
                   variant='medium'
@@ -411,6 +411,7 @@ const Layout = ({
             }}
           >
             {children}
+
           </Box>
         </ThemeProvider>
       </CssBaseline>
