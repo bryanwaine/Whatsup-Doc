@@ -231,28 +231,18 @@ const Layout = ({
             {/* Mobile Menu */}
             <Box
               sx={{
-                display: { xs: 'initial', lg: 'none' },
                 position: 'absolute',
                 top: '5rem',
                 width: '100%',
                 height: '150vh',
                background:
-                  'transparent linear-gradient(180deg,rgba(28, 12, 40, 0.1) 0%,rgba(0, 0, 0, 1) 100%)',
+                  '#ffffff',
               }}
               className={`mobileMenu ${menuOpen}`}
             >
-              <List
-                sx={{
-                  display: { xs: 'flex', lg: 'none' },
-                  position: 'relative',
-                  flexDirection: 'column',
-                  height: '100%',
-                  backgroundColor: '#ffffff',
-            
-                }}
-              >
+         
                 <ListItem sx={{ display: 'flex', justifyContent: 'center' }}>
-                  <NextLink href='/about' passHref>
+                  <NextLink href='#' passHref>
                     <Typography
                       variant='bold'
                       sx={{
@@ -273,7 +263,7 @@ const Layout = ({
                   sx={{ display: 'flex', justifyContent: 'center' }}
                   onClick={() => menuOpenHandler()}
                 >
-                  <NextLink href='/portfolio' passHref>
+                  <NextLink href='#' passHref>
                     <Typography
                       variant='bold'
                       sx={{
@@ -294,7 +284,7 @@ const Layout = ({
                   sx={{ display: 'flex', justifyContent: 'center' }}
                   onClick={() => menuOpenHandler()}
                 >
-                  <NextLink href='/#contact' passHref>
+                  <NextLink href='#' passHref>
                     <Typography
                       variant='bold'
                       sx={{
@@ -314,7 +304,7 @@ const Layout = ({
                   sx={{ display: 'flex', justifyContent: 'center' }}
                   onClick={() => menuOpenHandler()}
                 >
-                  <NextLink href='/#contact' passHref>
+                  <NextLink href='#' passHref>
                     <Typography
                       variant='bold'
                       sx={{
@@ -334,7 +324,7 @@ const Layout = ({
                   sx={{ display: 'flex', justifyContent: 'center' }}
                   onClick={() => menuOpenHandler()}
                 >
-                  <NextLink href='/#contact' passHref>
+                  <NextLink href='#' passHref>
                     <Typography
                       variant='bold'
                       sx={{
@@ -350,7 +340,6 @@ const Layout = ({
                     </Typography>
                   </NextLink>
                 </ListItem>
-              </List>
             </Box>
           </AppBar>
 

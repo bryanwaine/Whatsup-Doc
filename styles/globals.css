@@ -44,15 +44,18 @@ a {
   -moz-backdrop-filter: none;
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
+  left: -20rem;
   z-index: -1;
   opacity: 0;
   transition: all 0.5s ease-out;
 }
 
 .mobileMenu.true {
+  /* display: initial; */
+  left: 0;
   opacity: 0.95;
   -moz-backdrop-filter: blur(17px);
   -webkit-backdrop-filter: blur(17px);
   backdrop-filter: blur(17px);
-  z-index: 10000;
+  z-index: 1;
 }
