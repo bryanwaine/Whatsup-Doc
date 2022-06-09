@@ -231,6 +231,7 @@ const Layout = ({
             {/* Mobile Menu */}
             <Box
               sx={{
+                display: {lg: 'none'},
                 position: 'absolute',
                 top: '5rem',
                 width: '100%',

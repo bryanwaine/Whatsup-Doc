@@ -30,9 +30,47 @@ import hv from '../public/home-visit.png';
 import wd from '../public/w-d_logo.png';
 import Layout from '../components/Layout';
 import { styles } from '../utils/styles';
+import { useEffect } from 'react';
+import {
+  reveal_first_section,
+  reveal_first_section_image,
+  reveal_first_section_text,
+  reveal_second_section,
+  reveal_second_section_text,
+  reveal_second_section_card_1,
+  reveal_second_section_card_2,
+  reveal_third_section,
+  reveal_third_section_text,
+  reveal_third_section_card_1,
+  reveal_third_section_card_2,
+  reveal_third_section_card_3,
+  reveal_third_section_card_4,
+  reveal_third_section_image,
+} from '../components/Animations';
 
 export default function Home() {
   const router = useRouter();
+
+  useEffect(() => {
+    reveal_first_section()
+    reveal_first_section_image()
+    reveal_first_section_text()
+    
+    
+    window.addEventListener('scroll', () => {
+      reveal_second_section()
+      reveal_second_section_text()
+      reveal_second_section_card_1()
+      reveal_second_section_card_2()
+      reveal_third_section()
+      reveal_third_section_text()
+      reveal_third_section_card_1()
+      reveal_third_section_card_2()
+      reveal_third_section_card_3()
+      reveal_third_section_card_4()
+  reveal_third_section_image()
+    });
+  }, []);
 
   return (
     <Layout title='Telemedicine & Public Health.'>
@@ -49,7 +87,7 @@ export default function Home() {
             padding: '0 1rem',
           }}
         >
-          {/* Top Section */}
+          {/* First Section */}
           <Box
             sx={{
               display: 'flex',
@@ -66,9 +104,10 @@ export default function Home() {
               backdropFilter: 'blur(16px)',
               boxShadow: '-2px 2px 5px 1px rgba(0,0,0,0.20)',
             }}
+            className={`reveal_first_section`}
           >
-            {/* Video Call Image */}
-            <Box>
+            {/* First Section Image */}
+            <Box className={`reveal_first_section_image`}>
               <Image
                 src={vc}
                 width={400}
@@ -76,13 +115,14 @@ export default function Home() {
                 alt='Image of video call with a doctor'
               />
             </Box>
-            {/* Welcome Title */}
+            {/* First Section Text */}
             <Box
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'start',
               }}
+              className={`reveal_first_section_text`}
             >
               <Typography
                 variant='bold'
@@ -135,6 +175,7 @@ export default function Home() {
               </Typography>
             </Box>
           </Box>
+
           {/* Second Section */}
           <Box
             sx={{
@@ -143,8 +184,9 @@ export default function Home() {
               margin: '2rem 0',
               padding: '3rem',
             }}
+            className={`reveal_second_section`}
           >
-            {/* Second Section Title */}
+            {/* Second Section Text */}
             <Box
               sx={{
                 flex: 1,
@@ -152,6 +194,7 @@ export default function Home() {
                 flexDirection: 'column',
                 alignItems: 'center',
               }}
+              className={`reveal_second_section_text`}
             >
               <Typography
                 variant='bold'
@@ -183,7 +226,12 @@ export default function Home() {
                 advice.
               </Typography>
               <Grid container spacing={2} sx={{ margin: '4rem 0' }}>
-                <Grid item xs={6} md={3}>
+                <Grid
+                  item
+                  xs={6}
+                  md={3}
+                  className={`reveal_second_section_card_1`}
+                >
                   <Card raised sx={styles.specialty}>
                     <Box
                       sx={styles.specialty_icon}
@@ -198,7 +246,12 @@ export default function Home() {
                     <Typography variant='medium'>Cardiology</Typography>
                   </Card>
                 </Grid>
-                <Grid item xs={6} md={3}>
+                <Grid
+                  item
+                  xs={6}
+                  md={3}
+                  className={`reveal_second_section_card_1`}
+                >
                   <Card raised sx={styles.specialty}>
                     <Box
                       sx={styles.specialty_icon}
@@ -211,7 +264,12 @@ export default function Home() {
                     <Typography variant='medium'>Dermatology</Typography>
                   </Card>
                 </Grid>
-                <Grid item xs={6} md={3}>
+                <Grid
+                  item
+                  xs={6}
+                  md={3}
+                  className={`reveal_second_section_card_1`}
+                >
                   <Card raised sx={styles.specialty}>
                     <Box
                       sx={styles.specialty_icon}
@@ -226,7 +284,12 @@ export default function Home() {
                     <Typography variant='medium'>Endocrinology</Typography>
                   </Card>
                 </Grid>
-                <Grid item xs={6} md={3}>
+                <Grid
+                  item
+                  xs={6}
+                  md={3}
+                  className={`reveal_second_section_card_1`}
+                >
                   <Card raised sx={styles.specialty}>
                     <Box
                       sx={styles.specialty_icon}
@@ -243,7 +306,12 @@ export default function Home() {
                     </Typography>
                   </Card>
                 </Grid>
-                <Grid item xs={6} md={3}>
+                <Grid
+                  item
+                  xs={6}
+                  md={3}
+                  className={`reveal_second_section_card_2`}
+                >
                   <Card raised sx={styles.specialty}>
                     <Box
                       sx={styles.specialty_icon}
@@ -256,7 +324,12 @@ export default function Home() {
                     <Typography variant='medium'>Gynaecology</Typography>
                   </Card>
                 </Grid>
-                <Grid item xs={6} md={3}>
+                <Grid
+                  item
+                  xs={6}
+                  md={3}
+                  className={`reveal_second_section_card_2`}
+                >
                   <Card raised sx={styles.specialty}>
                     <Box
                       sx={styles.specialty_icon}
@@ -272,7 +345,12 @@ export default function Home() {
                   </Card>
                 </Grid>
 
-                <Grid item xs={6} md={3}>
+                <Grid
+                  item
+                  xs={6}
+                  md={3}
+                  className={`reveal_second_section_card_2`}
+                >
                   <Card raised sx={styles.specialty}>
                     <Box
                       sx={styles.specialty_icon}
@@ -287,7 +365,12 @@ export default function Home() {
                     <Typography variant='medium'>Ophtalmology</Typography>
                   </Card>
                 </Grid>
-                <Grid item xs={6} md={3}>
+                <Grid
+                  item
+                  xs={6}
+                  md={3}
+                  className={`reveal_second_section_card_2`}
+                >
                   <Card raised sx={styles.specialty}>
                     <Box
                       sx={styles.specialty_icon}
@@ -305,6 +388,7 @@ export default function Home() {
               </Grid>
             </Box>
           </Box>
+
           {/* Third Section */}
           <Box
             sx={{
@@ -321,14 +405,16 @@ export default function Home() {
               backdropFilter: 'blur(16px)',
               boxShadow: '-2px 2px 5px 1px rgba(0,0,0,0.20)',
             }}
+            className={`reveal_third_section`}
           >
-            {/* Third Section Title */}
+            {/* Third Section Text */}
             <Box
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
               }}
+              className={`reveal_third_section_text`}
             >
               <Typography
                 variant='bold'
@@ -389,6 +475,7 @@ export default function Home() {
                       borderRadius: '1rem',
                       margin: '2rem 1rem',
                     }}
+                    className={`reveal_third_section_card_1`}
                   >
                     <Box
                       sx={{
@@ -435,6 +522,7 @@ export default function Home() {
                       borderRadius: '1rem',
                       margin: '2rem 1rem',
                     }}
+                    className={`reveal_third_section_card_2`}
                   >
                     <Box
                       sx={{
@@ -481,6 +569,7 @@ export default function Home() {
                       borderRadius: '1rem',
                       margin: '2rem 1rem',
                     }}
+                    className={`reveal_third_section_card_3`}
                   >
                     <Box
                       sx={{
@@ -526,6 +615,7 @@ export default function Home() {
                       borderRadius: '1rem',
                       margin: '2rem 1rem',
                     }}
+                    className={`reveal_third_section_card_4`}
                   >
                     <Box
                       sx={{
@@ -563,7 +653,7 @@ export default function Home() {
                     </Typography>
                   </Card>
                 </Box>
-                <Box>
+                <Box className={`reveal_third_section_image`}>
                   <Image
                     src={ss}
                     width={850}
