@@ -248,6 +248,19 @@ export default function Home() {
                     <Box
                       sx={styles.specialty_icon}
                       style={{
+                        background: '#e3f0fd',
+                      }}
+                    >
+                      <FaceIcon sx={{ color: '#1271c9', fontSize: '2rem' }} />
+                    </Box>
+                    <Typography variant='medium'>Gynaecology</Typography>
+                  </Card>
+                </Grid>
+                <Grid item xs={6} md={3}>
+                  <Card raised sx={styles.specialty}>
+                    <Box
+                      sx={styles.specialty_icon}
+                      style={{
                         background: '#e5e4fb',
                       }}
                     >
@@ -258,19 +271,7 @@ export default function Home() {
                     <Typography variant='medium'>Public&nbsp;Health</Typography>
                   </Card>
                 </Grid>
-                <Grid item xs={6} md={3}>
-                  <Card raised sx={styles.specialty}>
-                    <Box
-                      sx={styles.specialty_icon}
-                      style={{
-                        background: '#e3f0fd',
-                      }}
-                    >
-                      <FaceIcon sx={{ color: '#1271c9', fontSize: '2rem' }} />
-                    </Box>
-                    <Typography variant='medium'>Gynaecology</Typography>
-                  </Card>
-                </Grid>
+
                 <Grid item xs={6} md={3}>
                   <Card raised sx={styles.specialty}>
                     <Box
@@ -1133,32 +1134,9 @@ export default function Home() {
                       background: '#f2d7c7',
                     }}
                   >
-                    <YouTubeIcon sx={{ color: '#ffa500', fontSize: '2rem' }} className='social' />
-                  </Box>
-                  <Box
-                    sx={styles.footer_icon}
-                    style={{
-                      background: '#f2d7c7',
-                    }}
-                  >
-                    <FacebookIcon sx={{ color: '#ffa500', fontSize: '2rem' }} className='social' />
-                  </Box>
-                  <Box
-                    sx={styles.footer_icon}
-                    style={{
-                      background: '#f2d7c7',
-                    }}
-                  >
-                    <LinkedInIcon sx={{ color: '#ffa500', fontSize: '2rem' }} className='social' />
-                  </Box>
-                  <Box
-                    sx={styles.footer_icon}
-                    style={{
-                      background: '#f2d7c7',
-                    }}
-                  >
-                    <InstagramIcon
-                      sx={{ color: '#ffa500', fontSize: '2rem' }} className='social'
+                    <YouTubeIcon
+                      sx={{ color: '#ffa500', fontSize: '2rem' }}
+                      className='social'
                     />
                   </Box>
                   <Box
@@ -1167,7 +1145,43 @@ export default function Home() {
                       background: '#f2d7c7',
                     }}
                   >
-                    <TwitterIcon sx={{ color: '#ffa500', fontSize: '2rem' }} className='social'/>
+                    <FacebookIcon
+                      sx={{ color: '#ffa500', fontSize: '2rem' }}
+                      className='social'
+                    />
+                  </Box>
+                  <Box
+                    sx={styles.footer_icon}
+                    style={{
+                      background: '#f2d7c7',
+                    }}
+                  >
+                    <LinkedInIcon
+                      sx={{ color: '#ffa500', fontSize: '2rem' }}
+                      className='social'
+                    />
+                  </Box>
+                  <Box
+                    sx={styles.footer_icon}
+                    style={{
+                      background: '#f2d7c7',
+                    }}
+                  >
+                    <InstagramIcon
+                      sx={{ color: '#ffa500', fontSize: '2rem' }}
+                      className='social'
+                    />
+                  </Box>
+                  <Box
+                    sx={styles.footer_icon}
+                    style={{
+                      background: '#f2d7c7',
+                    }}
+                  >
+                    <TwitterIcon
+                      sx={{ color: '#ffa500', fontSize: '2rem' }}
+                      className='social'
+                    />
                   </Box>
                 </Box>
                 <Box
