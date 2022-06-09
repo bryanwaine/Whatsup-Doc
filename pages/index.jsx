@@ -1243,7 +1243,7 @@ export default function Home() {
                     }}
                   >
                     <YouTubeIcon
-                      sx={{ color: '#ffa500', fontSize: '2rem' }}
+                      sx={{ color: '#ffa500', fontSize: '1.5rem' }}
                       className='social'
                     />
                   </Box>
@@ -1254,7 +1254,7 @@ export default function Home() {
                     }}
                   >
                     <FacebookIcon
-                      sx={{ color: '#ffa500', fontSize: '2rem' }}
+                      sx={{ color: '#ffa500', fontSize: '1.5rem' }}
                       className='social'
                     />
                   </Box>
@@ -1265,7 +1265,7 @@ export default function Home() {
                     }}
                   >
                     <LinkedInIcon
-                      sx={{ color: '#ffa500', fontSize: '2rem' }}
+                      sx={{ color: '#ffa500', fontSize: '1.5rem' }}
                       className='social'
                     />
                   </Box>
@@ -1276,7 +1276,7 @@ export default function Home() {
                     }}
                   >
                     <InstagramIcon
-                      sx={{ color: '#ffa500', fontSize: '2rem' }}
+                      sx={{ color: '#ffa500', fontSize: '1.5rem' }}
                       className='social'
                     />
                   </Box>
@@ -1287,7 +1287,7 @@ export default function Home() {
                     }}
                   >
                     <TwitterIcon
-                      sx={{ color: '#ffa500', fontSize: '2rem' }}
+                      sx={{ color: '#ffa500', fontSize: '1.5rem' }}
                       className='social'
                     />
                   </Box>
