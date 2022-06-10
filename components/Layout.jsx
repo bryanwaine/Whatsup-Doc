@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -24,6 +24,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import wd from '../public/w-d_logo.png';
 import { theme } from '../components/Theme';
 import { styles } from '../utils/styles';
+import { apply_elevation } from './Animations';
 
 const Layout = ({
   children,
@@ -36,6 +37,15 @@ const Layout = ({
   const router = useRouter();
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [applyElevation, setApplyElevation] = useState(false);
+
+   useEffect(() => {
+
+     window.addEventListener('scroll', () => {
+       apply_elevation(applyElevation, setApplyElevation)
+       
+     });
+   }, []);
 
   const menuOpenHandler = () => {
     setMenuOpen(!menuOpen);
@@ -53,7 +63,7 @@ const Layout = ({
           {/* HEADER */}
           <AppBar
             position='fixed'
-            elevation={0}
+            elevation={applyElevation ? 5 : 0}
             sx={{
               width: '100%',
               height: '5rem',
@@ -63,7 +73,7 @@ const Layout = ({
               webkitBackdropFilter: 'blur(6px)',
               mozBackdropFilter: 'blur(6px)',
               backdropFilter: 'blur(6px)',
-              boxShadow: '-2px 2px 5px 1px rgba(0,0,0,0.20)',
+              // boxShadow: '-2px 2px 5px 1px rgba(0,0,0,0.20)',
             }}
           >
             {/* Desktop Toolbar */}
