@@ -75,7 +75,7 @@ a {
 
 .reveal_first_section {
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_first_section.active {
   opacity: 1;
@@ -84,7 +84,7 @@ a {
 .reveal_first_section_image {
   transform: translateX(-150px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_first_section_image.active {
   transform: translateX(0px);
@@ -94,7 +94,7 @@ a {
 .reveal_first_section_text {
   transform: translateX(150px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_first_section_text.active {
   transform: translateX(0px);
@@ -104,7 +104,7 @@ a {
 /* Second Section */
 .reveal_second_section {
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_second_section.active {
   opacity: 1;
@@ -113,7 +113,7 @@ a {
 .reveal_second_section_text {
   transform: translateY(150px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_second_section_text.active {
   transform: translateY(0px);
@@ -123,7 +123,7 @@ a {
 .reveal_second_section_card_1 {
   transform: translateX(-250px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_second_section_card_1.active {
   transform: translateX(0px);
@@ -133,7 +133,7 @@ a {
 .reveal_second_section_card_2 {
   transform: translateX(250px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_second_section_card_2.active {
   transform: translateX(0px);
@@ -143,7 +143,7 @@ a {
 /* Third Section */
 .reveal_third_section {
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_third_section.active {
   opacity: 1;
@@ -152,7 +152,7 @@ a {
 .reveal_third_section_text {
   transform: translateY(150px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_third_section_text.active {
   transform: translateY(0px);
@@ -162,7 +162,7 @@ a {
 .reveal_third_section_card_1 {
   transform: translateX(-250px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_third_section_card_1.active {
   transform: translateX(0px);
@@ -172,7 +172,7 @@ a {
 .reveal_third_section_card_2 {
   transform: translateX(-250px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_third_section_card_2.active {
   transform: translateX(0px);
@@ -182,7 +182,7 @@ a {
 .reveal_third_section_card_3 {
   transform: translateX(-250px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_third_section_card_3.active {
   transform: translateX(0px);
@@ -192,7 +192,7 @@ a {
 .reveal_third_section_card_4 {
   transform: translateX(-250px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_third_section_card_4.active {
   transform: translateX(0px);
@@ -202,7 +202,7 @@ a {
 .reveal_third_section_image {
   transform: translateX(150px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_third_section_image.active {
   transform: translateX(0px);
@@ -212,7 +212,7 @@ a {
 .reveal_fourth_section_text {
   transform: translateX(-150px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_fourth_section_text.active {
   transform: translateX(0px);
@@ -222,7 +222,7 @@ a {
 .reveal_fourth_section_image {
   transform: translateX(150px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_fourth_section_image.active {
   transform: translateX(0px);
@@ -236,7 +236,7 @@ a {
 .reveal_first_section_image {
   transform: translateY(150px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_first_section_image.active {
   transform: translateY(0px);
@@ -246,7 +246,7 @@ a {
 .reveal_first_section_text {
   transform: translateY(150px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_first_section_text.active {
   transform: translateY(0px);
@@ -256,7 +256,7 @@ a {
 /* Second Section */
 .reveal_second_section {
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_second_section.active {
   opacity: 1;
@@ -265,7 +265,7 @@ a {
 .reveal_second_section_text {
   transform: translateY(150px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_second_section_text.active {
   transform: translateY(0px);
@@ -275,7 +275,7 @@ a {
 .reveal_second_section_card_1 {
   transform: translateY(250px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_second_section_card_1.active {
   transform: translateY(0px);
@@ -285,7 +285,7 @@ a {
 .reveal_second_section_card_2 {
   transform: translateY(250px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_second_section_card_2.active {
   transform: translateY(0px);
@@ -295,7 +295,7 @@ a {
 /* Third Section */
 .reveal_third_section {
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_third_section.active {
   opacity: 1;
@@ -304,7 +304,7 @@ a {
 .reveal_third_section_text {
   transform: translateY(150px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_third_section_text.active {
   transform: translateY(0px);
@@ -314,7 +314,7 @@ a {
 .reveal_third_section_card_1 {
   transform: translateY(250px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_third_section_card_1.active {
   transform: translateY(0px);
@@ -324,7 +324,7 @@ a {
 .reveal_third_section_card_2 {
   transform: translateY(250px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_third_section_card_2.active {
   transform: translateY(0px);
@@ -334,7 +334,7 @@ a {
 .reveal_third_section_card_3 {
   transform: translateY(250px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_third_section_card_3.active {
   transform: translateY(0px);
@@ -344,7 +344,7 @@ a {
 .reveal_third_section_card_4 {
   transform: translateY(250px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_third_section_card_4.active {
   transform: translateY(0px);
@@ -354,7 +354,7 @@ a {
 .reveal_third_section_image {
   transform: translateY(150px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_third_section_image.active {
   transform: translateY(0px);
@@ -364,7 +364,7 @@ a {
 .reveal_fourth_section_text {
   transform: translateY(150px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_fourth_section_text.active {
   transform: translateY(0px);
@@ -374,7 +374,7 @@ a {
 .reveal_fourth_section_image {
   transform: translateY(150px);
   opacity: 0;
-  transition: 3s all ease;
+  transition: 1s all ease;
 }
 .reveal_fourth_section_image.active {
   transform: translateY(0px);

@@ -79,7 +79,7 @@ export default function Home() {
   }, []);
 
   return (
-    <Layout title='Telemedicine & Public Health.'>
+    <Layout title='Telemedicine &amp; Public Health.'>
       <Box style={{ display: 'flex' }}>
         <Box style={{ flex: 1 }} />
         {/* Main Column Start */}
