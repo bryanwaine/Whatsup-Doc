@@ -121,7 +121,7 @@ a {
 }
 
 .reveal_second_section_card_1 {
-  transform: translateX(-250px);
+  transform: translateX(-150px);
   opacity: 0;
   transition: 1s all ease;
 }
@@ -131,7 +131,7 @@ a {
 }
 
 .reveal_second_section_card_2 {
-  transform: translateX(250px);
+  transform: translateX(150px);
   opacity: 0;
   transition: 1s all ease;
 }

@@ -99,6 +99,7 @@ export default function Home() {
               display: 'flex',
               flexDirection: { xs: 'column', md: 'row' },
               justifyContent: { md: 'center' },
+              alignItems: { xs: 'center' },
               margin: '2rem 0',
               padding: '3rem',
               borderRadius: '2rem',
