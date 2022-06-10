@@ -64,13 +64,22 @@ a {
 }
 
 .mobileMenu.true {
-  /* display: initial; */
   left: 0;
   opacity: 0.95;
   -moz-backdrop-filter: blur(17px);
   -webkit-backdrop-filter: blur(17px);
   backdrop-filter: blur(17px);
   z-index: 1;
+}
+
+.mobileMenuList {
+  top: 100rem;
+  transition: top 0.5s ease;
+  transition-delay: 0.3s;
+}
+
+.mobileMenuList.true {
+  top: 0;
 }
 
 .reveal_first_section {
