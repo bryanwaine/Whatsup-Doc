@@ -8,8 +8,6 @@ const apply_elevation = (applyElevation, setApplyElevation) => {
     } else {
       setApplyElevation(false);
     }
-    console.log(applyElevation);
-    console.log(elementTop);
   }
 };
 
