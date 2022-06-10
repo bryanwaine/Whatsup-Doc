@@ -48,8 +48,8 @@ const Layout = ({
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [applyElevation, setApplyElevation] = useState(false);
-  const [showAboutMenu, setShowAboutMenu] = useState(false);
-  const [showPlansMenu, setShowPlansMenu] = useState(false);
+  const [showAboutSubMenuMobile, setShowAboutSubMenuMobile] = useState(false);
+  const [showPlansSubMenuMobile, setShowPlansSubMenuMobile] = useState(false);
   const [showAboutSubMenu, setShowAboutSubMenu] = useState(false);
   const [showPlansSubMenu, setShowPlansSubMenu] = useState(false);
 
@@ -63,6 +63,8 @@ const Layout = ({
 
   const menuOpenHandler = () => {
     setMenuOpen(!menuOpen);
+    setShowAboutSubMenuMobile(false)
+   setShowPlansSubMenuMobile(false)
   };
 
   return (
@@ -764,8 +766,8 @@ const Layout = ({
                     padding: '0 0 0 0rem',
                   }}
                   onClick={() => {
-                    setShowAboutMenu(!showAboutMenu);
-                    setShowPlansMenu(false);
+                    setShowAboutSubMenuMobile(!showAboutSubMenuMobile);
+                    setShowPlansSubMenuMobile(false);
                   }}
                   className={`nav-about`}
                 >
@@ -784,7 +786,7 @@ const Layout = ({
                       About Us
                     </Typography>
                   </NextLink>
-                  {showAboutMenu ? (
+                  {showAboutSubMenuMobile ? (
                     <KeyboardArrowUpRoundedIcon
                       sx={{
                         color: '#000000',
@@ -806,7 +808,7 @@ const Layout = ({
                 {/* About Us Mobile Sub Menu Start*/}
                 <Box
                   sx={{
-                    display: showAboutMenu ? 'initial' : 'none',
+                    display: showAboutSubMenuMobile ? 'initial' : 'none',
                     left: '3rem',
                     top: '10rem',
                     width: '20rem',
@@ -1070,8 +1072,8 @@ const Layout = ({
                     padding: '0 0 0 0rem',
                   }}
                   onClick={() => {
-                    setShowPlansMenu(!showPlansMenu);
-                    setShowAboutMenu(false);
+                    setShowPlansSubMenuMobile(!showPlansSubMenuMobile);
+                    setShowAboutSubMenuMobile(false);
                   }}
                   className={`nav-plans`}
                 >
@@ -1089,7 +1091,7 @@ const Layout = ({
                       Plans
                     </Typography>
                   </NextLink>
-                  {showPlansMenu ? (
+                  {showPlansSubMenuMobile ? (
                     <KeyboardArrowUpRoundedIcon
                       sx={{
                         color: '#000000',
@@ -1110,7 +1112,7 @@ const Layout = ({
                 {/* Plans Us Mobile Sub Menu Start*/}
                 <Box
                   sx={{
-                    display: showPlansMenu ? 'initial' : 'none',
+                    display: showPlansSubMenuMobile ? 'initial' : 'none',
                     left: '3rem',
                     top: '10rem',
                     width: '20rem',
