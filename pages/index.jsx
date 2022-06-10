@@ -109,7 +109,7 @@ export default function Home() {
               webkitBackdropFilter: 'blur(16px)',
               mozBackdropFilter: 'blur(16px)',
               backdropFilter: 'blur(16px)',
-              boxShadow: '-2px 2px 5px 1px rgba(0,0,0,0.20)',
+              boxShadow: '0px 0px 25px 1px rgba(0,0,0,0.10)',
             }}
             className={`reveal_first_section`}
           >
@@ -263,7 +263,7 @@ export default function Home() {
                     <Box
                       sx={styles.specialty_icon}
                       style={{
-                        background: '#f2d7c7',
+                        background: '#fcf0e8',
                       }}
                     >
                       <WavesIcon sx={{ color: '#f5762c', fontSize: '2rem' }} />
@@ -410,7 +410,7 @@ export default function Home() {
               webkitBackdropFilter: 'blur(16px)',
               mozBackdropFilter: 'blur(16px)',
               backdropFilter: 'blur(16px)',
-              boxShadow: '-2px 2px 5px 1px rgba(0,0,0,0.20)',
+              boxShadow: '0px 0px 25px 1px rgba(0,0,0,0.10)',
             }}
             className={`reveal_third_section`}
           >
