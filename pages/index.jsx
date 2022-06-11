@@ -1623,7 +1623,7 @@ export default function Home() {
                         }}
                         className='footer'
                       >
-                        Ask
+                        Got Questions&#63;
                       </Typography>
                     </Box>
 
@@ -1773,7 +1773,7 @@ export default function Home() {
                           sx={{ margin: '0 1rem 0 0', color: '#ffa500' }}
                         />
                         <a href='mailto:info@whats-updoc.vercel.app'>
-                          info@whatsup-doc.vercel.app
+                          info@whatsup&#8211;doc.vercel.app
                         </a>
                       </Typography>
                       <Typography
@@ -1794,7 +1794,7 @@ export default function Home() {
                           sx={{ margin: '0 1rem 0 0', color: '#ffa500' }}
                         />
                         <a href='tel:+2349052367228'>
-                          +234&nbsp;WHATSUP&nbsp;DOC!
+                          +234&nbsp;WHATSUP&nbsp;DOC&#33;
                         </a>
                       </Typography>
                     </Box>

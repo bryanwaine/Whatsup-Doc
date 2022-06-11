@@ -116,7 +116,7 @@ const Layout = ({
                   justifyContent: 'end',
                   padding: '0',
                   cursor: 'pointer',
-                  borderRight: '1px solid #000000',
+                  borderRight: '1px solid #0d2344',
                 }}
               >
                 <Typography
@@ -138,13 +138,13 @@ const Layout = ({
                   {showAboutSubMenu ? (
                     <KeyboardArrowUpRoundedIcon
                       sx={{
-                        color: '#666666',
+                        color: '#0d2344',
                       }}
                     />
                   ) : (
                     <KeyboardArrowDownRoundedIcon
                       sx={{
-                        color: '#666666',
+                        color: '#0d2344',
                       }}
                     />
                   )}
@@ -157,7 +157,6 @@ const Layout = ({
                   onMouseEnter={() => setShowAboutSubMenu(true)}
                   onMouseLeave={() => setShowAboutSubMenu(false)}
                 >
-                 
                   {/* Company menu item */}
                   <ListItem sx={styles.menu_listitem} className={`menuList`}>
                     <Box
@@ -682,7 +681,7 @@ const Layout = ({
                   margin: '0 1rem 0 0',
                   padding: '.5rem',
                   borderRadius: '.5rem',
-                  color: '#000000',
+                  color: '#0d2344',
                   background: 'transparent',
                   border: '1px solid rgba(14, 83, 148, 1)',
                   cursor: 'pointer',
@@ -697,7 +696,7 @@ const Layout = ({
 
               <IconButton
                 sx={{
-                  color: '#838383',
+                  color: '#0d2344',
                   padding: '0 1rem 0 0',
                 }}
                 onClick={menuOpenHandler}
@@ -732,7 +731,7 @@ const Layout = ({
             >
               <List
                 className={`mobileMenuList ${menuOpen}`}
-                sx={{ maxHeight: { xs: 700, sm: 700 }, overflowY: 'auto' ,}}
+                sx={{ maxHeight: { xs: 700, sm: 700 }, overflowY: 'auto' }}
               >
                 <ListItem
                   sx={{
@@ -747,7 +746,7 @@ const Layout = ({
                       variant='medium'
                       sx={{
                         cursor: 'pointer',
-                        color: selectedHome ? '#ffa500' : '#000000',
+                        color: selectedHome ? '#ffa500' : '#0d2344',
                         ':hover': {
                           color: '#ffa500',
                         },
@@ -776,7 +775,7 @@ const Layout = ({
                       variant='medium'
                       sx={{
                         cursor: 'pointer',
-                        color: selectedAbout ? '#ffa500' : '#000000',
+                        color: selectedAbout ? '#ffa500' : '#0d2344',
                         ':hover': {
                           color: '#ffa500',
                         },
@@ -789,7 +788,10 @@ const Layout = ({
                   {showAboutSubMenuMobile ? (
                     <KeyboardArrowUpRoundedIcon
                       sx={{
-                        color: '#000000',
+                        color: selectedAbout ? '#ffa500' : '#0d2344',
+                        ':hover': {
+                          color: '#ffa500',
+                        },
                         fontSize: '1.5rem',
                         margin: '0 0 0 -1rem',
                       }}
@@ -797,7 +799,10 @@ const Layout = ({
                   ) : (
                     <KeyboardArrowDownRoundedIcon
                       sx={{
-                        color: '#000000',
+                        color: selectedAbout ? '#ffa500' : '#0d2344',
+                        ':hover': {
+                          color: '#ffa500',
+                        },
                         fontSize: '1.5rem',
                         margin: '0 0 0 -1rem',
                       }}
@@ -1082,7 +1087,7 @@ const Layout = ({
                       variant='medium'
                       sx={{
                         cursor: 'pointer',
-                        color: selectedPlans ? '#ffa500' : '#000000',
+                        color: selectedPlans ? '#ffa500' : '#0d2344',
                         ':hover': {
                           color: '#ffa500',
                         },
@@ -1094,7 +1099,10 @@ const Layout = ({
                   {showPlansSubMenuMobile ? (
                     <KeyboardArrowUpRoundedIcon
                       sx={{
-                        color: '#000000',
+                        color: selectedPlans ? '#ffa500' : '#0d2344',
+                        ':hover': {
+                          color: '#ffa500',
+                        },
                         fontSize: '1.5rem',
                         margin: '0 0 0 -1rem',
                       }}
@@ -1102,14 +1110,17 @@ const Layout = ({
                   ) : (
                     <KeyboardArrowDownRoundedIcon
                       sx={{
-                        color: '#000000',
+                        color: selectedPlans ? '#ffa500' : '#0d2344',
+                        ':hover': {
+                          color: '#ffa500',
+                        },
                         fontSize: '1.5rem',
                         margin: '0 0 0 -1rem',
                       }}
                     />
                   )}
                 </ListItem>
-                {/* Plans Us Mobile Sub Menu Start*/}
+                {/* Plans Mobile Sub Menu Start*/}
                 <Box
                   sx={{
                     display: showPlansSubMenuMobile ? 'initial' : 'none',
@@ -1132,7 +1143,7 @@ const Layout = ({
                         display: 'flex',
                         justifyContent: 'start',
                         alignItems: 'start',
-                        margin: '0 .5rem 0 0',
+                        margin: '0 -2rem 0 0',
                       }}
                     >
                       <Box
@@ -1189,7 +1200,7 @@ const Layout = ({
                         display: 'flex',
                         justifyContent: 'start',
                         alignItems: 'start',
-                        margin: '0 .5rem 0 0',
+                        margin: '0 -2rem 0 0',
                       }}
                     >
                       <Box
@@ -1247,7 +1258,7 @@ const Layout = ({
                         display: 'flex',
                         justifyContent: 'start',
                         alignItems: 'start',
-                        margin: '0 .5rem 0 0',
+                        margin: '0 -2rem 0 0',
                       }}
                     >
                       <Box
@@ -1313,7 +1324,7 @@ const Layout = ({
                       variant='medium'
                       sx={{
                         cursor: 'pointer',
-                        color: selectedFaq ? '#ffa500' : '#000000',
+                        color: selectedFaq ? '#ffa500' : '#0d2344',
                         ':hover': {
                           color: '#ffa500',
                         },
@@ -1337,7 +1348,7 @@ const Layout = ({
                       variant='medium'
                       sx={{
                         cursor: 'pointer',
-                        color: selectedBlog ? '#ffa500' : '#000000',
+                        color: selectedBlog ? '#ffa500' : '#0d2344',
                         ':hover': {
                           color: '#ffa500',
                         },
@@ -1362,7 +1373,7 @@ const Layout = ({
                       margin: '0 0 2rem 0',
                       padding: '.5rem',
                       borderRadius: '.5rem',
-                      color: '#000000',
+                      color: '#0d2344',
                       background: 'transparent',
                       border: '1px solid rgba(14, 83, 148, 1)',
                       cursor: 'pointer',

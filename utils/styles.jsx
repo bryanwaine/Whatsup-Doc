@@ -1,24 +1,9 @@
-const submenuStyle = (showSubMenu) => {
-  return {
-    position: 'absolute',
-    display: showSubMenu ? 'initial' : 'none',
-    left: '32rem',
-    top: '5rem',
-    width: '20rem',
-    background: '#fff',
-    borderRadius: '.5rem',
-    margin: '0',
-    overflow: 'hidden',
-    boxShadow: '0px 4px 25px 1px rgba(0,0,0,0.10)',
-  };
-};
-
 const styles = {
   navButton: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    color: '#000000',
+    color: '#0d2344',
     height: '3rem',
     width: '7rem',
     borderRadius: '.5rem',
@@ -107,9 +92,9 @@ const styles = {
 
   about_submenu: {
     position: 'absolute',
-    display: 'none' ,
-    left: '31rem',
-    top: '4rem',
+    display: 'none',
+    left: { md: '23rem', lg: '31rem' },
+    top: { md: '4rem', lg: '4rem' },
     width: '20rem',
     background: '#fff',
     borderRadius: '.5rem',
@@ -120,9 +105,9 @@ const styles = {
 
   plans_submenu: {
     position: 'absolute',
-    display: 'none' ,
-    left: '40rem',
-    top: '4rem',
+    display: 'none',
+    left: { md: '32rem', lg: '40rem' },
+    top: { md: '4rem', lg: '4rem' },
     width: '20rem',
     background: '#fff',
     borderRadius: '.5rem',
@@ -136,7 +121,7 @@ const styles = {
     justifyContent: 'center',
     overflow: 'hidden',
     height: '6rem',
-    width: {sm: '60%', md: '100%'}
+    width: { sm: '55%', md: '100%' },
   },
 
   divider: {
@@ -145,19 +130,6 @@ const styles = {
     margin: '.5rem 0',
     background: '#ffa500',
     borderRadius: '50%',
-  },
-  whatsappWidget: {
-    '& .whatsapp_widget_wrapper': {
-      bottom: { sm: '80px !important' },
-      right: { sm: '20px !important' },
-      width: { sm: 50 },
-    },
-    '& .whatsapp_widget_icon': {
-      webkitBoxShadow: '3px 3px 5px 1px rgba(0,0,0,0.50)  !important',
-      mozBoxShadow: '3px 3px 5px 1px rgba(0,0,0,0.50)  !important',
-      boxShadow: '3px 3px 5px 1px rgba(0,0,0,0.50)  !important',
-      border: 'none',
-    },
   },
 };
 
