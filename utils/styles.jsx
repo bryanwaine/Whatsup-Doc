@@ -13,7 +13,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    color: '#000000',
+    color: '#0d2344',
     height: '3rem',
     width: '6rem',
     borderRadius: '.5rem',

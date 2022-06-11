@@ -411,13 +411,13 @@ const Layout = ({
                   {showPlansSubMenu ? (
                     <KeyboardArrowUpRoundedIcon
                       sx={{
-                        color: '#666666',
+                        color: '#0d2344',
                       }}
                     />
                   ) : (
                     <KeyboardArrowDownRoundedIcon
                       sx={{
-                        color: '#666666',
+                        color: '#0d2344',
                       }}
                     />
                   )}
