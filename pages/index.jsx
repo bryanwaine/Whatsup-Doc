@@ -1153,7 +1153,7 @@ export default function Home() {
               }}
               className={`reveal_fourth_section_image`}
             >
-              <Card raised sx={styles.plans} style={{ marginLeft: '0' }}>
+              <Card raised sx={styles.plans} style={{ marginLeft: '5rem' }}>
                 <Box
                   sx={styles.plans_icon}
                   style={{
@@ -1164,7 +1164,7 @@ export default function Home() {
                 </Box>
                 <Typography variant='medium'>Individual</Typography>
               </Card>
-              <Card raised sx={styles.plans} style={{ marginLeft: '5rem' }}>
+              <Card raised sx={styles.plans} style={{ marginLeft: '10rem' }}>
                 <Box
                   sx={styles.plans_icon}
                   style={{
@@ -1177,7 +1177,7 @@ export default function Home() {
                 </Box>
                 <Typography variant='medium'>Family</Typography>
               </Card>
-              <Card raised sx={styles.plans} style={{ marginLeft: '10rem' }}>
+              <Card raised sx={styles.plans} style={{ marginLeft: '15rem' }}>
                 <Box
                   sx={styles.plans_icon}
                   style={{

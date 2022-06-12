@@ -93,7 +93,7 @@ const styles = {
   about_submenu: {
     position: 'absolute',
     display: 'none',
-    left: { md: '23rem', lg: '31rem' },
+    left: { md: '23rem', lg: '32rem' },
     top: { md: '4rem', lg: '4rem' },
     width: '20rem',
     background: '#fff',
@@ -106,7 +106,7 @@ const styles = {
   plans_submenu: {
     position: 'absolute',
     display: 'none',
-    left: { md: '32rem', lg: '40rem' },
+    left: { md: '32rem', lg: '41rem' },
     top: { md: '4rem', lg: '4rem' },
     width: '20rem',
     background: '#fff',
@@ -114,6 +114,7 @@ const styles = {
     margin: '0',
     overflow: 'hidden',
     boxShadow: '0px 4px 25px 1px rgba(0,0,0,0.10)',
+    zIndex:0
   },
 
   menu_listitem: {
