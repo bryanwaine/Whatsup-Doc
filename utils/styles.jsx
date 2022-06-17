@@ -1,4 +1,14 @@
 const styles = {
+  nav: {
+    width: '100%',
+    height: '5rem',
+    background:
+      'transparent linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%)',
+    opacity: 1,
+    webkitBackdropFilter: 'blur(6px)',
+    mozBackdropFilter: 'blur(6px)',
+    backdropFilter: 'blur(6px)',
+  },
   navButton: {
     display: 'flex',
     justifyContent: 'center',
@@ -114,7 +124,7 @@ const styles = {
     margin: '0',
     overflow: 'hidden',
     boxShadow: '0px 4px 25px 1px rgba(0,0,0,0.10)',
-    zIndex:0
+    zIndex: 0,
   },
 
   menu_listitem: {

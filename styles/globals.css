@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Poppins;
+  font-family: Poppins !important;
 }
 
 a {
@@ -12,13 +12,13 @@ a {
 
 * {
   box-sizing: border-box;
-  font-family: Poppins;
+  font-family: Poppins !important;
 }
 
 .nav {
   background-color: transparent;
   box-shadow: none;
-  transition: 0.9s all ease-out;
+  transition: 0.5s all ease-out;
 }
 
 .nav:hover {
@@ -31,7 +31,7 @@ a {
 .nav-action {
   background-color: transparent;
   box-shadow: none;
-  transition: 0.9s all ease-out;
+  transition: 0.5s all ease-out;
 }
 
 .nav-action:hover {
@@ -42,7 +42,7 @@ a {
 
 .footer {
   color: #000000;
-  transition: color 0.9s ease-out;
+  transition: color 0.5s ease-out;
 }
 
 .footer:hover {

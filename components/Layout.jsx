@@ -83,16 +83,7 @@ const Layout = ({
           <AppBar
             position='fixed'
             elevation={applyElevation ? 5 : 0}
-            sx={{
-              width: '100%',
-              height: '5rem',
-              background:
-                'transparent linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%)',
-              opacity: 1,
-              webkitBackdropFilter: 'blur(6px)',
-              mozBackdropFilter: 'blur(6px)',
-              backdropFilter: 'blur(6px)',
-            }}
+            sx={styles.nav}
           >
             {/* Desktop Toolbar */}
             <Toolbar
@@ -154,7 +145,7 @@ const Layout = ({
                 </Typography>
 
                 {/* About Us Submenu Start */}
-                <Fade in={showAboutSubMenu} timeout={1000}>
+                <Fade in={showAboutSubMenu} timeout={800}>
                   <Box
                     sx={styles.about_submenu}
                     className={`about_submenu ${showAboutSubMenu}`}
@@ -428,7 +419,7 @@ const Layout = ({
                   )}
                 </Typography>
                 {/* Plans  Submenu Start */}
-                <Fade in={showPlansSubMenu} timeout={1000}>
+                <Fade in={showPlansSubMenu} timeout={800}>
                   <Box
                     sx={styles.plans_submenu}
                     className={`plans_submenu ${showPlansSubMenu}`}

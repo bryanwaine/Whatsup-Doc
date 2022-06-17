@@ -1,7 +1,6 @@
 const apply_elevation = (applyElevation, setApplyElevation) => {
   var reveals = document.querySelectorAll('.reveal_first_section');
   for (var i = 0; i < reveals.length; i++) {
-    var windowHeight = window.innerHeight;
     var elementTop = reveals[i].getBoundingClientRect().top;
     if (elementTop < 180) {
       setApplyElevation(true);

@@ -23,7 +23,6 @@
     "react-animations": "^1.0.0",
     "react-dom": "18.1.0",
     "react-hook-form": "^7.31.3",
-    "react-spring": "^9.4.5",
     "react-whatsapp-chat-widget": "^1.1.1",
     "styled-components": "^5.3.5",
     "yup": "^0.32.11"
