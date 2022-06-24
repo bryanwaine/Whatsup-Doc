@@ -45,7 +45,7 @@ const Layout = ({
   selectedAbout,
   selectedPlans,
   selectedFaq,
-  selectedBlog
+  selectedBlog,
 }) => {
   const router = useRouter();
 
@@ -56,18 +56,16 @@ const Layout = ({
   const [showAboutSubMenu, setShowAboutSubMenu] = useState(false);
   const [showPlansSubMenu, setShowPlansSubMenu] = useState(false);
 
-   useEffect(() => {
-
-     window.addEventListener('scroll', () => {
-       apply_elevation(applyElevation, setApplyElevation)
-       
-     });
-   }, []);
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      apply_elevation(applyElevation, setApplyElevation);
+    });
+  }, []);
 
   const menuOpenHandler = () => {
     setMenuOpen(!menuOpen);
-    setShowAboutSubMenuMobile(false)
-   setShowPlansSubMenuMobile(false)
+    setShowAboutSubMenuMobile(false);
+    setShowPlansSubMenuMobile(false);
   };
 
   return (
@@ -121,488 +119,538 @@ const Layout = ({
                 >
                   Home
                 </Typography>
-                <Typography
-                  className={`nav`}
-                  variant='medium'
-                  sx={styles.navButton}
+
+                {/* About Main */}
+                <Box
+                  sx={styles.relativeContainer}
                   onMouseEnter={() => setShowAboutSubMenu(true)}
                   onMouseLeave={() => setShowAboutSubMenu(false)}
                 >
-                  About us
-                  {showAboutSubMenu ? (
-                    <KeyboardArrowUpRoundedIcon
-                      sx={{
-                        color: '#ffa500',
-                      }}
-                    />
-                  ) : (
-                    <KeyboardArrowDownRoundedIcon
-                      sx={{
-                        color: '#0d2344',
-                      }}
-                    />
-                  )}
-                </Typography>
-
-                {/* About Us Submenu Start */}
-                <Fade in={showAboutSubMenu} timeout={800}>
-                  <Box
-                    sx={styles.about_submenu}
-                    className={`about_submenu ${showAboutSubMenu}`}
+                  <Typography
+                    className={`nav`}
+                    variant='medium'
+                    sx={styles.navButton}
                     onMouseEnter={() => setShowAboutSubMenu(true)}
                     onMouseLeave={() => setShowAboutSubMenu(false)}
                   >
-                    {/* Company menu item */}
-                    <ListItem sx={styles.menu_listitem} className={`menuList`}>
-                      <Box
+                    About us
+                    {showAboutSubMenu ? (
+                      <KeyboardArrowUpRoundedIcon
                         sx={{
-                          display: 'flex',
-                          justifyContent: 'start',
-                          alignItems: 'start',
-                          margin: '0 .5rem 0 0',
+                          color: '#ffa500',
                         }}
+                      />
+                    ) : (
+                      <KeyboardArrowDownRoundedIcon
+                        sx={{
+                          color: '#0d2344',
+                        }}
+                      />
+                    )}
+                  </Typography>
+
+                  {/* About Us Submenu Start */}
+
+                  <Collapse
+                    in={showAboutSubMenu}
+                    sx={styles.main_submenu}
+                    style={{
+                      bottom: '-24.1rem',
+                    }}
+                    onMouseEnter={() => setShowAboutSubMenu(true)}
+                    onMouseLeave={() => setShowAboutSubMenu(false)}
+                    className={`about_submenu ${showAboutSubMenu}`}
+                  >
+                    <Box>
+                      {/* Company menu item */}
+                      <ListItem
+                        sx={styles.menu_listitem}
+                        className={`menuList`}
                       >
                         <Box
-                          sx={styles.menu_icon_bg}
-                          style={{ color: '#7533c5' }}
-                          className={`menuListItemIcon`}
-                        />
-                        <Box
                           sx={{
-                            position: 'absolute',
-                            top: '1.6rem',
-                            left: '1.1rem',
+                            display: 'flex',
+                            justifyContent: 'start',
+                            alignItems: 'start',
+                            margin: '0 .5rem 0 0',
                           }}
                         >
-                          <Image
-                            src={thumb}
-                            width={20}
-                            height={20}
-                            alt='Whatsup Doc thumb'
+                          <Box
+                            sx={styles.menu_icon_bg}
+                            style={{ color: '#7533c5' }}
+                            className={`menuListItemIcon`}
                           />
+                          <Box
+                            sx={{
+                              position: 'absolute',
+                              top: '1.6rem',
+                              left: '1.1rem',
+                            }}
+                          >
+                            <Image
+                              src={thumb}
+                              width={20}
+                              height={20}
+                              alt='Whatsup Doc thumb'
+                            />
+                          </Box>
                         </Box>
-                      </Box>
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          flexDirection: 'column',
-                          alignItems: 'start',
-                          margin: '0 0 0 2rem',
-                        }}
-                      >
-                        <Typography
-                          variant='bold'
-                          component='h2'
+                        <Box
                           sx={{
-                            fontSize: { xs: '1rem', md: '1rem' },
-                            color: '#0d2344',
-                            background: 'transparent',
-                            margin: '0',
-                            zIndex: 1,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'start',
+                            margin: '0 0 0 2rem',
                           }}
                         >
-                          Our Company
-                        </Typography>
-                        <Typography
-                          variant='medium'
-                          component='p'
-                          sx={{
-                            color: '#3c4f69',
-                            margin: '0',
-                            padding: '0 2rem 0 0',
-                            textAlign: 'left',
-                            fontSize: '.8rem',
-                            background: 'transparent',
-                            zIndex: 1,
-                          }}
-                        >
-                          Learn our vision, mission, and what we stand for
-                        </Typography>
-                      </Box>
-                    </ListItem>
+                          <Typography
+                            variant='bold'
+                            component='h2'
+                            sx={{
+                              fontSize: { xs: '1rem', md: '1rem' },
+                              color: '#0d2344',
+                              background: 'transparent',
+                              margin: '0',
+                              zIndex: 1,
+                            }}
+                          >
+                            Our Company
+                          </Typography>
+                          <Typography
+                            variant='medium'
+                            component='p'
+                            sx={{
+                              color: '#3c4f69',
+                              margin: '0',
+                              padding: '0 2rem 0 0',
+                              textAlign: 'left',
+                              fontSize: '.8rem',
+                              background: 'transparent',
+                              zIndex: 1,
+                            }}
+                          >
+                            Learn our vision, mission, and what we stand for
+                          </Typography>
+                        </Box>
+                      </ListItem>
 
-                    {/* News menu item */}
-                    <ListItem sx={styles.menu_listitem} className={`menuList`}>
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          justifyContent: 'start',
-                          alignItems: 'start',
-                          margin: '0 .5rem 0 0',
-                        }}
+                      {/* News menu item */}
+                      <ListItem
+                        sx={styles.menu_listitem}
+                        className={`menuList`}
                       >
                         <Box
-                          sx={styles.menu_icon_bg}
-                          style={{ color: '#7533c5' }}
-                          className={`menuListItemIcon`}
-                        ></Box>
-                        <Box sx={styles.menu_icon}>
-                          <CampaignRoundedIcon sx={{ color: '#ffa500' }} />
+                          sx={{
+                            display: 'flex',
+                            justifyContent: 'start',
+                            alignItems: 'start',
+                            margin: '0 .5rem 0 0',
+                          }}
+                        >
+                          <Box
+                            sx={styles.menu_icon_bg}
+                            style={{ color: '#7533c5' }}
+                            className={`menuListItemIcon`}
+                          ></Box>
+                          <Box sx={styles.menu_icon}>
+                            <CampaignRoundedIcon sx={{ color: '#ffa500' }} />
+                          </Box>
                         </Box>
-                      </Box>
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          flexDirection: 'column',
-                          alignItems: 'start',
-                          margin: '0 0 0 2rem',
-                        }}
-                      >
-                        <Typography
-                          variant='bold'
-                          component='h2'
+                        <Box
                           sx={{
-                            fontSize: { xs: '1rem', md: '1rem' },
-                            color: '#0d2344',
-                            background: 'transparent',
-                            margin: '0',
-                            zIndex: 1,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'start',
+                            margin: '0 0 0 2rem',
                           }}
                         >
-                          News
-                        </Typography>
-                        <Typography
-                          variant='medium'
-                          component='p'
-                          sx={{
-                            color: '#3c4f69',
-                            margin: '0',
-                            padding: '0 2rem 0 0',
-                            textAlign: 'left',
-                            fontSize: '.8rem',
-                            background: 'transparent',
-                            zIndex: 1,
-                          }}
-                        >
-                          Get updates on the latest news about us
-                        </Typography>
-                      </Box>
-                    </ListItem>
-                    {/* Gallery menu item */}
-                    <ListItem sx={styles.menu_listitem} className={`menuList`}>
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          justifyContent: 'start',
-                          alignItems: 'start',
-                          margin: '0 .5rem 0 0',
-                        }}
+                          <Typography
+                            variant='bold'
+                            component='h2'
+                            sx={{
+                              fontSize: { xs: '1rem', md: '1rem' },
+                              color: '#0d2344',
+                              background: 'transparent',
+                              margin: '0',
+                              zIndex: 1,
+                            }}
+                          >
+                            News
+                          </Typography>
+                          <Typography
+                            variant='medium'
+                            component='p'
+                            sx={{
+                              color: '#3c4f69',
+                              margin: '0',
+                              padding: '0 2rem 0 0',
+                              textAlign: 'left',
+                              fontSize: '.8rem',
+                              background: 'transparent',
+                              zIndex: 1,
+                            }}
+                          >
+                            Get updates on the latest news about us
+                          </Typography>
+                        </Box>
+                      </ListItem>
+                      {/* Gallery menu item */}
+                      <ListItem
+                        sx={styles.menu_listitem}
+                        className={`menuList`}
                       >
                         <Box
-                          sx={styles.menu_icon_bg}
-                          style={{ color: '#7533c5' }}
-                          className={`menuListItemIcon`}
-                        ></Box>
-                        <Box sx={styles.menu_icon}>
-                          <InsertPhotoRoundedIcon sx={{ color: '#ffa500' }} />
+                          sx={{
+                            display: 'flex',
+                            justifyContent: 'start',
+                            alignItems: 'start',
+                            margin: '0 .5rem 0 0',
+                          }}
+                        >
+                          <Box
+                            sx={styles.menu_icon_bg}
+                            style={{ color: '#7533c5' }}
+                            className={`menuListItemIcon`}
+                          ></Box>
+                          <Box sx={styles.menu_icon}>
+                            <InsertPhotoRoundedIcon sx={{ color: '#ffa500' }} />
+                          </Box>
                         </Box>
-                      </Box>
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          flexDirection: 'column',
-                          alignItems: 'start',
-                          margin: '0 0 0 2rem',
-                        }}
-                      >
-                        <Typography
-                          variant='bold'
-                          component='h2'
+                        <Box
                           sx={{
-                            fontSize: { xs: '1rem', md: '1rem' },
-                            color: '#0d2344',
-                            background: 'transparent',
-                            margin: '0',
-                            zIndex: 1,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'start',
+                            margin: '0 0 0 2rem',
                           }}
                         >
-                          Gallery
-                        </Typography>
-                        <Typography
-                          variant='medium'
-                          component='p'
-                          sx={{
-                            color: '#3c4f69',
-                            margin: '0',
-                            padding: '0 2rem 0 0',
-                            textAlign: 'left',
-                            fontSize: '.8rem',
-                            background: 'transparent',
-                            zIndex: 1,
-                          }}
-                        >
-                          Browse though our achievements in pictures
-                        </Typography>
-                      </Box>
-                    </ListItem>
-                    {/* Legal menu item */}
-                    <ListItem sx={styles.menu_listitem} className={`menuList`}>
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          justifyContent: 'start',
-                          alignItems: 'start',
-                          margin: '0 .5rem 0 0',
-                        }}
+                          <Typography
+                            variant='bold'
+                            component='h2'
+                            sx={{
+                              fontSize: { xs: '1rem', md: '1rem' },
+                              color: '#0d2344',
+                              background: 'transparent',
+                              margin: '0',
+                              zIndex: 1,
+                            }}
+                          >
+                            Gallery
+                          </Typography>
+                          <Typography
+                            variant='medium'
+                            component='p'
+                            sx={{
+                              color: '#3c4f69',
+                              margin: '0',
+                              padding: '0 2rem 0 0',
+                              textAlign: 'left',
+                              fontSize: '.8rem',
+                              background: 'transparent',
+                              zIndex: 1,
+                            }}
+                          >
+                            Browse though our achievements in pictures
+                          </Typography>
+                        </Box>
+                      </ListItem>
+                      {/* Legal menu item */}
+                      <ListItem
+                        sx={styles.menu_listitem}
+                        className={`menuList`}
                       >
                         <Box
-                          sx={styles.menu_icon_bg}
-                          style={{ color: '#7533c5' }}
-                          className={`menuListItemIcon`}
-                        ></Box>
-                        <Box sx={styles.menu_icon}>
-                          <GavelRoundedIcon sx={{ color: '#ffa500' }} />
+                          sx={{
+                            display: 'flex',
+                            justifyContent: 'start',
+                            alignItems: 'start',
+                            margin: '0 .5rem 0 0',
+                          }}
+                        >
+                          <Box
+                            sx={styles.menu_icon_bg}
+                            style={{ color: '#7533c5' }}
+                            className={`menuListItemIcon`}
+                          ></Box>
+                          <Box sx={styles.menu_icon}>
+                            <GavelRoundedIcon sx={{ color: '#ffa500' }} />
+                          </Box>
                         </Box>
-                      </Box>
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          flexDirection: 'column',
-                          alignItems: 'start',
-                          margin: '0 0 0 2rem',
-                        }}
-                      >
-                        <Typography
-                          variant='bold'
-                          component='h2'
+                        <Box
                           sx={{
-                            fontSize: { xs: '1rem', md: '1rem' },
-                            color: '#0d2344',
-                            background: 'transparent',
-                            margin: '0',
-                            zIndex: 1,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'start',
+                            margin: '0 0 0 2rem',
                           }}
                         >
-                          Legal
-                        </Typography>
-                        <Typography
-                          variant='medium'
-                          component='p'
-                          sx={{
-                            color: '#3c4f69',
-                            margin: '0',
-                            padding: '0 2rem 0 0',
-                            textAlign: 'left',
-                            fontSize: '.8rem',
-                            background: 'transparent',
-                            zIndex: 1,
-                          }}
-                        >
-                          Go through our Terms of Service and Privacy Policy
-                        </Typography>
-                      </Box>
-                    </ListItem>
-                  </Box>
-                </Fade>
+                          <Typography
+                            variant='bold'
+                            component='h2'
+                            sx={{
+                              fontSize: { xs: '1rem', md: '1rem' },
+                              color: '#0d2344',
+                              background: 'transparent',
+                              margin: '0',
+                              zIndex: 1,
+                            }}
+                          >
+                            Legal
+                          </Typography>
+                          <Typography
+                            variant='medium'
+                            component='p'
+                            sx={{
+                              color: '#3c4f69',
+                              margin: '0',
+                              padding: '0 2rem 0 0',
+                              textAlign: 'left',
+                              fontSize: '.8rem',
+                              background: 'transparent',
+                              zIndex: 1,
+                            }}
+                          >
+                            Go through our Terms of Service and Privacy Policy
+                          </Typography>
+                        </Box>
+                      </ListItem>
+                    </Box>
+                  </Collapse>
+                </Box>
                 {/* About Submenu End */}
+                {/* About Main End */}
 
-                <Typography
-                  className='nav'
-                  variant='medium'
-                  sx={styles.navButton}
+                {/* Plans Main */}
+                <Box
+                  sx={styles.relativeContainer}
                   onMouseEnter={() => setShowPlansSubMenu(true)}
                   onMouseLeave={() => setShowPlansSubMenu(false)}
                 >
-                  Plans
-                  {showPlansSubMenu ? (
-                    <KeyboardArrowUpRoundedIcon
-                      sx={{
-                        color: '#ffa500',
-                      }}
-                    />
-                  ) : (
-                    <KeyboardArrowDownRoundedIcon
-                      sx={{
-                        color: '#0d2344',
-                      }}
-                    />
-                  )}
-                </Typography>
-                {/* Plans  Submenu Start */}
-                <Fade in={showPlansSubMenu} timeout={800}>
-                  <Box
-                    sx={styles.plans_submenu}
-                    className={`plans_submenu ${showPlansSubMenu}`}
+                  <Typography
+                    className='nav'
+                    variant='medium'
+                    sx={styles.navButton}
                     onMouseEnter={() => setShowPlansSubMenu(true)}
                     onMouseLeave={() => setShowPlansSubMenu(false)}
                   >
-                    {/* Individual Health Plan menu item */}
-                    <ListItem sx={styles.menu_listitem} className={`menuList`}>
-                      <Box
+                    Plans
+                    {showPlansSubMenu ? (
+                      <KeyboardArrowUpRoundedIcon
                         sx={{
-                          display: 'flex',
-                          justifyContent: 'start',
-                          alignItems: 'start',
-                          margin: '0 .5rem 0 0',
+                          color: '#ffa500',
                         }}
-                      >
-                        <Box
-                          sx={styles.menu_icon_bg}
-                          style={{ color: '#7533c5' }}
-                          className={`menuListItemIcon`}
-                        />
-                        <Box sx={styles.menu_icon}>
-                          <PersonRoundedIcon sx={{ color: '#ffa500' }} />
-                        </Box>
-                      </Box>
-                      <Box
+                      />
+                    ) : (
+                      <KeyboardArrowDownRoundedIcon
                         sx={{
-                          display: 'flex',
-                          flexDirection: 'column',
-                          alignItems: 'start',
-                          margin: '0 0 0 2rem',
+                          color: '#0d2344',
                         }}
-                      >
-                        <Typography
-                          variant='bold'
-                          component='h2'
-                          sx={{
-                            fontSize: { xs: '1rem', md: '1rem' },
-                            color: '#0d2344',
-                            background: 'transparent',
-                            margin: '0',
-                            zIndex: 1,
-                          }}
-                        >
-                          Individual Health Plan
-                        </Typography>
-                        <Typography
-                          variant='medium'
-                          component='p'
-                          sx={{
-                            color: '#3c4f69',
-                            margin: '0',
-                            padding: '0 2rem 0 0',
-                            textAlign: 'left',
-                            fontSize: '.8rem',
-                            background: 'transparent',
-                            zIndex: 1,
-                          }}
-                        >
-                          Affordable health plan that&apos;s right for you
-                        </Typography>
-                      </Box>
-                    </ListItem>
+                      />
+                    )}
+                  </Typography>
 
-                    {/* Family Health Plan menu item */}
-                    <ListItem sx={styles.menu_listitem} className={`menuList`}>
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          justifyContent: 'start',
-                          alignItems: 'start',
-                          margin: '0 .5rem 0 0',
-                        }}
+                  {/* Plans  Submenu Start */}
+
+                  <Collapse
+                    in={showPlansSubMenu}
+                    sx={styles.main_submenu}
+                    style={{
+                      bottom: '-18.1rem',
+                    }}
+                    onMouseEnter={() => setShowPlansSubMenu(true)}
+                    onMouseLeave={() => setShowPlansSubMenu(false)}
+                    className={`plans_submenu ${showPlansSubMenu}`}
+                  >
+                    <Box>
+                      {/* Individual Health Plan menu item */}
+                      <ListItem
+                        sx={styles.menu_listitem}
+                        className={`menuList`}
                       >
                         <Box
-                          sx={styles.menu_icon_bg}
-                          style={{ color: '#7533c5' }}
-                          className={`menuListItemIcon`}
-                        />
-                        <Box sx={styles.menu_icon}>
-                          <FamilyRestroomRoundedIcon
-                            sx={{ color: '#ffa500' }}
+                          sx={{
+                            display: 'flex',
+                            justifyContent: 'start',
+                            alignItems: 'start',
+                            margin: '0 .5rem 0 0',
+                          }}
+                        >
+                          <Box
+                            sx={styles.menu_icon_bg}
+                            style={{ color: '#7533c5' }}
+                            className={`menuListItemIcon`}
                           />
+                          <Box sx={styles.menu_icon}>
+                            <PersonRoundedIcon sx={{ color: '#ffa500' }} />
+                          </Box>
                         </Box>
-                      </Box>
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          flexDirection: 'column',
-                          alignItems: 'start',
-                          margin: '0 0 0 2rem',
-                        }}
-                      >
-                        <Typography
-                          variant='bold'
-                          component='h2'
+                        <Box
                           sx={{
-                            fontSize: { xs: '1rem', md: '1rem' },
-                            color: '#0d2344',
-                            background: 'transparent',
-                            margin: '0',
-                            zIndex: 1,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'start',
+                            margin: '0 0 0 2rem',
                           }}
                         >
-                          Family Health Plan
-                        </Typography>
-                        <Typography
-                          variant='medium'
-                          component='p'
-                          sx={{
-                            color: '#3c4f69',
-                            margin: '0',
-                            padding: '0 2rem 0 0',
-                            textAlign: 'left',
-                            fontSize: '.8rem',
-                            background: 'transparent',
-                            zIndex: 1,
-                          }}
-                        >
-                          Suitable health plan for the whole family
-                        </Typography>
-                      </Box>
-                    </ListItem>
-                    {/* Corporate Health Plan menu item */}
-                    <ListItem sx={styles.menu_listitem} className={`menuList`}>
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          justifyContent: 'start',
-                          alignItems: 'start',
-                          margin: '0 .5rem 0 0',
-                        }}
+                          <Typography
+                            variant='bold'
+                            component='h2'
+                            sx={{
+                              fontSize: { xs: '1rem', md: '1rem' },
+                              color: '#0d2344',
+                              background: 'transparent',
+                              margin: '0',
+                              zIndex: 1,
+                            }}
+                          >
+                            Individual Health Plan
+                          </Typography>
+                          <Typography
+                            variant='medium'
+                            component='p'
+                            sx={{
+                              color: '#3c4f69',
+                              margin: '0',
+                              padding: '0 2rem 0 0',
+                              textAlign: 'left',
+                              fontSize: '.8rem',
+                              background: 'transparent',
+                              zIndex: 1,
+                            }}
+                          >
+                            Affordable health plan that&apos;s right for you
+                          </Typography>
+                        </Box>
+                      </ListItem>
+
+                      {/* Family Health Plan menu item */}
+                      <ListItem
+                        sx={styles.menu_listitem}
+                        className={`menuList`}
                       >
                         <Box
-                          sx={styles.menu_icon_bg}
-                          style={{ color: '#7533c5' }}
-                          className={`menuListItemIcon`}
-                        />
-                        <Box sx={styles.menu_icon}>
-                          <BusinessRoundedIcon sx={{ color: '#ffa500' }} />
+                          sx={{
+                            display: 'flex',
+                            justifyContent: 'start',
+                            alignItems: 'start',
+                            margin: '0 .5rem 0 0',
+                          }}
+                        >
+                          <Box
+                            sx={styles.menu_icon_bg}
+                            style={{ color: '#7533c5' }}
+                            className={`menuListItemIcon`}
+                          />
+                          <Box sx={styles.menu_icon}>
+                            <FamilyRestroomRoundedIcon
+                              sx={{ color: '#ffa500' }}
+                            />
+                          </Box>
                         </Box>
-                      </Box>
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          flexDirection: 'column',
-                          alignItems: 'start',
-                          margin: '0 0 0 2rem',
-                        }}
+                        <Box
+                          sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'start',
+                            margin: '0 0 0 2rem',
+                          }}
+                        >
+                          <Typography
+                            variant='bold'
+                            component='h2'
+                            sx={{
+                              fontSize: { xs: '1rem', md: '1rem' },
+                              color: '#0d2344',
+                              background: 'transparent',
+                              margin: '0',
+                              zIndex: 1,
+                            }}
+                          >
+                            Family Health Plan
+                          </Typography>
+                          <Typography
+                            variant='medium'
+                            component='p'
+                            sx={{
+                              color: '#3c4f69',
+                              margin: '0',
+                              padding: '0 2rem 0 0',
+                              textAlign: 'left',
+                              fontSize: '.8rem',
+                              background: 'transparent',
+                              zIndex: 1,
+                            }}
+                          >
+                            Suitable health plan for the whole family
+                          </Typography>
+                        </Box>
+                      </ListItem>
+                      {/* Corporate Health Plan menu item */}
+                      <ListItem
+                        sx={styles.menu_listitem}
+                        className={`menuList`}
                       >
-                        <Typography
-                          variant='bold'
-                          component='h2'
+                        <Box
                           sx={{
-                            fontSize: { xs: '1rem', md: '1rem' },
-                            color: '#0d2344',
-                            background: 'transparent',
-                            margin: '0',
-                            zIndex: 1,
+                            display: 'flex',
+                            justifyContent: 'start',
+                            alignItems: 'start',
+                            margin: '0 .5rem 0 0',
                           }}
                         >
-                          Corporate Health Plan
-                        </Typography>
-                        <Typography
-                          variant='medium'
-                          component='p'
+                          <Box
+                            sx={styles.menu_icon_bg}
+                            style={{ color: '#7533c5' }}
+                            className={`menuListItemIcon`}
+                          />
+                          <Box sx={styles.menu_icon}>
+                            <BusinessRoundedIcon sx={{ color: '#ffa500' }} />
+                          </Box>
+                        </Box>
+                        <Box
                           sx={{
-                            color: '#3c4f69',
-                            margin: '0',
-                            padding: '0 2rem 0 0',
-                            textAlign: 'left',
-                            fontSize: '.8rem',
-                            background: 'transparent',
-                            zIndex: 1,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'start',
+                            margin: '0 0 0 2rem',
                           }}
                         >
-                          The best health plan for your organization
-                        </Typography>
-                      </Box>
-                    </ListItem>
-                  </Box>
-                </Fade>
+                          <Typography
+                            variant='bold'
+                            component='h2'
+                            sx={{
+                              fontSize: { xs: '1rem', md: '1rem' },
+                              color: '#0d2344',
+                              background: 'transparent',
+                              margin: '0',
+                              zIndex: 1,
+                            }}
+                          >
+                            Corporate Health Plan
+                          </Typography>
+                          <Typography
+                            variant='medium'
+                            component='p'
+                            sx={{
+                              color: '#3c4f69',
+                              margin: '0',
+                              padding: '0 2rem 0 0',
+                              textAlign: 'left',
+                              fontSize: '.8rem',
+                              background: 'transparent',
+                              zIndex: 1,
+                            }}
+                          >
+                            The best health plan for your organization
+                          </Typography>
+                        </Box>
+                      </ListItem>
+                    </Box>
+                  </Collapse>
+                </Box>
                 {/* Plans Submenu End */}
+                {/* Plans Main End */}
+
                 <Typography
                   className='nav'
                   variant='medium'
@@ -725,6 +773,7 @@ const Layout = ({
                 top: '5rem',
                 width: '100%',
                 height: '200vh',
+                paddingBottom: '5rem',
                 background: '#ffffff',
               }}
               className={`mobileMenu ${menuOpen}`}
@@ -780,7 +829,6 @@ const Layout = ({
                           color: '#ffa500',
                         },
                       }}
-                      // onClick={() => aboutMenuOpenHandler()}
                     >
                       About Us
                     </Typography>

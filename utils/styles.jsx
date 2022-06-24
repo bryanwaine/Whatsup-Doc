@@ -100,11 +100,17 @@ const styles = {
     left: '1rem',
   },
 
-  about_submenu: {
+  relativeContainer: {
+    position: 'relative',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+
+  main_submenu: {
     position: 'absolute',
     display: 'none',
-    left: { md: '23rem', lg: '32rem' },
-    top: { md: '4rem', lg: '4rem' },
+    left:  '1rem',
     width: '20rem',
     background: '#fff',
     borderRadius: '.5rem',
@@ -112,21 +118,7 @@ const styles = {
     overflow: 'hidden',
     boxShadow: '0px 4px 25px 1px rgba(0,0,0,0.10)',
   },
-
-  plans_submenu: {
-    position: 'absolute',
-    display: 'none',
-    left: { md: '32rem', lg: '41rem' },
-    top: { md: '4rem', lg: '4rem' },
-    width: '20rem',
-    background: '#fff',
-    borderRadius: '.5rem',
-    margin: '0',
-    overflow: 'hidden',
-    boxShadow: '0px 4px 25px 1px rgba(0,0,0,0.10)',
-    zIndex: 0,
-  },
-
+  
   menu_listitem: {
     display: 'flex',
     justifyContent: 'center',
