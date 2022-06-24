@@ -18,15 +18,11 @@ import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
 import {
   AppBar,
   Box,
-  Card,
   Collapse,
   CssBaseline,
-  Drawer,
-  Fade,
   IconButton,
   List,
   ListItem,
-  Slide,
   Toolbar,
   Typography,
 } from '@mui/material';
@@ -855,17 +851,9 @@ const Layout = ({
                 {/* About Us Mobile Sub Menu Start*/}
                 <Collapse in={showAboutSubMenuMobile}>
                   <Box
-                    sx={{
+                    sx={styles.mobileSubmenu}
+                    style={{
                       display: showAboutSubMenuMobile ? 'initial' : 'none',
-                      left: '3rem',
-                      top: '10rem',
-                      width: '20rem',
-                      background: '#fff',
-                      borderRadius: '.5rem',
-                      margin: '0',
-                      overflow: 'hidden',
-                      boxShadow: '0px 4px 25px 1px rgba(0,0,0,0.10)',
-                      zIndex: 1000,
                     }}
                     className={`submenu`}
                   >
@@ -1161,17 +1149,9 @@ const Layout = ({
                 {/* Plans Mobile Sub Menu Start*/}
                 <Collapse in={showPlansSubMenuMobile}>
                   <Box
-                    sx={{
+                    sx={styles.mobileSubmenu}
+                    style={{
                       display: showPlansSubMenuMobile ? 'initial' : 'none',
-                      left: '3rem',
-                      top: '10rem',
-                      width: '20rem',
-                      background: '#fff',
-                      borderRadius: '.5rem',
-                      margin: '0',
-                      overflow: 'hidden',
-                      boxShadow: '0px 4px 25px 1px rgba(0,0,0,0.10)',
-                      zIndex: 1000,
                     }}
                     className={`submenu`}
                   >

@@ -110,7 +110,7 @@ const styles = {
   main_submenu: {
     position: 'absolute',
     display: 'none',
-    left:  '1rem',
+    left: '1rem',
     width: '20rem',
     background: '#fff',
     borderRadius: '.5rem',
@@ -118,13 +118,25 @@ const styles = {
     overflow: 'hidden',
     boxShadow: '0px 4px 25px 1px rgba(0,0,0,0.10)',
   },
-  
+
   menu_listitem: {
     display: 'flex',
     justifyContent: 'center',
     overflow: 'hidden',
     height: '6rem',
     width: { sm: '55%', md: '100%' },
+  },
+
+  mobileSubmenu: {    
+    left: '3rem',
+    top: '10rem',
+    width: '20rem',
+    background: '#fff',
+    borderRadius: '.5rem',
+    margin: '0',
+    overflow: 'hidden',
+    boxShadow: '0px 4px 25px 1px rgba(0,0,0,0.10)',
+    zIndex: 1000,
   },
 
   divider: {
