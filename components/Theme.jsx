@@ -25,6 +25,14 @@ let theme = createTheme({
     },
   },
   palette: {
+    primary: {
+      main: '#ffa500',
+      light: 'rgba(255, 166, 0, 0.2)',
+      mid: 'rgba(255, 166, 0, 0.5)',
+    },
+    secondary: {
+      main: '#0d2344',
+    },
     button: {
       blue: '#271AC1 ',
     },

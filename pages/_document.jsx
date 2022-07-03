@@ -40,7 +40,7 @@ class MyDocument extends Document {
         <body>
           <div style={{ height: '10rem' }} />
           <Main />
-          <NextScript  />
+          <NextScript />
         </body>
       </Html>
     );

@@ -1,3 +1,5 @@
+import { theme } from "../components/Theme";
+
 const styles = {
   nav: {
     width: '100%',
@@ -18,17 +20,31 @@ const styles = {
     width: '7rem',
     borderRadius: '.5rem',
     margin: '0 1rem',
+    transition: '0.5s all ease-out',
+    '&:hover': {
+      color: theme.palette.primary.main,
+      background: 'rgba(255, 166, 0, 0.2)',
+      backdropFilter: 'blur(6px)',
+      boxShadow: '-2px 2px 5px 2px rgba(0, 0, 0, 0.1)',
+    },
   },
   navActionButton: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    color: '#0d2344',
+    color: theme.palette.secondary.main,
     height: '3rem',
     width: '6rem',
     borderRadius: '.5rem',
     padding: '0 .5rem',
     margin: '0 .5rem',
+    transition: '0.5s all ease-out',
+    '&:hover': {
+      color: '#ffffff',
+      background: 'rgba(14, 83, 148, 1)',
+      backdropFilter: 'blur(6px)',
+      boxShadow: '-2px 2px 5px 2px rgba(0, 0, 0, 0.3)',
+    },
   },
   specialty: {
     display: 'flex',
@@ -109,7 +125,6 @@ const styles = {
 
   main_submenu: {
     position: 'absolute',
-    display: 'none',
     left: '1rem',
     width: '20rem',
     background: '#fff',
@@ -127,7 +142,7 @@ const styles = {
     width: { sm: '55%', md: '100%' },
   },
 
-  mobileSubmenu: {    
+  mobileSubmenu: {
     left: '3rem',
     top: '10rem',
     width: '20rem',
@@ -145,6 +160,40 @@ const styles = {
     margin: '.5rem 0',
     background: '#ffa500',
     borderRadius: '50%',
+  },
+
+  // Login page
+  loginContainer: {
+    margin: '-10rem 0 0 0',
+    width: '100%',
+    height: '100vh',
+    backgroundImage: `url(/doctor-and-patient.jpg)`,
+    backgroundSize: 'cover',
+    backdropFilter: 'blur(6px)',
+  },
+  loginTransbox: {
+    position: 'absolute',
+    width: '100%',
+    height: '100vh',
+    top: '0',
+    left: '0',
+    backdropFilter: 'blur(1px)',
+    background: 'rgba(1, 1, 1, 0.5)',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  loginForm: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '100%',
+    height: '90vh',
+  },
+  loginFormList: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
 };
 

@@ -121,6 +121,7 @@ const Layout = ({
                   sx={styles.relativeContainer}
                   onMouseEnter={() => setShowAboutSubMenu(true)}
                   onMouseLeave={() => setShowAboutSubMenu(false)}
+                  onClick={() => setShowAboutSubMenu(!showAboutSubMenu)}
                 >
                   <Typography
                     className={`nav`}
@@ -155,9 +156,13 @@ const Layout = ({
                     }}
                     onMouseEnter={() => setShowAboutSubMenu(true)}
                     onMouseLeave={() => setShowAboutSubMenu(false)}
-                    className={`about_submenu ${showAboutSubMenu}`}
                   >
-                    <Box>
+                    <Box
+                      style={{
+                        display: showAboutSubMenu ? 'initial' : 'none',
+                        width: '100%',
+                      }}
+                    >
                       {/* Company menu item */}
                       <ListItem
                         sx={styles.menu_listitem}
@@ -421,6 +426,7 @@ const Layout = ({
                   sx={styles.relativeContainer}
                   onMouseEnter={() => setShowPlansSubMenu(true)}
                   onMouseLeave={() => setShowPlansSubMenu(false)}
+                  onClick={() => setShowPlansSubMenu(!showPlansSubMenu)}
                 >
                   <Typography
                     className='nav'
@@ -455,9 +461,13 @@ const Layout = ({
                     }}
                     onMouseEnter={() => setShowPlansSubMenu(true)}
                     onMouseLeave={() => setShowPlansSubMenu(false)}
-                    className={`plans_submenu ${showPlansSubMenu}`}
                   >
-                    <Box>
+                    <Box
+                      style={{
+                        display: showPlansSubMenu ? 'initial' : 'none',
+                        width: '100%',
+                      }}
+                    >
                       {/* Individual Health Plan menu item */}
                       <ListItem
                         sx={styles.menu_listitem}
@@ -683,7 +693,7 @@ const Layout = ({
                   className='nav-action'
                   variant='medium'
                   sx={styles.navActionButton}
-                  onClick={() => router.push('/blog')}
+                  onClick={() => router.push(`/login`)}
                 >
                   Login
                 </Typography>
@@ -691,7 +701,7 @@ const Layout = ({
                   className='nav-action'
                   variant='medium'
                   sx={styles.navActionButton}
-                  onClick={() => router.push('/blog')}
+                  onClick={() => router.push('/register')}
                 >
                   Register
                 </Typography>
@@ -1402,6 +1412,7 @@ const Layout = ({
                         color: 'rgba(255, 255, 255, 1)',
                       },
                     }}
+                    onClick={() => router.push(`/login`)}
                   >
                     Log in
                   </Typography>
