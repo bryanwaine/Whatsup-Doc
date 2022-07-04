@@ -81,15 +81,21 @@ const Login = () => {
               raised={true}
               sx={{
                 width: { xs: '80%', md: '30%' },
-                height: { xs: '90%', md: '100%' },
-                padding: '1rem',
+                minHeight: { xs: '80%', md: '100%' },
+                padding: '.5rem 1rem ',
                 borderRadius: '.5rem',
               }}
             >
               <List>
                 <ListItem>
                   <Box
-                    sx={{ cursor: 'pointer',display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%'}}
+                    sx={{
+                      cursor: 'pointer',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      width: '100%',
+                    }}
                     onClick={() => router.push('/')}
                   >
                     <Image
@@ -112,6 +118,7 @@ const Login = () => {
                     variant='bold'
                     sx={{
                       fontWeight: '200',
+                      fontSize: { xs: '1rem', md: '1.5rem' },
                       color: theme.palette.secondary.main,
                     }}
                   >
@@ -160,7 +167,6 @@ const Login = () => {
                     )}
                   />
                 </ListItem>
-                <ListItem></ListItem>
                 <ListItem>
                   <Controller
                     name='password'
@@ -240,6 +246,7 @@ const Login = () => {
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
+                          fontSize: { xs: '.8rem', md: '1rem' },
                           color: '#ffffff',
                           backgroundColor: theme.palette.primary.main,
                           border: `1px solid ${theme.palette.primary.main}`,
@@ -302,7 +309,10 @@ const Login = () => {
                   <Typography
                     variant='regular'
                     component='p'
-                    sx={{ margin: '0 .5rem' }}
+                    sx={{
+                      margin: '0 .5rem',
+                      fontSize: { xs: '.8rem', md: '1rem' },
+                    }}
                   >
                     OR
                   </Typography>
@@ -329,6 +339,7 @@ const Login = () => {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
+                        fontSize: { xs: '.8rem', md: '1rem' },
                         color: theme.palette.primary.main,
                         border: `1px solid ${theme.palette.primary.main}`,
                         width: '100%',
