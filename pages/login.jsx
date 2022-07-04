@@ -61,7 +61,7 @@ const Login = () => {
   return (
     <Box sx={styles.loginContainer}>
       <Head>
-        <title>{`Whatsup Doc! | Login  ` }</title>
+        <title>{`Whatsup Doc! | Login  `}</title>
         <link rel='icon' type='image/x-icon' href='/w-d_logo_thumb.png' />
         <meta name='description' content='Login to your account'></meta>
       </Head>
@@ -69,16 +69,27 @@ const Login = () => {
         <Box sx={styles.loginForm} className={`reveal_login `}>
           <form
             // onSubmit={handleSubmit(submitHandler)} className={classes.form}
-            style={{ width: '30%', height: '100%' }}
+            style={{
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
           >
             <Card
               raised={true}
-              sx={{ height: '100%', padding: '1rem', borderRadius: '.5rem' }}
+              sx={{
+                width: { xs: '80%', md: '30%' },
+                height: { xs: '90%', md: '100%' },
+                padding: '1rem',
+                borderRadius: '.5rem',
+              }}
             >
               <List>
                 <ListItem>
                   <Box
-                    sx={{ flex: 1, padding: '0 0 0 2rem', cursor: 'pointer' }}
+                    sx={{ cursor: 'pointer',display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%'}}
                     onClick={() => router.push('/')}
                   >
                     <Image
@@ -255,7 +266,7 @@ const Login = () => {
                       variant='medium'
                       component='h2'
                       sx={{
-                        fontSize: '1rem',
+                        fontSize: { xs: '.8rem', md: '1rem' },
                         fontWeight: '300',
                         display: 'flex',
                         alignItems: 'center',
@@ -359,7 +370,10 @@ const Login = () => {
                   <Typography
                     variant='medium'
                     component='h2'
-                    style={{ fontWeight: '200', fontSize: '1rem' }}
+                    sx={{
+                      fontWeight: '200',
+                      fontSize: { xs: '.8rem', md: '1rem' },
+                    }}
                   >
                     Don&apos;t have an account yet?&nbsp;
                   </Typography>
@@ -368,7 +382,7 @@ const Login = () => {
                     component='h2'
                     sx={{
                       fontWeight: '300',
-                      fontSize: '1rem',
+                      fontSize: { xs: '.8rem', md: '1rem' },
                       color: theme.palette.primary.main,
                       color: theme.palette.primary.main,
                       cursor: 'pointer',
