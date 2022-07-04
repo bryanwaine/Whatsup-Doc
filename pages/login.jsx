@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import NextLink from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 import {
   Box,
@@ -59,6 +60,11 @@ const Login = () => {
 
   return (
     <Box sx={styles.loginContainer}>
+      <Head>
+        <title>{`Whatsup Doc! | Login  ` }</title>
+        <link rel='icon' type='image/x-icon' href='/w-d_logo_thumb.png' />
+        <meta name='description' content='Login to your account'></meta>
+      </Head>
       <Box sx={styles.loginTransbox}>
         <Box sx={styles.loginForm} className={`reveal_login `}>
           <form
