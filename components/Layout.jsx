@@ -701,9 +701,9 @@ const Layout = ({
                   className='nav-action'
                   variant='medium'
                   sx={styles.navActionButton}
-                  onClick={() => router.push('/register')}
+                  onClick={() => router.push('/signup')}
                 >
-                  Register
+                  Sign up
                 </Typography>
               </Box>
             </Toolbar>
@@ -744,6 +744,7 @@ const Layout = ({
                     color: 'rgba(255, 255, 255, 1)',
                   },
                 }}
+                onClick={() => router.push('/signup')}
               >
                 Sign up
               </Typography>

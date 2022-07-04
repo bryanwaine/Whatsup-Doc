@@ -325,13 +325,6 @@ const Login = () => {
                   />
                 </ListItem>
                 <ListItem>
-                  <Button
-                    fullWidth
-                    variant='text'
-                    color='primary'
-                    type='submit'
-                    sx={{ padding: 0 }}
-                  >
                     <Typography
                       variant='medium'
                       component='p'
@@ -345,6 +338,7 @@ const Login = () => {
                         width: '100%',
                         borderRadius: '.2rem',
                         padding: '.5rem 0',
+                        cursor: 'pointer',
                         transition: '0.5s all ease-out',
                         '&:hover': {
                           backgroundColor: theme.palette.primary.light,
@@ -369,7 +363,6 @@ const Login = () => {
                       </Box>
                       Login with Google
                     </Typography>
-                  </Button>
                 </ListItem>
                 <ListItem
                   sx={{
@@ -401,6 +394,7 @@ const Login = () => {
                         textDecoration: 'underline',
                       },
                     }}
+                    onClick={() => router.push('/signup')}
                   >
                     Sign up
                   </Typography>

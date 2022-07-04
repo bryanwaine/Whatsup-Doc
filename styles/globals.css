@@ -240,11 +240,20 @@ a {
   opacity: 1;
 }
 .reveal_login {
-  transform: translateY(250px);
+  transform: translateX(150px);
   opacity: 0;
   transition: 1s all ease;
 }
 .reveal_login.active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+.reveal_signup {
+  transform: translateX(-150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+.reveal_signup.active {
   transform: translateY(0px);
   opacity: 1;
 }
