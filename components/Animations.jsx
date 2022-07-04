@@ -202,6 +202,18 @@ const reveal_fourth_section_image = () => {
   }
 };
 
+const reveal_login = () => {
+  var reveals = document.querySelectorAll('.reveal_login');
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 200;
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add('active');
+    }
+  }
+};
+
 export {
   apply_elevation,
   reveal_first_section,
@@ -220,4 +232,5 @@ export {
   reveal_third_section_image,
   reveal_fourth_section_text,
   reveal_fourth_section_image,
+  reveal_login,
 };

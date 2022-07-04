@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import NextLink from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -28,12 +28,19 @@ import { styles } from '../utils/styles';
 import wd from '../public/w-d_logo.png';
 import google from '../public/google-logo.png';
 import { theme } from '../components/Theme';
+import {
+  reveal_login
+} from '../components/Animations';
 
 const Login = () => {  
   const router = useRouter();
 
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    reveal_login();
+  },[])
 
   const {
     handleSubmit,
@@ -53,7 +60,7 @@ const Login = () => {
   return (
     <Box sx={styles.loginContainer}>
       <Box sx={styles.loginTransbox}>
-        <Box sx={styles.loginForm}>
+        <Box sx={styles.loginForm} className={`reveal_login `}>
           <form
             // onSubmit={handleSubmit(submitHandler)} className={classes.form}
             style={{ width: '30%', height: '100%' }}
