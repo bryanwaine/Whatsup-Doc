@@ -110,9 +110,11 @@ const Login = () => {
               raised={true}
               sx={{
                 width: { xs: '80%', md: '30%' },
-                minHeight: { xs: '80%', md: '100%' },
+                height: { xs: '90%', md: '100%' },
                 padding: '.5rem 1rem ',
                 borderRadius: '.5rem',
+                margin: '1rem 0',
+                overflow: 'auto'
               }}
             >
               <List sx={styles.signupFormList}>

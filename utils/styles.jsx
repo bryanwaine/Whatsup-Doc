@@ -167,17 +167,17 @@ const styles = {
     margin: '-10rem 0 0 0',
     width: '100%',
     height: '100vh',
-    backgroundImage: `url(/doctor-and-patient.jpg)`,
+    backgroundImage: `url(/doctor.png)`,
     backgroundSize: 'cover',
     backdropFilter: 'blur(6px)',
     overflow: 'hidden',
   },
   loginTransbox: {
     position: 'absolute',
-    width: '100%',
-    height: '100vh',
     top: '0',
     left: '0',
+    width: '100%',
+    height: '100%',
     backdropFilter: 'blur(1px)',
     background: 'rgba(1, 1, 1, 0.5)',
     display: 'flex',
@@ -200,23 +200,22 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
   },
-  
+
   // Signup page
-  signupContainer: {
+   signupContainer: {
     margin: '-10rem 0 0 0',
     width: '100%',
     height: '100vh',
-    backgroundImage: `url(/doctor.png)`,
+    backgroundImage: `url(/doctor-and-patient.jpg)`,
     backgroundSize: 'cover',
     backdropFilter: 'blur(6px)',
-    overflow: 'hidden',
   },
   signupTransbox: {
     position: 'absolute',
-    width: '100%',
-    height: '100vh',
     top: '0',
     left: '0',
+    width: '100%',
+    height: '100%',
     backdropFilter: 'blur(1px)',
     background: 'rgba(1, 1, 1, 0.5)',
     display: 'flex',
@@ -238,8 +237,6 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    webkitBackfaceVisibility: 'hidden',
-    backfaceVisibility: 'hidden'
   },
 };
 
