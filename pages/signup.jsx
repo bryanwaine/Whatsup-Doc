@@ -23,26 +23,34 @@ import LockRoundedIcon from '@mui/icons-material/LockRounded';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
-import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
+import TelegramIcon from '@mui/icons-material/Telegram';
+import LockIcon from '@mui/icons-material/Lock';
+import EnhancedEncryptionIcon from '@mui/icons-material/EnhancedEncryption';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 import { styles } from '../utils/styles';
 import wd from '../public/w-d_logo.png';
 import google from '../public/google-logo.png';
 import { theme } from '../components/Theme';
-import {
-  reveal_signup
-} from '../components/Animations';
+import { reveal_signup } from '../components/Animations';
 
-const Login = () => {  
+const Login = () => {
   const router = useRouter();
 
-  const [showPassword, setShowPassword] = useState(false);
   const [cardFlip, setCardFlip] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [showPasswordInfo, setShowPasswordInfo] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+  const [isUpperCase, setIsUpperCase] = useState(false);
+  const [isLowerCase, setIsLowerCase] = useState(false);
+  const [isNumber, setIsNumber] = useState(false);
+  const [isSymbol, setIsSymbol] = useState(false);
 
   useEffect(() => {
     reveal_signup();
-  },[])
+  }, []);
 
   const {
     handleSubmit,
@@ -50,14 +58,33 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
+  const passwordHintHandler = (e) => {
+    const uppercase = new RegExp('(?=.*[A-Z])');
+    const lowercase = new RegExp('(?=.*[a-z])');
+    const number = new RegExp('(?=.*\\d)');
+    const symbol = new RegExp('(?=.*[(\\-+~:=/_\\\\!@#$%^&*.,?)])');
+
+    uppercase.test(e.target.value)
+      ? setIsUpperCase(true)
+      : setIsUpperCase(false);
+    lowercase.test(e.target.value)
+      ? setIsLowerCase(true)
+      : setIsLowerCase(false);
+    number.test(e.target.value) ? setIsNumber(true) : setIsNumber(false);
+    symbol.test(e.target.value) ? setIsSymbol(true) : setIsSymbol(false);
+  };
+
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
+  };
+  
+  const handleClickShowConfirmPassword = () => {
+    setShowConfirmPassword(!showConfirmPassword);
   };
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
-
 
   return (
     <Box sx={styles.signupContainer}>
@@ -66,6 +93,7 @@ const Login = () => {
         <link rel='icon' type='image/x-icon' href='/w-d_logo_thumb.png' />
         <meta name='description' content='Login to your account'></meta>
       </Head>
+
       <Box sx={styles.signupTransbox}>
         <Box sx={styles.signupForm} className={`reveal_signup ${cardFlip} `}>
           <form
@@ -107,6 +135,7 @@ const Login = () => {
                     />
                   </Box>
                 </ListItem>
+
                 <ListItem
                   sx={{
                     display: 'flex',
@@ -126,6 +155,7 @@ const Login = () => {
                     Sign up
                   </Typography>
                 </ListItem>
+
                 <ListItem>
                   <Controller
                     name='email'
@@ -168,37 +198,34 @@ const Login = () => {
                     )}
                   />
                 </ListItem>
+
                 <ListItem>
                   <Controller
                     name='password'
                     control={control}
                     defaultValue=''
-                    rules={{
-                      required: true,
-                      minLength: 6,
-                    }}
                     render={({ field }) => (
                       <TextField
                         variant='outlined'
                         fullWidth
+                        onInput={(e) => {
+                          setInputValue(e.target.value);
+                          passwordHintHandler(e);
+                        }}
                         id='password'
                         label='Password'
+                        onFocus={() => setShowPasswordInfo(true)}
+                        onBlur={() => setShowPasswordInfo(false)}
                         autoComplete='new-password'
                         error={Boolean(errors.password)}
-                        helperText={
-                          errors.password
-                            ? errors.password.type === 'minLength'
-                              ? 'Password is too short'
-                              : 'Password is required'
-                            : null
-                        }
+                        helperText={errors.password?.message}
                         {...field}
                         InputProps={{
                           style: { fontSize: '0.8rem', fontWeight: 300 },
                           startAdornment: (
                             <InputAdornment position='start'>
                               <IconButton>
-                                <LockRoundedIcon />
+                                <LockIcon />
                               </IconButton>
                             </InputAdornment>
                           ),
@@ -227,6 +254,191 @@ const Login = () => {
                     )}
                   />
                 </ListItem>
+
+                {showPasswordInfo ? (
+                  <ListItem>
+                    <div>
+                      <span style={{ display: 'flex', margin: 0 }}>
+                        <Typography
+                          variant='h6'
+                          style={{
+                            margin: '0 0 0 5px',
+                            fontSize: '0.7rem',
+                            color: '#aaaaaa',
+                          }}
+                        >
+                          Your password must contian:
+                        </Typography>
+                      </span>
+                      <span style={{ display: 'flex', margin: 0 }}>
+                        {inputValue.length < 8 ? (
+                          <CancelIcon
+                            fontSize='small'
+                            style={{ fontSize: '1rem', color: '#ff0000' }}
+                          />
+                        ) : (
+                          <CheckCircleIcon
+                            fontSize='small'
+                            style={{ fontSize: '1rem', color: '#12b370' }}
+                          />
+                        )}
+                        <Typography
+                          variant='h6'
+                          style={{
+                            margin: '0 0 0 5px',
+                            fontSize: '0.7rem',
+                            color:
+                              inputValue.length < 8 ? '#ff0000' : '#12b370',
+                          }}
+                        >
+                          8 characters minimum
+                        </Typography>
+                      </span>
+                      <span style={{ display: 'flex', margin: 0 }}>
+                        {isUpperCase ? (
+                          <CheckCircleIcon
+                            fontSize='small'
+                            style={{ fontSize: '1rem', color: '#12b370' }}
+                          />
+                        ) : (
+                          <CancelIcon
+                            fontSize='small'
+                            style={{ fontSize: '1rem', color: '#ff0000' }}
+                          />
+                        )}
+                        <Typography
+                          variant='h6'
+                          style={{
+                            margin: '0 0 0 5px',
+                            fontSize: '0.7rem',
+                            color: isUpperCase ? '#12b370' : '#ff0000',
+                          }}
+                        >
+                          uppercase letters
+                        </Typography>
+                      </span>
+                      <span style={{ display: 'flex', margin: 0 }}>
+                        {isLowerCase ? (
+                          <CheckCircleIcon
+                            fontSize='small'
+                            style={{ fontSize: '1rem', color: '#12b370' }}
+                          />
+                        ) : (
+                          <CancelIcon
+                            fontSize='small'
+                            style={{ fontSize: '1rem', color: '#ff0000' }}
+                          />
+                        )}
+                        <Typography
+                          variant='h6'
+                          style={{
+                            margin: '0 0 0 5px',
+                            fontSize: '0.7rem',
+                            color: isLowerCase ? '#12b370' : '#ff0000',
+                          }}
+                        >
+                          lowercase letters
+                        </Typography>
+                      </span>
+                      <span style={{ display: 'flex', margin: 0 }}>
+                        {isNumber ? (
+                          <CheckCircleIcon
+                            fontSize='small'
+                            style={{ fontSize: '1rem', color: '#12b370' }}
+                          />
+                        ) : (
+                          <CancelIcon
+                            fontSize='small'
+                            style={{ fontSize: '1rem', color: '#ff0000' }}
+                          />
+                        )}
+                        <Typography
+                          variant='h6'
+                          style={{
+                            margin: '0 0 0 5px',
+                            fontSize: '0.7rem',
+                            color: isNumber ? '#12b370' : '#ff0000',
+                          }}
+                        >
+                          numbers
+                        </Typography>
+                      </span>
+                      <span style={{ display: 'flex', margin: 0 }}>
+                        {isSymbol ? (
+                          <CheckCircleIcon
+                            fontSize='small'
+                            style={{ fontSize: '1rem', color: '#12b370' }}
+                          />
+                        ) : (
+                          <CancelIcon
+                            fontSize='small'
+                            style={{ fontSize: '1rem', color: '#ff0000' }}
+                          />
+                        )}
+                        <Typography
+                          variant='h6'
+                          style={{
+                            margin: '0 0 0 5px',
+                            fontSize: '0.7rem',
+                            color: isSymbol ? '#12b370' : '#ff0000',
+                          }}
+                        >
+                          special characters
+                        </Typography>
+                      </span>
+                    </div>
+                  </ListItem>
+                ) : null}
+
+                <ListItem>
+                  <Controller
+                    name='confirmPassword'
+                    control={control}
+                    defaultValue=''
+                    render={({ field }) => (
+                      <TextField
+                        variant='outlined'
+                        fullWidth
+                        id='confirmPassword'
+                        label='Confirm Password'
+                        error={Boolean(errors.confirmPassword)}
+                        helperText={errors.confirmPassword?.message}
+                        {...field}
+                        InputProps={{
+                          style: { fontSize: '0.8rem', fontWeight: 300 },
+                          startAdornment: (
+                            <InputAdornment position='start'>
+                              <IconButton>
+                                <EnhancedEncryptionIcon />
+                              </IconButton>
+                            </InputAdornment>
+                          ),
+                          endAdornment: (
+                            <InputAdornment position='end'>
+                              <IconButton
+                                aria-label='toggle password visibility'
+                                onClick={handleClickShowConfirmPassword}
+                                onMouseDown={handleMouseDownPassword}
+                                edge='end'
+                              >
+                                {showConfirmPassword ? (
+                                  <VisibilityOff />
+                                ) : (
+                                  <Visibility />
+                                )}
+                              </IconButton>
+                            </InputAdornment>
+                          ),
+                          type: showConfirmPassword ? 'text' : 'password',
+                        }}
+                        InputLabelProps={{
+                          style: { fontSize: '0.8rem', fontWeight: 300 },
+                        }}
+                      />
+                    )}
+                  />
+                </ListItem>
+
                 <ListItem style={{ display: 'flex', justifyContent: 'center' }}>
                   {loading ? (
                     <div className={classes.buttonLoading}>
@@ -262,12 +474,13 @@ const Login = () => {
                           },
                         }}
                       >
-                        <LoginRoundedIcon sx={{ margin: '0 .5rem 0 0' }} />
+                        <TelegramIcon sx={{ margin: '0 .5rem 0 0' }} />
                         Sign up
                       </Typography>
                     </Button>
                   )}
                 </ListItem>
+
                 <ListItem
                   sx={{
                     display: 'flex',
@@ -300,6 +513,7 @@ const Login = () => {
                     }}
                   />
                 </ListItem>
+
                 <ListItem>
                   <Typography
                     variant='medium'
@@ -335,6 +549,7 @@ const Login = () => {
                     Sign up with Google
                   </Typography>
                 </ListItem>
+
                 <ListItem
                   sx={{
                     display: 'flex',
@@ -367,7 +582,6 @@ const Login = () => {
                     }}
                     onClick={() => {
                       router.push('/login');
-                      setCardFlip(true);
                     }}
                   >
                     Login

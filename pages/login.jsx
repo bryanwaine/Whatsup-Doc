@@ -29,11 +29,9 @@ import { styles } from '../utils/styles';
 import wd from '../public/w-d_logo.png';
 import google from '../public/google-logo.png';
 import { theme } from '../components/Theme';
-import {
-  reveal_login
-} from '../components/Animations';
+import { reveal_login } from '../components/Animations';
 
-const Login = () => {  
+const Login = () => {
   const router = useRouter();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -41,7 +39,7 @@ const Login = () => {
 
   useEffect(() => {
     reveal_login();
-  },[])
+  }, []);
 
   const {
     handleSubmit,
@@ -56,7 +54,6 @@ const Login = () => {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
-
 
   return (
     <Box sx={styles.loginContainer}>
@@ -325,44 +322,39 @@ const Login = () => {
                   />
                 </ListItem>
                 <ListItem>
-                    <Typography
-                      variant='medium'
-                      component='p'
-                      sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: { xs: '.8rem', md: '1rem' },
+                  <Typography
+                    variant='medium'
+                    component='p'
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: { xs: '.8rem', md: '1rem' },
+                      color: theme.palette.primary.main,
+                      border: `1px solid ${theme.palette.primary.main}`,
+                      width: '100%',
+                      borderRadius: '.2rem',
+                      padding: '.5rem 0',
+                      cursor: 'pointer',
+                      transition: '0.5s all ease-out',
+                      '&:hover': {
+                        backgroundColor: theme.palette.primary.light,
                         color: theme.palette.primary.main,
-                        border: `1px solid ${theme.palette.primary.main}`,
-                        width: '100%',
-                        borderRadius: '.2rem',
-                        padding: '.5rem 0',
-                        cursor: 'pointer',
-                        transition: '0.5s all ease-out',
-                        '&:hover': {
-                          backgroundColor: theme.palette.primary.light,
-                          color: theme.palette.primary.main,
-                        },
+                      },
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        margin: '0 .5rem 0 0',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
                       }}
                     >
-                      <Box
-                        sx={{
-                          margin: '0 .5rem 0 0',
-                          display: 'flex',
-                          justifyContent: 'center',
-                          alignItems: 'center',
-                        }}
-                      >
-                        <Image
-                          src={google}
-                          width={25}
-                          height={25}
-                          alt='Google'
-                        />
-                      </Box>
-                      Login with Google
-                    </Typography>
+                      <Image src={google} width={25} height={25} alt='Google' />
+                    </Box>
+                    Login with Google
+                  </Typography>
                 </ListItem>
                 <ListItem
                   sx={{

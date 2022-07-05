@@ -258,6 +258,7 @@ a {
   opacity: 1;
 }
 
+/* Media Queries */
 @media screen and (max-width: 800px) {
   /* First Section */
   .reveal_first_section_image {

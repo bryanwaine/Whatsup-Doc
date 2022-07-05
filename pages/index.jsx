@@ -177,6 +177,9 @@ export default function Home() {
                     color: 'rgba(14, 83, 148, 1)',
                   },
                 }}
+                onClick={() => {
+                  router.push('/signup');
+                }}
               >
                 Get Started
               </Typography>
@@ -801,6 +804,9 @@ export default function Home() {
                     color: 'rgba(14, 83, 148, 1)',
                   },
                 }}
+                onClick={() => {
+                  router.push('/signup');
+                }}
               >
                 Get Started
               </Typography>
@@ -914,6 +920,9 @@ export default function Home() {
                     background: 'transparent',
                     color: 'rgba(14, 83, 148, 1)',
                   },
+                }}
+                onClick={() => {
+                  router.push('/signup');
                 }}
               >
                 Talk to a doctor now
@@ -1029,6 +1038,9 @@ export default function Home() {
                     color: 'rgba(14, 83, 148, 1)',
                   },
                 }}
+                onClick={() => {
+                  router.push('/signup');
+                }}
               >
                 Get a prescription
               </Typography>
@@ -1139,6 +1151,9 @@ export default function Home() {
                     background: 'transparent',
                     color: 'rgba(14, 83, 148, 1)',
                   },
+                }}
+                onClick={() => {
+                  router.push('/signup');
                 }}
               >
                 Choose a plan
