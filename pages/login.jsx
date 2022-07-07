@@ -124,6 +124,74 @@ const Login = () => {
                     Login
                   </Typography>
                 </ListItem>
+
+                <ListItem>
+                  <Typography
+                    variant='medium'
+                    component='p'
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: { xs: '.8rem', md: '1rem' },
+                      color: theme.palette.primary.main,
+                      border: `1px solid ${theme.palette.primary.main}`,
+                      width: '100%',
+                      borderRadius: '.5rem',
+                      padding: '.5rem 0',
+                      cursor: 'pointer',
+                      transition: '0.5s all ease-out',
+                      '&:hover': {
+                        backgroundColor: theme.palette.primary.light,
+                        color: theme.palette.primary.main,
+                      },
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        margin: '0 .5rem 0 0',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                      }}
+                    >
+                      <Image src={google} width={25} height={25} alt='Google' />
+                    </Box>
+                    Login with Google
+                  </Typography>
+                </ListItem>
+                <ListItem
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <div
+                    style={{
+                      width: '50%',
+                      height: '1px',
+                      backgroundColor: '#cccccc',
+                    }}
+                  />
+                  <Typography
+                    variant='regular'
+                    component='p'
+                    sx={{
+                      margin: '0 .5rem',
+                      fontSize: { xs: '.8rem', md: '1rem' },
+                    }}
+                  >
+                    OR
+                  </Typography>
+                  <div
+                    style={{
+                      width: '50%',
+                      height: '1px',
+                      backgroundColor: '#cccccc',
+                    }}
+                  />
+                </ListItem>
                 <ListItem>
                   <Controller
                     name='email'
@@ -250,7 +318,7 @@ const Login = () => {
                           backgroundColor: theme.palette.primary.main,
                           border: `1px solid ${theme.palette.primary.main}`,
                           width: '100%',
-                          borderRadius: '.2rem',
+                          borderRadius: '.5rem',
                           padding: '.5rem 0',
                           transition: '0.5s all ease-out',
                           '&:hover': {
@@ -291,73 +359,7 @@ const Login = () => {
                     </Typography>
                   </NextLink>
                 </ListItem>
-                <ListItem
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <div
-                    style={{
-                      width: '50%',
-                      height: '1px',
-                      backgroundColor: '#cccccc',
-                    }}
-                  />
-                  <Typography
-                    variant='regular'
-                    component='p'
-                    sx={{
-                      margin: '0 .5rem',
-                      fontSize: { xs: '.8rem', md: '1rem' },
-                    }}
-                  >
-                    OR
-                  </Typography>
-                  <div
-                    style={{
-                      width: '50%',
-                      height: '1px',
-                      backgroundColor: '#cccccc',
-                    }}
-                  />
-                </ListItem>
-                <ListItem>
-                  <Typography
-                    variant='medium'
-                    component='p'
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: { xs: '.8rem', md: '1rem' },
-                      color: theme.palette.primary.main,
-                      border: `1px solid ${theme.palette.primary.main}`,
-                      width: '100%',
-                      borderRadius: '.2rem',
-                      padding: '.5rem 0',
-                      cursor: 'pointer',
-                      transition: '0.5s all ease-out',
-                      '&:hover': {
-                        backgroundColor: theme.palette.primary.light,
-                        color: theme.palette.primary.main,
-                      },
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        margin: '0 .5rem 0 0',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                      }}
-                    >
-                      <Image src={google} width={25} height={25} alt='Google' />
-                    </Box>
-                    Login with Google
-                  </Typography>
-                </ListItem>
+
                 <ListItem
                   sx={{
                     display: 'flex',

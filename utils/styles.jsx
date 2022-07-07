@@ -202,7 +202,7 @@ const styles = {
   },
 
   // Signup page
-   signupContainer: {
+  signupContainer: {
     margin: '-10rem 0 0 0',
     width: '100%',
     height: '100vh',
