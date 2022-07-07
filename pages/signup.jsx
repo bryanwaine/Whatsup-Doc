@@ -151,9 +151,6 @@ const Login = () => {
             <Card
               raised={true}
               sx={{
-                display: 'flex',
-                justifyContent: 'center',
-
                 width: { xs: '80%', md: '30%' },
                 height: { xs: '90%', md: '100%' },
                 padding: '.5rem 1rem ',
