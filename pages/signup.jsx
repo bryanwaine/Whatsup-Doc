@@ -156,7 +156,8 @@ const Login = () => {
                 padding: '.5rem 1rem ',
                 borderRadius: '.5rem',
                 margin: '1rem 0',
-                overflow: 'auto',
+                overflowY: 'auto',
+                overflowX: 'none',
               }}
             >
               <Slide
