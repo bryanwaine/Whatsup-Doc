@@ -151,6 +151,9 @@ const Login = () => {
             <Card
               raised={true}
               sx={{
+                display: 'flex',
+                justifyContent: 'center',
+
                 width: { xs: '80%', md: '30%' },
                 height: { xs: '90%', md: '100%' },
                 padding: '.5rem 1rem ',
@@ -1001,6 +1004,7 @@ const Login = () => {
                       display: 'flex',
                       justifyContent: 'center',
                       alignItems: 'center',
+                      padding: '0 0 2rem 0',
                     }}
                   >
                     <Typography
@@ -1625,6 +1629,7 @@ const Login = () => {
                       display: 'flex',
                       justifyContent: 'center',
                       alignItems: 'center',
+                      padding: '0 0 2rem 0',
                     }}
                   >
                     <Typography
@@ -2249,6 +2254,7 @@ const Login = () => {
                       display: 'flex',
                       justifyContent: 'center',
                       alignItems: 'center',
+                      padding: '0 0 2rem 0',
                     }}
                   >
                     <Typography
