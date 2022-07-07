@@ -49,6 +49,7 @@ import { reveal_signup } from '../components/Animations';
 const Login = () => {
   const router = useRouter();
 
+  const [signup, setSignup] = useState(true);
   const [patient, setPatient] = useState(false);
   const [doctor, setDoctor] = useState(false);
   const [business, setBusiness] = useState(false);
@@ -162,7 +163,7 @@ const Login = () => {
                 direction='right'
                 mountOnEnter
                 unmountOnExit
-                in={!patient}
+                in={signup}
                 sx={styles.signupFormList}
               >
                 <List>
@@ -254,7 +255,10 @@ const Login = () => {
                           border: `1px solid #A812DD`,
                         },
                       }}
-                      onClick={() => setPatient(true)}
+                      onClick={() => {
+                        setPatient(true);
+                        setSignup(false);
+                      }}
                     >
                       <Box
                         sx={{
@@ -297,6 +301,10 @@ const Login = () => {
                           border: `1px solid #FAD24D`,
                         },
                       }}
+                      onClick={() => {
+                        setDoctor(true);
+                        setSignup(false);
+                      }}
                     >
                       <Box
                         sx={{
@@ -338,6 +346,10 @@ const Login = () => {
                           color: '#ffffff',
                           border: `1px solid #018E98`,
                         },
+                      }}
+                      onClick={() => {
+                        setBusiness(true);
+                        setSignup(false);
                       }}
                     >
                       <Box
@@ -406,7 +418,6 @@ const Login = () => {
                 unmountOnExit
                 in={patient}
                 sx={styles.signupFormList}
-                // timeout={1000}
               >
                 <List>
                   <ListItem>
@@ -459,6 +470,7 @@ const Login = () => {
                       }}
                       onClick={() => {
                         setPatient(false);
+                        setSignup(true);
                       }}
                     >
                       <ArrowBackRoundedIcon sx={{ margin: '0 .5rem 0 0' }} />
@@ -483,6 +495,1254 @@ const Login = () => {
                       }}
                     >
                       Patient Sign up
+                    </Typography>
+                  </ListItem>
+
+                  <ListItem>
+                    <Typography
+                      variant='medium'
+                      component='p'
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: { xs: '.8rem', md: '1rem' },
+                        color: theme.palette.primary.main,
+                        border: `1px solid ${theme.palette.primary.main}`,
+                        width: '100%',
+                        borderRadius: '.5rem',
+                        padding: '.5rem 0',
+                        cursor: 'pointer',
+                        transition: '0.5s all ease-out',
+                        '&:hover': {
+                          backgroundColor: theme.palette.primary.light,
+                          color: theme.palette.primary.main,
+                        },
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          margin: '0 .5rem 0 0',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                        }}
+                      >
+                        <Image
+                          src={google}
+                          width={25}
+                          height={25}
+                          alt='Google'
+                        />
+                      </Box>
+                      Sign up with Google
+                    </Typography>
+                  </ListItem>
+                  <ListItem
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: '50%',
+                        height: '1px',
+                        backgroundColor: '#cccccc',
+                      }}
+                    />
+                    <Typography
+                      variant='regular'
+                      component='p'
+                      sx={{
+                        margin: '0 .5rem',
+                        fontSize: { xs: '.8rem', md: '1rem' },
+                      }}
+                    >
+                      OR
+                    </Typography>
+                    <div
+                      style={{
+                        width: '50%',
+                        height: '1px',
+                        backgroundColor: '#cccccc',
+                      }}
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <Controller
+                      name='firstName'
+                      control={control}
+                      defaultValue=''
+                      render={({ field }) => (
+                        <TextField
+                          InputProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                            startAdornment: (
+                              <InputAdornment position='start'>
+                                <IconButton>
+                                  <PersonRoundedIcon />
+                                </IconButton>
+                              </InputAdornment>
+                            ),
+                          }}
+                          InputLabelProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                          }}
+                          variant='outlined'
+                          fullWidth
+                          id='firstName'
+                          label='First Name'
+                          inputProps={{ type: 'text' }}
+                          error={Boolean(errors.firstName)}
+                          helperText={errors.firstName?.message}
+                          {...field}
+                        />
+                      )}
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <Controller
+                      name='lastName'
+                      control={control}
+                      defaultValue=''
+                      render={({ field }) => (
+                        <TextField
+                          InputProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                            startAdornment: (
+                              <InputAdornment position='start'>
+                                <IconButton>
+                                  <PersonAddAlt1RoundedIcon />
+                                </IconButton>
+                              </InputAdornment>
+                            ),
+                          }}
+                          InputLabelProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                          }}
+                          variant='outlined'
+                          fullWidth
+                          id='lastName'
+                          label='Last Name'
+                          inputProps={{ type: 'text' }}
+                          error={Boolean(errors.lastName)}
+                          helperText={errors.lastName?.message}
+                          {...field}
+                        />
+                      )}
+                    />
+                  </ListItem>
+
+                  <ListItem>
+                    <Controller
+                      name='email'
+                      control={control}
+                      defaultValue=''
+                      rules={{
+                        required: true,
+                        pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+                      }}
+                      render={({ field }) => (
+                        <TextField
+                          InputProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                            startAdornment: (
+                              <InputAdornment position='start'>
+                                <IconButton>
+                                  <MailRoundedIcon />
+                                </IconButton>
+                              </InputAdornment>
+                            ),
+                          }}
+                          InputLabelProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                          }}
+                          variant='outlined'
+                          fullWidth
+                          id='email'
+                          label='Email'
+                          inputProps={{ type: 'email' }}
+                          error={Boolean(errors.email)}
+                          helperText={
+                            errors.email
+                              ? errors.email.type === 'pattern'
+                                ? 'Email is not valid'
+                                : 'Email is required'
+                              : null
+                          }
+                          {...field}
+                        />
+                      )}
+                    />
+                  </ListItem>
+
+                  <ListItem>
+                    <Controller
+                      name='phone'
+                      control={control}
+                      defaultValue=''
+                      render={({ field }) => (
+                        <TextField
+                          InputProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                            startAdornment: (
+                              <InputAdornment position='start'>
+                                <IconButton>
+                                  <PhoneIphoneRoundedIcon />
+                                </IconButton>
+                              </InputAdornment>
+                            ),
+                          }}
+                          InputLabelProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                          }}
+                          variant='outlined'
+                          fullWidth
+                          id='phone'
+                          label='Phone Number'
+                          inputProps={{ inputComponent: NumberFormatCustom }}
+                          error={Boolean(errors.phone)}
+                          helperText={errors.phone?.message}
+                          {...field}
+                        />
+                      )}
+                    />
+                  </ListItem>
+
+                  <ListItem>
+                    <Controller
+                      name='password'
+                      control={control}
+                      defaultValue=''
+                      render={({ field }) => (
+                        <TextField
+                          variant='outlined'
+                          fullWidth
+                          onInput={(e) => {
+                            setInputValue(e.target.value);
+                            passwordHintHandler(e);
+                          }}
+                          id='password'
+                          label='Password'
+                          onFocus={() => setShowPasswordInfo(true)}
+                          onBlur={() => setShowPasswordInfo(false)}
+                          autoComplete='new-password'
+                          error={Boolean(errors.password)}
+                          helperText={errors.password?.message}
+                          {...field}
+                          InputProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                            startAdornment: (
+                              <InputAdornment position='start'>
+                                <IconButton>
+                                  <LockIcon />
+                                </IconButton>
+                              </InputAdornment>
+                            ),
+                            endAdornment: (
+                              <InputAdornment position='end'>
+                                <IconButton
+                                  aria-label='toggle password visibility'
+                                  onClick={handleClickShowPassword}
+                                  onMouseDown={handleMouseDownPassword}
+                                  edge='end'
+                                >
+                                  {showPassword ? (
+                                    <VisibilityOff />
+                                  ) : (
+                                    <Visibility />
+                                  )}
+                                </IconButton>
+                              </InputAdornment>
+                            ),
+                            type: showPassword ? 'text' : 'password',
+                          }}
+                          InputLabelProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                          }}
+                        />
+                      )}
+                    />
+                  </ListItem>
+
+                  {showPasswordInfo ? (
+                    <ListItem>
+                      <div>
+                        <span style={{ display: 'flex', margin: 0 }}>
+                          <Typography
+                            variant='h6'
+                            style={{
+                              margin: '0 0 0 5px',
+                              fontSize: '0.7rem',
+                              color: '#aaaaaa',
+                            }}
+                          >
+                            Your password must contian:
+                          </Typography>
+                        </span>
+                        <span style={{ display: 'flex', margin: 0 }}>
+                          {inputValue.length < 8 ? (
+                            <CancelIcon
+                              fontSize='small'
+                              style={{ fontSize: '1rem', color: '#ff0000' }}
+                            />
+                          ) : (
+                            <CheckCircleIcon
+                              fontSize='small'
+                              style={{ fontSize: '1rem', color: '#12b370' }}
+                            />
+                          )}
+                          <Typography
+                            variant='h6'
+                            style={{
+                              margin: '0 0 0 5px',
+                              fontSize: '0.7rem',
+                              color:
+                                inputValue.length < 8 ? '#ff0000' : '#12b370',
+                            }}
+                          >
+                            8 characters minimum
+                          </Typography>
+                        </span>
+                        <span style={{ display: 'flex', margin: 0 }}>
+                          {isUpperCase ? (
+                            <CheckCircleIcon
+                              fontSize='small'
+                              style={{ fontSize: '1rem', color: '#12b370' }}
+                            />
+                          ) : (
+                            <CancelIcon
+                              fontSize='small'
+                              style={{ fontSize: '1rem', color: '#ff0000' }}
+                            />
+                          )}
+                          <Typography
+                            variant='h6'
+                            style={{
+                              margin: '0 0 0 5px',
+                              fontSize: '0.7rem',
+                              color: isUpperCase ? '#12b370' : '#ff0000',
+                            }}
+                          >
+                            uppercase letters
+                          </Typography>
+                        </span>
+                        <span style={{ display: 'flex', margin: 0 }}>
+                          {isLowerCase ? (
+                            <CheckCircleIcon
+                              fontSize='small'
+                              style={{ fontSize: '1rem', color: '#12b370' }}
+                            />
+                          ) : (
+                            <CancelIcon
+                              fontSize='small'
+                              style={{ fontSize: '1rem', color: '#ff0000' }}
+                            />
+                          )}
+                          <Typography
+                            variant='h6'
+                            style={{
+                              margin: '0 0 0 5px',
+                              fontSize: '0.7rem',
+                              color: isLowerCase ? '#12b370' : '#ff0000',
+                            }}
+                          >
+                            lowercase letters
+                          </Typography>
+                        </span>
+                        <span style={{ display: 'flex', margin: 0 }}>
+                          {isNumber ? (
+                            <CheckCircleIcon
+                              fontSize='small'
+                              style={{ fontSize: '1rem', color: '#12b370' }}
+                            />
+                          ) : (
+                            <CancelIcon
+                              fontSize='small'
+                              style={{ fontSize: '1rem', color: '#ff0000' }}
+                            />
+                          )}
+                          <Typography
+                            variant='h6'
+                            style={{
+                              margin: '0 0 0 5px',
+                              fontSize: '0.7rem',
+                              color: isNumber ? '#12b370' : '#ff0000',
+                            }}
+                          >
+                            numbers
+                          </Typography>
+                        </span>
+                        <span style={{ display: 'flex', margin: 0 }}>
+                          {isSymbol ? (
+                            <CheckCircleIcon
+                              fontSize='small'
+                              style={{ fontSize: '1rem', color: '#12b370' }}
+                            />
+                          ) : (
+                            <CancelIcon
+                              fontSize='small'
+                              style={{ fontSize: '1rem', color: '#ff0000' }}
+                            />
+                          )}
+                          <Typography
+                            variant='h6'
+                            style={{
+                              margin: '0 0 0 5px',
+                              fontSize: '0.7rem',
+                              color: isSymbol ? '#12b370' : '#ff0000',
+                            }}
+                          >
+                            special characters
+                          </Typography>
+                        </span>
+                      </div>
+                    </ListItem>
+                  ) : null}
+
+                  <ListItem>
+                    <Controller
+                      name='confirmPassword'
+                      control={control}
+                      defaultValue=''
+                      render={({ field }) => (
+                        <TextField
+                          variant='outlined'
+                          fullWidth
+                          id='confirmPassword'
+                          label='Confirm Password'
+                          error={Boolean(errors.confirmPassword)}
+                          helperText={errors.confirmPassword?.message}
+                          {...field}
+                          InputProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                            startAdornment: (
+                              <InputAdornment position='start'>
+                                <IconButton>
+                                  <EnhancedEncryptionIcon />
+                                </IconButton>
+                              </InputAdornment>
+                            ),
+                            endAdornment: (
+                              <InputAdornment position='end'>
+                                <IconButton
+                                  aria-label='toggle password visibility'
+                                  onClick={handleClickShowConfirmPassword}
+                                  onMouseDown={handleMouseDownPassword}
+                                  edge='end'
+                                >
+                                  {showConfirmPassword ? (
+                                    <VisibilityOff />
+                                  ) : (
+                                    <Visibility />
+                                  )}
+                                </IconButton>
+                              </InputAdornment>
+                            ),
+                            type: showConfirmPassword ? 'text' : 'password',
+                          }}
+                          InputLabelProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                          }}
+                        />
+                      )}
+                    />
+                  </ListItem>
+
+                  <ListItem
+                    style={{ display: 'flex', justifyContent: 'center' }}
+                  >
+                    {loading ? (
+                      <div className={classes.buttonLoading}>
+                        <CircularProgress />
+                      </div>
+                    ) : (
+                      <Button
+                        fullWidth
+                        variant='text'
+                        color='primary'
+                        type='submit'
+                        sx={{ padding: 0 }}
+                      >
+                        <Typography
+                          variant='medium'
+                          component='p'
+                          sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontSize: { xs: '.8rem', md: '1rem' },
+                            color: '#ffffff',
+                            backgroundColor: theme.palette.primary.main,
+                            border: `1px solid ${theme.palette.primary.main}`,
+                            width: '100%',
+                            borderRadius: '.5rem',
+                            padding: '.5rem 0',
+                            transition: '0.5s all ease-out',
+                            '&:hover': {
+                              backgroundColor: theme.palette.primary.light,
+                              color: theme.palette.primary.main,
+                              border: `1px solid ${theme.palette.primary.main}`,
+                            },
+                          }}
+                        >
+                          <TelegramIcon sx={{ margin: '0 .5rem 0 0' }} />
+                          Sign up
+                        </Typography>
+                      </Button>
+                    )}
+                  </ListItem>
+
+                  <ListItem
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <Typography
+                      variant='medium'
+                      component='h2'
+                      sx={{
+                        fontWeight: '200',
+                        fontSize: { xs: '.8rem', md: '1rem' },
+                      }}
+                    >
+                      Already have an account?&nbsp;
+                    </Typography>
+                    <Typography
+                      variant='medium'
+                      component='h2'
+                      sx={{
+                        fontWeight: '300',
+                        fontSize: { xs: '.8rem', md: '1rem' },
+                        color: theme.palette.primary.main,
+                        color: theme.palette.primary.main,
+                        cursor: 'pointer',
+                        '&:hover': {
+                          textDecoration: 'underline',
+                        },
+                      }}
+                      onClick={() => {
+                        router.push('/login');
+                      }}
+                    >
+                      Login
+                    </Typography>
+                  </ListItem>
+                </List>
+              </Slide>
+
+              {/* Doctor Sign up */}
+              <Slide
+                direction='left'
+                mountOnEnter
+                unmountOnExit
+                in={doctor}
+                sx={styles.signupFormList}
+              >
+                <List>
+                  <ListItem>
+                    <Box
+                      sx={{
+                        cursor: 'pointer',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        width: '100%',
+                      }}
+                      onClick={() => router.push('/')}
+                    >
+                      <Image
+                        src={wd}
+                        width={300}
+                        height={55}
+                        alt='Whatsup Doc!'
+                      />
+                    </Box>
+                  </ListItem>
+
+                  <ListItem
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'start',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <Typography
+                      variant='medium'
+                      component='h2'
+                      sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        fontWeight: '300',
+                        fontSize: { xs: '.8rem', md: '1rem' },
+                        padding: '0 .5rem',
+                        color: theme.palette.primary.main,
+                        color: theme.palette.primary.main,
+                        border: `1px solid ${theme.palette.primary.main}`,
+                        borderRadius: '.5rem',
+                        cursor: 'pointer',
+                        transition: '0.5s all ease-out',
+                        '&:hover': {
+                          backgroundColor: theme.palette.primary.main,
+                          color: '#ffffff',
+                        },
+                      }}
+                      onClick={() => {
+                        setDoctor(false);
+                        setSignup(true);
+                      }}
+                    >
+                      <ArrowBackRoundedIcon sx={{ margin: '0 .5rem 0 0' }} />
+                      Back
+                    </Typography>
+                  </ListItem>
+
+                  <ListItem
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      width: '100%',
+                    }}
+                  >
+                    <Typography
+                      component='h1'
+                      variant='bold'
+                      sx={{
+                        fontWeight: '200',
+                        fontSize: { xs: '1rem', md: '1.5rem' },
+                        color: theme.palette.secondary.main,
+                      }}
+                    >
+                      Doctor Sign up
+                    </Typography>
+                  </ListItem>
+
+                  <ListItem>
+                    <Typography
+                      variant='medium'
+                      component='p'
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: { xs: '.8rem', md: '1rem' },
+                        color: theme.palette.primary.main,
+                        border: `1px solid ${theme.palette.primary.main}`,
+                        width: '100%',
+                        borderRadius: '.5rem',
+                        padding: '.5rem 0',
+                        cursor: 'pointer',
+                        transition: '0.5s all ease-out',
+                        '&:hover': {
+                          backgroundColor: theme.palette.primary.light,
+                          color: theme.palette.primary.main,
+                        },
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          margin: '0 .5rem 0 0',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                        }}
+                      >
+                        <Image
+                          src={google}
+                          width={25}
+                          height={25}
+                          alt='Google'
+                        />
+                      </Box>
+                      Sign up with Google
+                    </Typography>
+                  </ListItem>
+                  <ListItem
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: '50%',
+                        height: '1px',
+                        backgroundColor: '#cccccc',
+                      }}
+                    />
+                    <Typography
+                      variant='regular'
+                      component='p'
+                      sx={{
+                        margin: '0 .5rem',
+                        fontSize: { xs: '.8rem', md: '1rem' },
+                      }}
+                    >
+                      OR
+                    </Typography>
+                    <div
+                      style={{
+                        width: '50%',
+                        height: '1px',
+                        backgroundColor: '#cccccc',
+                      }}
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <Controller
+                      name='firstName'
+                      control={control}
+                      defaultValue=''
+                      render={({ field }) => (
+                        <TextField
+                          InputProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                            startAdornment: (
+                              <InputAdornment position='start'>
+                                <IconButton>
+                                  <PersonRoundedIcon />
+                                </IconButton>
+                              </InputAdornment>
+                            ),
+                          }}
+                          InputLabelProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                          }}
+                          variant='outlined'
+                          fullWidth
+                          id='firstName'
+                          label='First Name'
+                          inputProps={{ type: 'text' }}
+                          error={Boolean(errors.firstName)}
+                          helperText={errors.firstName?.message}
+                          {...field}
+                        />
+                      )}
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <Controller
+                      name='lastName'
+                      control={control}
+                      defaultValue=''
+                      render={({ field }) => (
+                        <TextField
+                          InputProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                            startAdornment: (
+                              <InputAdornment position='start'>
+                                <IconButton>
+                                  <PersonAddAlt1RoundedIcon />
+                                </IconButton>
+                              </InputAdornment>
+                            ),
+                          }}
+                          InputLabelProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                          }}
+                          variant='outlined'
+                          fullWidth
+                          id='lastName'
+                          label='Last Name'
+                          inputProps={{ type: 'text' }}
+                          error={Boolean(errors.lastName)}
+                          helperText={errors.lastName?.message}
+                          {...field}
+                        />
+                      )}
+                    />
+                  </ListItem>
+
+                  <ListItem>
+                    <Controller
+                      name='email'
+                      control={control}
+                      defaultValue=''
+                      rules={{
+                        required: true,
+                        pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+                      }}
+                      render={({ field }) => (
+                        <TextField
+                          InputProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                            startAdornment: (
+                              <InputAdornment position='start'>
+                                <IconButton>
+                                  <MailRoundedIcon />
+                                </IconButton>
+                              </InputAdornment>
+                            ),
+                          }}
+                          InputLabelProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                          }}
+                          variant='outlined'
+                          fullWidth
+                          id='email'
+                          label='Email'
+                          inputProps={{ type: 'email' }}
+                          error={Boolean(errors.email)}
+                          helperText={
+                            errors.email
+                              ? errors.email.type === 'pattern'
+                                ? 'Email is not valid'
+                                : 'Email is required'
+                              : null
+                          }
+                          {...field}
+                        />
+                      )}
+                    />
+                  </ListItem>
+
+                  <ListItem>
+                    <Controller
+                      name='phone'
+                      control={control}
+                      defaultValue=''
+                      render={({ field }) => (
+                        <TextField
+                          InputProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                            startAdornment: (
+                              <InputAdornment position='start'>
+                                <IconButton>
+                                  <PhoneIphoneRoundedIcon />
+                                </IconButton>
+                              </InputAdornment>
+                            ),
+                          }}
+                          InputLabelProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                          }}
+                          variant='outlined'
+                          fullWidth
+                          id='phone'
+                          label='Phone Number'
+                          inputProps={{ inputComponent: NumberFormatCustom }}
+                          error={Boolean(errors.phone)}
+                          helperText={errors.phone?.message}
+                          {...field}
+                        />
+                      )}
+                    />
+                  </ListItem>
+
+                  <ListItem>
+                    <Controller
+                      name='password'
+                      control={control}
+                      defaultValue=''
+                      render={({ field }) => (
+                        <TextField
+                          variant='outlined'
+                          fullWidth
+                          onInput={(e) => {
+                            setInputValue(e.target.value);
+                            passwordHintHandler(e);
+                          }}
+                          id='password'
+                          label='Password'
+                          onFocus={() => setShowPasswordInfo(true)}
+                          onBlur={() => setShowPasswordInfo(false)}
+                          autoComplete='new-password'
+                          error={Boolean(errors.password)}
+                          helperText={errors.password?.message}
+                          {...field}
+                          InputProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                            startAdornment: (
+                              <InputAdornment position='start'>
+                                <IconButton>
+                                  <LockIcon />
+                                </IconButton>
+                              </InputAdornment>
+                            ),
+                            endAdornment: (
+                              <InputAdornment position='end'>
+                                <IconButton
+                                  aria-label='toggle password visibility'
+                                  onClick={handleClickShowPassword}
+                                  onMouseDown={handleMouseDownPassword}
+                                  edge='end'
+                                >
+                                  {showPassword ? (
+                                    <VisibilityOff />
+                                  ) : (
+                                    <Visibility />
+                                  )}
+                                </IconButton>
+                              </InputAdornment>
+                            ),
+                            type: showPassword ? 'text' : 'password',
+                          }}
+                          InputLabelProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                          }}
+                        />
+                      )}
+                    />
+                  </ListItem>
+
+                  {showPasswordInfo ? (
+                    <ListItem>
+                      <div>
+                        <span style={{ display: 'flex', margin: 0 }}>
+                          <Typography
+                            variant='h6'
+                            style={{
+                              margin: '0 0 0 5px',
+                              fontSize: '0.7rem',
+                              color: '#aaaaaa',
+                            }}
+                          >
+                            Your password must contian:
+                          </Typography>
+                        </span>
+                        <span style={{ display: 'flex', margin: 0 }}>
+                          {inputValue.length < 8 ? (
+                            <CancelIcon
+                              fontSize='small'
+                              style={{ fontSize: '1rem', color: '#ff0000' }}
+                            />
+                          ) : (
+                            <CheckCircleIcon
+                              fontSize='small'
+                              style={{ fontSize: '1rem', color: '#12b370' }}
+                            />
+                          )}
+                          <Typography
+                            variant='h6'
+                            style={{
+                              margin: '0 0 0 5px',
+                              fontSize: '0.7rem',
+                              color:
+                                inputValue.length < 8 ? '#ff0000' : '#12b370',
+                            }}
+                          >
+                            8 characters minimum
+                          </Typography>
+                        </span>
+                        <span style={{ display: 'flex', margin: 0 }}>
+                          {isUpperCase ? (
+                            <CheckCircleIcon
+                              fontSize='small'
+                              style={{ fontSize: '1rem', color: '#12b370' }}
+                            />
+                          ) : (
+                            <CancelIcon
+                              fontSize='small'
+                              style={{ fontSize: '1rem', color: '#ff0000' }}
+                            />
+                          )}
+                          <Typography
+                            variant='h6'
+                            style={{
+                              margin: '0 0 0 5px',
+                              fontSize: '0.7rem',
+                              color: isUpperCase ? '#12b370' : '#ff0000',
+                            }}
+                          >
+                            uppercase letters
+                          </Typography>
+                        </span>
+                        <span style={{ display: 'flex', margin: 0 }}>
+                          {isLowerCase ? (
+                            <CheckCircleIcon
+                              fontSize='small'
+                              style={{ fontSize: '1rem', color: '#12b370' }}
+                            />
+                          ) : (
+                            <CancelIcon
+                              fontSize='small'
+                              style={{ fontSize: '1rem', color: '#ff0000' }}
+                            />
+                          )}
+                          <Typography
+                            variant='h6'
+                            style={{
+                              margin: '0 0 0 5px',
+                              fontSize: '0.7rem',
+                              color: isLowerCase ? '#12b370' : '#ff0000',
+                            }}
+                          >
+                            lowercase letters
+                          </Typography>
+                        </span>
+                        <span style={{ display: 'flex', margin: 0 }}>
+                          {isNumber ? (
+                            <CheckCircleIcon
+                              fontSize='small'
+                              style={{ fontSize: '1rem', color: '#12b370' }}
+                            />
+                          ) : (
+                            <CancelIcon
+                              fontSize='small'
+                              style={{ fontSize: '1rem', color: '#ff0000' }}
+                            />
+                          )}
+                          <Typography
+                            variant='h6'
+                            style={{
+                              margin: '0 0 0 5px',
+                              fontSize: '0.7rem',
+                              color: isNumber ? '#12b370' : '#ff0000',
+                            }}
+                          >
+                            numbers
+                          </Typography>
+                        </span>
+                        <span style={{ display: 'flex', margin: 0 }}>
+                          {isSymbol ? (
+                            <CheckCircleIcon
+                              fontSize='small'
+                              style={{ fontSize: '1rem', color: '#12b370' }}
+                            />
+                          ) : (
+                            <CancelIcon
+                              fontSize='small'
+                              style={{ fontSize: '1rem', color: '#ff0000' }}
+                            />
+                          )}
+                          <Typography
+                            variant='h6'
+                            style={{
+                              margin: '0 0 0 5px',
+                              fontSize: '0.7rem',
+                              color: isSymbol ? '#12b370' : '#ff0000',
+                            }}
+                          >
+                            special characters
+                          </Typography>
+                        </span>
+                      </div>
+                    </ListItem>
+                  ) : null}
+
+                  <ListItem>
+                    <Controller
+                      name='confirmPassword'
+                      control={control}
+                      defaultValue=''
+                      render={({ field }) => (
+                        <TextField
+                          variant='outlined'
+                          fullWidth
+                          id='confirmPassword'
+                          label='Confirm Password'
+                          error={Boolean(errors.confirmPassword)}
+                          helperText={errors.confirmPassword?.message}
+                          {...field}
+                          InputProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                            startAdornment: (
+                              <InputAdornment position='start'>
+                                <IconButton>
+                                  <EnhancedEncryptionIcon />
+                                </IconButton>
+                              </InputAdornment>
+                            ),
+                            endAdornment: (
+                              <InputAdornment position='end'>
+                                <IconButton
+                                  aria-label='toggle password visibility'
+                                  onClick={handleClickShowConfirmPassword}
+                                  onMouseDown={handleMouseDownPassword}
+                                  edge='end'
+                                >
+                                  {showConfirmPassword ? (
+                                    <VisibilityOff />
+                                  ) : (
+                                    <Visibility />
+                                  )}
+                                </IconButton>
+                              </InputAdornment>
+                            ),
+                            type: showConfirmPassword ? 'text' : 'password',
+                          }}
+                          InputLabelProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                          }}
+                        />
+                      )}
+                    />
+                  </ListItem>
+
+                  <ListItem
+                    style={{ display: 'flex', justifyContent: 'center' }}
+                  >
+                    {loading ? (
+                      <div className={classes.buttonLoading}>
+                        <CircularProgress />
+                      </div>
+                    ) : (
+                      <Button
+                        fullWidth
+                        variant='text'
+                        color='primary'
+                        type='submit'
+                        sx={{ padding: 0 }}
+                      >
+                        <Typography
+                          variant='medium'
+                          component='p'
+                          sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontSize: { xs: '.8rem', md: '1rem' },
+                            color: '#ffffff',
+                            backgroundColor: theme.palette.primary.main,
+                            border: `1px solid ${theme.palette.primary.main}`,
+                            width: '100%',
+                            borderRadius: '.5rem',
+                            padding: '.5rem 0',
+                            transition: '0.5s all ease-out',
+                            '&:hover': {
+                              backgroundColor: theme.palette.primary.light,
+                              color: theme.palette.primary.main,
+                              border: `1px solid ${theme.palette.primary.main}`,
+                            },
+                          }}
+                        >
+                          <TelegramIcon sx={{ margin: '0 .5rem 0 0' }} />
+                          Sign up
+                        </Typography>
+                      </Button>
+                    )}
+                  </ListItem>
+
+                  <ListItem
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <Typography
+                      variant='medium'
+                      component='h2'
+                      sx={{
+                        fontWeight: '200',
+                        fontSize: { xs: '.8rem', md: '1rem' },
+                      }}
+                    >
+                      Already have an account?&nbsp;
+                    </Typography>
+                    <Typography
+                      variant='medium'
+                      component='h2'
+                      sx={{
+                        fontWeight: '300',
+                        fontSize: { xs: '.8rem', md: '1rem' },
+                        color: theme.palette.primary.main,
+                        color: theme.palette.primary.main,
+                        cursor: 'pointer',
+                        '&:hover': {
+                          textDecoration: 'underline',
+                        },
+                      }}
+                      onClick={() => {
+                        router.push('/login');
+                      }}
+                    >
+                      Login
+                    </Typography>
+                  </ListItem>
+                </List>
+              </Slide>
+
+              {/* Business Sign up */}
+              <Slide
+                direction='left'
+                mountOnEnter
+                unmountOnExit
+                in={business}
+                sx={styles.signupFormList}
+              >
+                <List>
+                  <ListItem>
+                    <Box
+                      sx={{
+                        cursor: 'pointer',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        width: '100%',
+                      }}
+                      onClick={() => router.push('/')}
+                    >
+                      <Image
+                        src={wd}
+                        width={300}
+                        height={55}
+                        alt='Whatsup Doc!'
+                      />
+                    </Box>
+                  </ListItem>
+
+                  <ListItem
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'start',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <Typography
+                      variant='medium'
+                      component='h2'
+                      sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        fontWeight: '300',
+                        fontSize: { xs: '.8rem', md: '1rem' },
+                        padding: '0 .5rem',
+                        color: theme.palette.primary.main,
+                        color: theme.palette.primary.main,
+                        border: `1px solid ${theme.palette.primary.main}`,
+                        borderRadius: '.5rem',
+                        cursor: 'pointer',
+                        transition: '0.5s all ease-out',
+                        '&:hover': {
+                          backgroundColor: theme.palette.primary.main,
+                          color: '#ffffff',
+                        },
+                      }}
+                      onClick={() => {
+                        setBusiness(false);
+                        setSignup(true);
+                      }}
+                    >
+                      <ArrowBackRoundedIcon sx={{ margin: '0 .5rem 0 0' }} />
+                      Back
+                    </Typography>
+                  </ListItem>
+
+                  <ListItem
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      width: '100%',
+                    }}
+                  >
+                    <Typography
+                      component='h1'
+                      variant='bold'
+                      sx={{
+                        fontWeight: '200',
+                        fontSize: { xs: '1rem', md: '1.5rem' },
+                        color: theme.palette.secondary.main,
+                      }}
+                    >
+                      Business Sign up
                     </Typography>
                   </ListItem>
 
