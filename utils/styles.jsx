@@ -162,6 +162,24 @@ const styles = {
     borderRadius: '50%',
   },
 
+  backButton: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontWeight: '300',
+    fontSize: { xs: '.8rem', md: '1rem' },
+    padding: '.4rem .5rem',
+    color: theme.palette.primary.main,
+    border: `1px solid ${theme.palette.primary.main}`,
+    borderRadius: '.5rem',
+    cursor: 'pointer',
+    transition: '0.5s all ease-out',
+    '&:hover': {
+      backgroundColor: theme.palette.primary.main,
+      color: '#ffffff',
+    },
+  },
+
   // Login page
   loginContainer: {
     margin: '-10rem 0 0 0',

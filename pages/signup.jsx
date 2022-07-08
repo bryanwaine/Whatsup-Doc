@@ -8,8 +8,10 @@ import {
   Box,
   Button,
   Card,
+  Checkbox,
   CircularProgress,
   Collapse,
+  FormControlLabel,
   IconButton,
   InputAdornment,
   Link,
@@ -53,6 +55,7 @@ const Login = () => {
   const [patient, setPatient] = useState(false);
   const [doctor, setDoctor] = useState(false);
   const [business, setBusiness] = useState(false);
+  const [checkedTerms, setCheckedTerms] = useState(false);
 
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -452,24 +455,7 @@ const Login = () => {
                     <Typography
                       variant='medium'
                       component='h2'
-                      sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        fontWeight: '300',
-                        fontSize: { xs: '.8rem', md: '1rem' },
-                        padding: '0 .5rem',
-                        color: theme.palette.primary.main,
-                        color: theme.palette.primary.main,
-                        border: `1px solid ${theme.palette.primary.main}`,
-                        borderRadius: '.5rem',
-                        cursor: 'pointer',
-                        transition: '0.5s all ease-out',
-                        '&:hover': {
-                          backgroundColor: theme.palette.primary.main,
-                          color: '#ffffff',
-                        },
-                      }}
+                      sx={styles.backButton}
                       onClick={() => {
                         setPatient(false);
                         setSignup(true);
@@ -953,6 +939,48 @@ const Login = () => {
                     />
                   </ListItem>
 
+                  <ListItem>
+                    <FormControlLabel
+                      label=''
+                      control={
+                        <Checkbox
+                          onClick={(e) => setCheckedTerms(e.target.checked)}
+                          checked={checkedTerms}
+                          name='Terms and Conditions'
+                          sx={{
+                            '&.Mui-checked': {
+                              color: theme.palette.primary.main,
+                            },
+                          }}
+                        />
+                      }
+                    />
+
+                    <Typography
+                      variant='regular'
+                      component='p'
+                      sx={{
+                        fontSize: { xs: '.7rem', md: '.9rem' },
+                      }}
+                    >
+                      I agree to the Whatsup Doc!&#8482;
+                      <br />
+                      <Typography
+                        variant='regular'
+                        component='span'
+                        sx={{
+                          color: theme.palette.primary.main,
+                          cursor: 'pointer',
+                          '&:hover': {
+                            textDecoration: 'underline',
+                          },
+                        }}
+                      >
+                        Terms&nbsp;&amp;&nbsp;Conditions
+                      </Typography>
+                    </Typography>
+                  </ListItem>
+
                   <ListItem
                     style={{ display: 'flex', justifyContent: 'center' }}
                   >
@@ -1077,24 +1105,7 @@ const Login = () => {
                     <Typography
                       variant='medium'
                       component='h2'
-                      sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        fontWeight: '300',
-                        fontSize: { xs: '.8rem', md: '1rem' },
-                        padding: '0 .5rem',
-                        color: theme.palette.primary.main,
-                        color: theme.palette.primary.main,
-                        border: `1px solid ${theme.palette.primary.main}`,
-                        borderRadius: '.5rem',
-                        cursor: 'pointer',
-                        transition: '0.5s all ease-out',
-                        '&:hover': {
-                          backgroundColor: theme.palette.primary.main,
-                          color: '#ffffff',
-                        },
-                      }}
+                      sx={styles.backButton}
                       onClick={() => {
                         setDoctor(false);
                         setSignup(true);
@@ -1578,6 +1589,48 @@ const Login = () => {
                     />
                   </ListItem>
 
+                  <ListItem>
+                    <FormControlLabel
+                      label=''
+                      control={
+                        <Checkbox
+                          onClick={(e) => setCheckedTerms(e.target.checked)}
+                          checked={checkedTerms}
+                          name='Terms and Conditions'
+                          sx={{
+                            '&.Mui-checked': {
+                              color: theme.palette.primary.main,
+                            },
+                          }}
+                        />
+                      }
+                    />
+
+                    <Typography
+                      variant='regular'
+                      component='p'
+                      sx={{
+                        fontSize: { xs: '.7rem', md: '.9rem' },
+                      }}
+                    >
+                      I agree to the Whatsup Doc!&#8482;
+                      <br />
+                      <Typography
+                        variant='regular'
+                        component='span'
+                        sx={{
+                          color: theme.palette.primary.main,
+                          cursor: 'pointer',
+                          '&:hover': {
+                            textDecoration: 'underline',
+                          },
+                        }}
+                      >
+                        Terms&nbsp;&amp;&nbsp;Conditions
+                      </Typography>
+                    </Typography>
+                  </ListItem>
+
                   <ListItem
                     style={{ display: 'flex', justifyContent: 'center' }}
                   >
@@ -1702,24 +1755,7 @@ const Login = () => {
                     <Typography
                       variant='medium'
                       component='h2'
-                      sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        fontWeight: '300',
-                        fontSize: { xs: '.8rem', md: '1rem' },
-                        padding: '0 .5rem',
-                        color: theme.palette.primary.main,
-                        color: theme.palette.primary.main,
-                        border: `1px solid ${theme.palette.primary.main}`,
-                        borderRadius: '.5rem',
-                        cursor: 'pointer',
-                        transition: '0.5s all ease-out',
-                        '&:hover': {
-                          backgroundColor: theme.palette.primary.main,
-                          color: '#ffffff',
-                        },
-                      }}
+                      sx={styles.backButton}
                       onClick={() => {
                         setBusiness(false);
                         setSignup(true);
@@ -2201,6 +2237,48 @@ const Login = () => {
                         />
                       )}
                     />
+                  </ListItem>
+
+                  <ListItem>
+                    <FormControlLabel
+                      label=''
+                      control={
+                        <Checkbox
+                          onClick={(e) => setCheckedTerms(e.target.checked)}
+                          checked={checkedTerms}
+                          name='Terms and Conditions'
+                          sx={{
+                            '&.Mui-checked': {
+                              color: theme.palette.primary.main,
+                            },
+                          }}
+                        />
+                      }
+                    />
+
+                    <Typography
+                      variant='regular'
+                      component='p'
+                      sx={{
+                        fontSize: { xs: '.7rem', md: '.9rem' },
+                      }}
+                    >
+                      I agree to the Whatsup Doc!&#8482;
+                      <br />
+                      <Typography
+                        variant='regular'
+                        component='span'
+                        sx={{
+                          color: theme.palette.primary.main,
+                          cursor: 'pointer',
+                          '&:hover': {
+                            textDecoration: 'underline',
+                          },
+                        }}
+                      >
+                        Terms&nbsp;&amp;&nbsp;Conditions
+                      </Typography>
+                    </Typography>
                   </ListItem>
 
                   <ListItem
