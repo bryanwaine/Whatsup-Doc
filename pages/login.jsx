@@ -14,6 +14,7 @@ import {
   Link,
   List,
   ListItem,
+  Slide,
   TextField,
   Typography,
 } from '@mui/material';
@@ -34,6 +35,7 @@ import { reveal_login } from '../components/Animations';
 const Login = () => {
   const router = useRouter();
 
+  const [login, setLogin] = useState(true)
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -85,317 +87,332 @@ const Login = () => {
                 overflow: 'auto',
               }}
             >
-              <List>
-                <ListItem>
-                  <Box
-                    sx={{
-                      cursor: 'pointer',
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      width: '100%',
-                    }}
-                    onClick={() => router.push('/')}
-                  >
-                    <Image
-                      src={wd}
-                      width={300}
-                      height={55}
-                      alt='Whatsup Doc!'
-                    />
-                  </Box>
-                </ListItem>
-                <ListItem
-                  sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    width: '100%',
-                  }}
-                >
-                  <Typography
-                    component='h1'
-                    variant='bold'
-                    sx={{
-                      fontWeight: '200',
-                      fontSize: { xs: '1rem', md: '1.5rem' },
-                      color: theme.palette.secondary.main,
-                    }}
-                  >
-                    Login
-                  </Typography>
-                </ListItem>
-
-                <ListItem>
-                  <Typography
-                    variant='medium'
-                    component='p'
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: { xs: '.8rem', md: '1rem' },
-                      color: theme.palette.primary.main,
-                      border: `1px solid ${theme.palette.primary.main}`,
-                      width: '100%',
-                      borderRadius: '.5rem',
-                      padding: '.5rem 0',
-                      cursor: 'pointer',
-                      transition: '0.5s all ease-out',
-                      '&:hover': {
-                        backgroundColor: theme.palette.primary.light,
-                        color: theme.palette.primary.main,
-                      },
-                    }}
-                  >
+              <Slide
+                direction='up'
+                mountOnEnter
+                unmountOnExit
+                in={login}
+                sx={styles.loginFormList}
+              >
+                <List>
+                  <ListItem>
                     <Box
                       sx={{
-                        margin: '0 .5rem 0 0',
+                        cursor: 'pointer',
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
+                        width: '100%',
                       }}
+                      onClick={() => router.push('/')}
                     >
-                      <Image src={google} width={25} height={25} alt='Google' />
+                      <Image
+                        src={wd}
+                        width={300}
+                        height={55}
+                        alt='Whatsup Doc!'
+                      />
                     </Box>
-                    Login with Google
-                  </Typography>
-                </ListItem>
-                <ListItem
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <div
-                    style={{
-                      width: '50%',
-                      height: '1px',
-                      backgroundColor: '#cccccc',
-                    }}
-                  />
-                  <Typography
-                    variant='regular'
-                    component='p'
+                  </ListItem>
+                  <ListItem
                     sx={{
-                      margin: '0 .5rem',
-                      fontSize: { xs: '.8rem', md: '1rem' },
+                      display: 'flex',
+                      justifyContent: 'center',
+                      width: '100%',
                     }}
                   >
-                    OR
-                  </Typography>
-                  <div
-                    style={{
-                      width: '50%',
-                      height: '1px',
-                      backgroundColor: '#cccccc',
-                    }}
-                  />
-                </ListItem>
-                <ListItem>
-                  <Controller
-                    name='email'
-                    control={control}
-                    defaultValue=''
-                    rules={{
-                      required: true,
-                      pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
-                    }}
-                    render={({ field }) => (
-                      <TextField
-                        InputProps={{
-                          style: { fontSize: '0.8rem', fontWeight: 300 },
-                          startAdornment: (
-                            <InputAdornment position='start'>
-                              <IconButton>
-                                <MailRoundedIcon />
-                              </IconButton>
-                            </InputAdornment>
-                          ),
-                        }}
-                        InputLabelProps={{
-                          style: { fontSize: '0.8rem', fontWeight: 300 },
-                        }}
-                        variant='outlined'
-                        fullWidth
-                        id='email'
-                        label='Email'
-                        inputProps={{ type: 'email' }}
-                        error={Boolean(errors.email)}
-                        helperText={
-                          errors.email
-                            ? errors.email.type === 'pattern'
-                              ? 'Email is not valid'
-                              : 'Email is required'
-                            : null
-                        }
-                        {...field}
-                      />
-                    )}
-                  />
-                </ListItem>
-                <ListItem>
-                  <Controller
-                    name='password'
-                    control={control}
-                    defaultValue=''
-                    rules={{
-                      required: true,
-                      minLength: 6,
-                    }}
-                    render={({ field }) => (
-                      <TextField
-                        variant='outlined'
-                        fullWidth
-                        id='password'
-                        label='Password'
-                        autoComplete='new-password'
-                        error={Boolean(errors.password)}
-                        helperText={
-                          errors.password
-                            ? errors.password.type === 'minLength'
-                              ? 'Password is too short'
-                              : 'Password is required'
-                            : null
-                        }
-                        {...field}
-                        InputProps={{
-                          style: { fontSize: '0.8rem', fontWeight: 300 },
-                          startAdornment: (
-                            <InputAdornment position='start'>
-                              <IconButton>
-                                <LockRoundedIcon />
-                              </IconButton>
-                            </InputAdornment>
-                          ),
-                          endAdornment: (
-                            <InputAdornment position='end'>
-                              <IconButton
-                                aria-label='toggle password visibility'
-                                onClick={handleClickShowPassword}
-                                onMouseDown={handleMouseDownPassword}
-                                edge='end'
-                              >
-                                {showPassword ? (
-                                  <VisibilityOff />
-                                ) : (
-                                  <Visibility />
-                                )}
-                              </IconButton>
-                            </InputAdornment>
-                          ),
-                          type: showPassword ? 'text' : 'password',
-                        }}
-                        InputLabelProps={{
-                          style: { fontSize: '0.8rem', fontWeight: 300 },
-                        }}
-                      />
-                    )}
-                  />
-                </ListItem>
-                <ListItem style={{ display: 'flex', justifyContent: 'center' }}>
-                  {loading ? (
-                    <div className={classes.buttonLoading}>
-                      <CircularProgress />
-                    </div>
-                  ) : (
-                    <Button
-                      fullWidth
-                      variant='text'
-                      color='primary'
-                      type='submit'
-                      sx={{ padding: 0 }}
+                    <Typography
+                      component='h1'
+                      variant='bold'
+                      sx={{
+                        fontWeight: '200',
+                        fontSize: { xs: '1rem', md: '1.5rem' },
+                        color: theme.palette.secondary.main,
+                      }}
                     >
+                      Login
+                    </Typography>
+                  </ListItem>
+
+                  <ListItem>
+                    <Typography
+                      variant='medium'
+                      component='p'
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: { xs: '.8rem', md: '1rem' },
+                        color: theme.palette.primary.main,
+                        border: `1px solid ${theme.palette.primary.main}`,
+                        width: '100%',
+                        borderRadius: '.5rem',
+                        padding: '.5rem 0',
+                        cursor: 'pointer',
+                        transition: '0.5s all ease-out',
+                        '&:hover': {
+                          backgroundColor: theme.palette.primary.light,
+                          color: theme.palette.primary.main,
+                        },
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          margin: '0 .5rem 0 0',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                        }}
+                      >
+                        <Image
+                          src={google}
+                          width={25}
+                          height={25}
+                          alt='Google'
+                        />
+                      </Box>
+                      Login with Google
+                    </Typography>
+                  </ListItem>
+                  <ListItem
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: '50%',
+                        height: '1px',
+                        backgroundColor: '#cccccc',
+                      }}
+                    />
+                    <Typography
+                      variant='regular'
+                      component='p'
+                      sx={{
+                        margin: '0 .5rem',
+                        fontSize: { xs: '.8rem', md: '1rem' },
+                      }}
+                    >
+                      OR
+                    </Typography>
+                    <div
+                      style={{
+                        width: '50%',
+                        height: '1px',
+                        backgroundColor: '#cccccc',
+                      }}
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <Controller
+                      name='email'
+                      control={control}
+                      defaultValue=''
+                      rules={{
+                        required: true,
+                        pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+                      }}
+                      render={({ field }) => (
+                        <TextField
+                          InputProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                            startAdornment: (
+                              <InputAdornment position='start'>
+                                <IconButton>
+                                  <MailRoundedIcon />
+                                </IconButton>
+                              </InputAdornment>
+                            ),
+                          }}
+                          InputLabelProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                          }}
+                          variant='outlined'
+                          fullWidth
+                          id='email'
+                          label='Email'
+                          inputProps={{ type: 'email' }}
+                          error={Boolean(errors.email)}
+                          helperText={
+                            errors.email
+                              ? errors.email.type === 'pattern'
+                                ? 'Email is not valid'
+                                : 'Email is required'
+                              : null
+                          }
+                          {...field}
+                        />
+                      )}
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <Controller
+                      name='password'
+                      control={control}
+                      defaultValue=''
+                      rules={{
+                        required: true,
+                        minLength: 6,
+                      }}
+                      render={({ field }) => (
+                        <TextField
+                          variant='outlined'
+                          fullWidth
+                          id='password'
+                          label='Password'
+                          autoComplete='new-password'
+                          error={Boolean(errors.password)}
+                          helperText={
+                            errors.password
+                              ? errors.password.type === 'minLength'
+                                ? 'Password is too short'
+                                : 'Password is required'
+                              : null
+                          }
+                          {...field}
+                          InputProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                            startAdornment: (
+                              <InputAdornment position='start'>
+                                <IconButton>
+                                  <LockRoundedIcon />
+                                </IconButton>
+                              </InputAdornment>
+                            ),
+                            endAdornment: (
+                              <InputAdornment position='end'>
+                                <IconButton
+                                  aria-label='toggle password visibility'
+                                  onClick={handleClickShowPassword}
+                                  onMouseDown={handleMouseDownPassword}
+                                  edge='end'
+                                >
+                                  {showPassword ? (
+                                    <VisibilityOff />
+                                  ) : (
+                                    <Visibility />
+                                  )}
+                                </IconButton>
+                              </InputAdornment>
+                            ),
+                            type: showPassword ? 'text' : 'password',
+                          }}
+                          InputLabelProps={{
+                            style: { fontSize: '0.8rem', fontWeight: 300 },
+                          }}
+                        />
+                      )}
+                    />
+                  </ListItem>
+                  <ListItem
+                    style={{ display: 'flex', justifyContent: 'center' }}
+                  >
+                    {loading ? (
+                      <div className={classes.buttonLoading}>
+                        <CircularProgress />
+                      </div>
+                    ) : (
+                      <Button
+                        fullWidth
+                        variant='text'
+                        color='primary'
+                        type='submit'
+                        sx={{ padding: 0 }}
+                      >
+                        <Typography
+                          variant='medium'
+                          component='p'
+                          sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontSize: { xs: '.8rem', md: '1rem' },
+                            color: '#ffffff',
+                            backgroundColor: theme.palette.primary.main,
+                            border: `1px solid ${theme.palette.primary.main}`,
+                            width: '100%',
+                            borderRadius: '.5rem',
+                            padding: '.5rem 0',
+                            transition: '0.5s all ease-out',
+                            '&:hover': {
+                              backgroundColor: theme.palette.primary.light,
+                              color: theme.palette.primary.main,
+                              border: `1px solid ${theme.palette.primary.main}`,
+                            },
+                          }}
+                        >
+                          <LoginRoundedIcon sx={{ margin: '0 .5rem 0 0' }} />
+                          Login
+                        </Typography>
+                      </Button>
+                    )}
+                  </ListItem>
+                  <ListItem>
+                    <NextLink href={`/forgot_password`} passHref>
                       <Typography
                         variant='medium'
-                        component='p'
+                        component='h2'
                         sx={{
+                          fontSize: { xs: '.8rem', md: '1rem' },
+                          fontWeight: '300',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          fontSize: { xs: '.8rem', md: '1rem' },
-                          color: '#ffffff',
-                          backgroundColor: theme.palette.primary.main,
-                          border: `1px solid ${theme.palette.primary.main}`,
                           width: '100%',
-                          borderRadius: '.5rem',
-                          padding: '.5rem 0',
-                          transition: '0.5s all ease-out',
+                          padding: '0 1rem 0 0',
+                          color: theme.palette.primary.main,
+                          cursor: 'pointer',
                           '&:hover': {
-                            backgroundColor: theme.palette.primary.light,
-                            color: theme.palette.primary.main,
-                            border: `1px solid ${theme.palette.primary.main}`,
+                            textDecoration: 'underline',
                           },
                         }}
                       >
-                        <LoginRoundedIcon sx={{ margin: '0 .5rem 0 0' }} />
-                        Login
+                        <HelpRoundedIcon sx={{ margin: '0 .5rem 0 0' }} />
+                        Forgot password?
                       </Typography>
-                    </Button>
-                  )}
-                </ListItem>
-                <ListItem>
-                  <NextLink href={`/forgot_password`} passHref>
+                    </NextLink>
+                  </ListItem>
+
+                  <ListItem
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}
+                  >
                     <Typography
                       variant='medium'
                       component='h2'
                       sx={{
+                        fontWeight: '200',
                         fontSize: { xs: '.8rem', md: '1rem' },
+                      }}
+                    >
+                      Don&apos;t have an account yet?&nbsp;
+                    </Typography>
+                    <Typography
+                      variant='medium'
+                      component='h2'
+                      sx={{
                         fontWeight: '300',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: '100%',
-                        padding: '0 1rem 0 0',
+                        fontSize: { xs: '.8rem', md: '1rem' },
+                        color: theme.palette.primary.main,
                         color: theme.palette.primary.main,
                         cursor: 'pointer',
                         '&:hover': {
                           textDecoration: 'underline',
                         },
                       }}
+                      onClick={() => router.push('/signup')}
                     >
-                      <HelpRoundedIcon sx={{ margin: '0 .5rem 0 0' }} />
-                      Forgot password?
+                      Sign up
                     </Typography>
-                  </NextLink>
-                </ListItem>
-
-                <ListItem
-                  sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}
-                >
-                  <Typography
-                    variant='medium'
-                    component='h2'
-                    sx={{
-                      fontWeight: '200',
-                      fontSize: { xs: '.8rem', md: '1rem' },
-                    }}
-                  >
-                    Don&apos;t have an account yet?&nbsp;
-                  </Typography>
-                  <Typography
-                    variant='medium'
-                    component='h2'
-                    sx={{
-                      fontWeight: '300',
-                      fontSize: { xs: '.8rem', md: '1rem' },
-                      color: theme.palette.primary.main,
-                      color: theme.palette.primary.main,
-                      cursor: 'pointer',
-                      '&:hover': {
-                        textDecoration: 'underline',
-                      },
-                    }}
-                    onClick={() => router.push('/signup')}
-                  >
-                    Sign up
-                  </Typography>
-                </ListItem>
-              </List>
+                  </ListItem>
+                </List>
+              </Slide>
             </Card>
           </form>
         </Box>
