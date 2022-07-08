@@ -161,7 +161,7 @@ const Login = () => {
               }}
             >
               <Slide
-                direction='right'
+                direction='down'
                 mountOnEnter
                 unmountOnExit
                 in={signup}
@@ -414,7 +414,7 @@ const Login = () => {
 
               {/* Patient Sign up */}
               <Slide
-                direction='left'
+                direction='up'
                 mountOnEnter
                 unmountOnExit
                 in={patient}
@@ -1039,7 +1039,7 @@ const Login = () => {
 
               {/* Doctor Sign up */}
               <Slide
-                direction='left'
+                direction='up'
                 mountOnEnter
                 unmountOnExit
                 in={doctor}
@@ -1664,7 +1664,7 @@ const Login = () => {
 
               {/* Business Sign up */}
               <Slide
-                direction='left'
+                direction='up'
                 mountOnEnter
                 unmountOnExit
                 in={business}
