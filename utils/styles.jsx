@@ -193,7 +193,6 @@ const styles = {
     width: '100%',
     height: '90vh',
     transition: 'transform 0.8s',
-    transformStyle: 'preserve-3d',
   },
   loginFormList: {
     display: 'flex',
@@ -230,8 +229,6 @@ const styles = {
     alignItems: 'center',
     width: '100%',
     height: '90vh',
-    transition: 'transform 0.8s',
-    transformStyle: 'preserve-3d',
   },
   signupFormList: {
     display: 'flex',

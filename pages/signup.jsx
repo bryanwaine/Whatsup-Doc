@@ -419,6 +419,7 @@ const Login = () => {
                 unmountOnExit
                 in={patient}
                 sx={styles.signupFormList}
+                className={`patientForm ${patient}`}
               >
                 <List>
                   <ListItem>
