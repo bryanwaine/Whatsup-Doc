@@ -66,7 +66,7 @@ const Login = () => {
       </Head>
       <Box sx={styles.loginTransbox}>
         <Box sx={styles.loginForm} className={`reveal_login `}>
-          <form
+          <form action='#'
             // onSubmit={handleSubmit(submitHandler)} className={classes.form}
             style={{
               width: '100%',
@@ -351,7 +351,7 @@ const Login = () => {
                     )}
                   </ListItem>
                   <ListItem>
-                    <NextLink href={`/forgot_password`} passHref>
+                    <NextLink href={`#`} passHref>
                       <Typography
                         variant='medium'
                         component='h2'

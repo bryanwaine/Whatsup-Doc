@@ -142,6 +142,7 @@ const Login = () => {
       <Box sx={styles.signupTransbox}>
         <Box sx={styles.signupForm} className={`reveal_signup  `}>
           <form
+            action="#"
             // onSubmit={handleSubmit(submitHandler)} className={classes.form}
             style={{
               width: "100%",
