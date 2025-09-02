@@ -88,7 +88,7 @@ const Login = () => {
               }}
             >
               <Slide
-                direction='up'
+                direction='left'
                 mountOnEnter
                 unmountOnExit
                 in={login}
