@@ -129,7 +129,7 @@ export default function Home() {
                 flexDirection: 'column',
                 alignItems: 'start',
               }}
-              // className={`reveal_first_section_text`}
+              className={`reveal_first_section_text`}
             >
               <Typography
                 variant='bold'
