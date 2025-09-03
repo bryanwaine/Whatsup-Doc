@@ -10,6 +10,7 @@ const apply_elevation = (applyElevation, setApplyElevation) => {
   }
 };
 
+
 const reveal_first_section = () => {
   var reveals = document.querySelectorAll('.reveal_first_section');
   for (var i = 0; i < reveals.length; i++) {
@@ -99,7 +100,7 @@ const reveal_third_section = () => {
   for (var i = 0; i < reveals.length; i++) {
     var windowHeight = window.innerHeight;
     var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 200;
+    var elementVisible = 10;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
     }
