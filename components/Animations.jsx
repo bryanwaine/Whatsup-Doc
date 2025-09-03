@@ -15,7 +15,7 @@ const reveal_first_section = () => {
   for (var i = 0; i < reveals.length; i++) {
     var windowHeight = window.innerHeight;
     var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = -250;
+    var elementVisible = -10;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
     }
@@ -27,7 +27,7 @@ const reveal_first_section_image = () => {
   for (var i = 0; i < reveals.length; i++) {
     var windowHeight = window.innerHeight;
     var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = -250;
+    var elementVisible = -10;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
     }
@@ -39,7 +39,7 @@ const reveal_first_section_text = () => {
   for (var i = 0; i < reveals.length; i++) {
     var windowHeight = window.innerHeight;
     var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = -250;
+    var elementVisible = -10;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
     }
@@ -51,7 +51,7 @@ const reveal_second_section = () => {
   for (var i = 0; i < reveals.length; i++) {
     var windowHeight = window.innerHeight;
     var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 200;
+    var elementVisible = 10;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
     }
@@ -63,7 +63,7 @@ const reveal_second_section_text = () => {
   for (var i = 0; i < reveals.length; i++) {
     var windowHeight = window.innerHeight;
     var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 200;
+    var elementVisible = 10;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
     }
@@ -75,7 +75,7 @@ const reveal_second_section_card_1 = () => {
   for (var i = 0; i < reveals.length; i++) {
     var windowHeight = window.innerHeight;
     var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 200;
+    var elementVisible = 10;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
     }
@@ -87,7 +87,7 @@ const reveal_second_section_card_2 = () => {
   for (var i = 0; i < reveals.length; i++) {
     var windowHeight = window.innerHeight;
     var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 200;
+    var elementVisible = 10;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
     }
@@ -111,7 +111,7 @@ const reveal_third_section_text = () => {
   for (var i = 0; i < reveals.length; i++) {
     var windowHeight = window.innerHeight;
     var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 200;
+    var elementVisible = 10;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
     }
@@ -123,7 +123,7 @@ const reveal_third_section_card_1 = () => {
   for (var i = 0; i < reveals.length; i++) {
     var windowHeight = window.innerHeight;
     var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 200;
+    var elementVisible = 10;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
     }
@@ -135,7 +135,7 @@ const reveal_third_section_card_2 = () => {
   for (var i = 0; i < reveals.length; i++) {
     var windowHeight = window.innerHeight;
     var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 200;
+    var elementVisible = 10;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
     }
@@ -147,7 +147,7 @@ const reveal_third_section_card_3 = () => {
   for (var i = 0; i < reveals.length; i++) {
     var windowHeight = window.innerHeight;
     var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 200;
+    var elementVisible = 10;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
     }
@@ -159,7 +159,7 @@ const reveal_third_section_card_4 = () => {
   for (var i = 0; i < reveals.length; i++) {
     var windowHeight = window.innerHeight;
     var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 200;
+    var elementVisible = 10;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
     }
@@ -171,7 +171,7 @@ const reveal_third_section_image = () => {
   for (var i = 0; i < reveals.length; i++) {
     var windowHeight = window.innerHeight;
     var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 200;
+    var elementVisible = 10;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
     }
@@ -183,7 +183,7 @@ const reveal_fourth_section_text = () => {
   for (var i = 0; i < reveals.length; i++) {
     var windowHeight = window.innerHeight;
     var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 200;
+    var elementVisible = 10;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
     }
@@ -195,7 +195,7 @@ const reveal_fourth_section_image = () => {
   for (var i = 0; i < reveals.length; i++) {
     var windowHeight = window.innerHeight;
     var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 200;
+    var elementVisible = 10;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
     }
@@ -207,7 +207,7 @@ const reveal_login = () => {
   for (var i = 0; i < reveals.length; i++) {
     var windowHeight = window.innerHeight;
     var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 200;
+    var elementVisible = 10;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
     }
@@ -219,7 +219,7 @@ const reveal_signup= () => {
   for (var i = 0; i < reveals.length; i++) {
     var windowHeight = window.innerHeight;
     var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 200;
+    var elementVisible = 10;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add('active');
     }

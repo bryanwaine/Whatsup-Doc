@@ -136,7 +136,8 @@ const Login = () => {
       <Head>
         <title>{`Whatsup Doc! | Sign up  `}</title>
         <link rel="icon" type="image/x-icon" href="/w-d_logo_thumb.png" />
-        <meta name="description" content="Login to your account"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Login to your account" />
       </Head>
 
       <Box sx={styles.signupTransbox}>

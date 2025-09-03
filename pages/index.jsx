@@ -1166,9 +1166,9 @@ export default function Home() {
                 display: 'flex',
                 flexDirection: { xs: 'column', md: 'column' },
               }}
-              className={`reveal_fourth_section_image`}
+              
             >
-              <Card raised sx={styles.plans} style={{ marginLeft: '5rem' }}>
+              <Card raised sx={styles.plans} style={{ marginLeft: '5rem' }} className={`reveal_fourth_section_image`}>
                 <Box
                   sx={styles.plans_icon}
                   style={{
@@ -1179,7 +1179,7 @@ export default function Home() {
                 </Box>
                 <Typography variant='medium'>Individual</Typography>
               </Card>
-              <Card raised sx={styles.plans} style={{ marginLeft: '10rem' }}>
+              <Card raised sx={styles.plans} style={{ marginLeft: '10rem' }} className={`reveal_fourth_section_image`}>
                 <Box
                   sx={styles.plans_icon}
                   style={{
@@ -1192,7 +1192,7 @@ export default function Home() {
                 </Box>
                 <Typography variant='medium'>Family</Typography>
               </Card>
-              <Card raised sx={styles.plans} style={{ marginLeft: '15rem' }}>
+              <Card raised sx={styles.plans} style={{ marginLeft: '15rem' }} className={`reveal_fourth_section_image`}>
                 <Box
                   sx={styles.plans_icon}
                   style={{

@@ -69,6 +69,7 @@ const Layout = ({
       <Head>
         <title>{title ? `Whatsup Doc! | ${title}  ` : `Whatsup Doc!`}</title>
         <link rel='icon' type='image/x-icon' href='/w-d_logo_thumb.png' />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {description && <meta name='description' content={description}></meta>}
       </Head>
       <CssBaseline>
